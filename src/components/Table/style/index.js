@@ -77,89 +77,88 @@ export const TableWrap = withProps({
         } = props;
 
         return css`
-        ${clearFixMixin};
-        padding: ${customStyle.outerPadding || '0px'};
-        color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
-        border-radius: ${DT.T_CORNER_SM};
-        background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
-        font-size: ${DT.T_TYPO_FONT_SIZE_1};
+            ${clearFixMixin};
+            padding: ${customStyle.outerPadding || '0px'};
+            color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
+            border-radius: ${DT.T_CORNER_SM};
+            background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
+            font-size: ${DT.T_TYPO_FONT_SIZE_1};
 
-        .${prefixCls} {
-            &-pagination {
-                float: right;
-                margin-top: 8px;
-            }
-            &-filter {
-                border: none;
-                padding: 0;
-                cursor: pointer;
-                line-height: 0;
-            }
-            table {
-                border-collapse: separate;
-                border-spacing: 0;
-                width: 100%;
-                min-width: 100%;
-            }
-            &-filter-notice,
-            &-empty-content-wrap,
-            &-error-content-wrap {
-                max-width: 400px;
-                margin: 12px auto;
-                text-align: center;
-            }
-            &-empty-content-wrap,
-            &-error-content-wrap {
-                margin: 40px auto;
-            }
-            &-reset-link {
-                color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
-                cursor: pointer;
-            }
-            &-fixed,
-            &-body {
-                background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
-            }
+            .${prefixCls} {
+                &-pagination {
+                    float: right;
+                    margin-top: 8px;
+                }
+                &-filter {
+                    border: none;
+                    padding: 0;
+                    cursor: pointer;
+                    line-height: 0;
+                }
+                table {
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    width: 100%;
+                    min-width: 100%;
+                }
+                &-filter-notice,
+                &-empty-content-wrap,
+                &-error-content-wrap {
+                    max-width: 400px;
+                    margin: 12px auto;
+                    text-align: center;
+                }
+                &-empty-content-wrap,
+                &-error-content-wrap {
+                    margin: 40px auto;
+                }
+                &-reset-link {
+                    color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
+                    cursor: pointer;
+                }
+                &-fixed,
+                &-body {
+                    background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
+                }
 
-            &-row-expand-icon {
-                color: ${DT.T_COLOR_TEXT_DEFAULT_LIGHT};
-                border: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
-                ${inlineBlockWithVerticalMixin};
-                width: 18px;
-                height: 18px;
-                line-height: 18px;
-                text-align: center;
-                cursor: pointer;
-                &-cell {
+                &-row-expand-icon {
+                    color: ${DT.T_COLOR_TEXT_DEFAULT_LIGHT};
+                    border: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
+                    ${inlineBlockWithVerticalMixin};
+                    width: 18px;
+                    height: 18px;
+                    line-height: 18px;
+                    text-align: center;
+                    cursor: pointer;
+                    &-cell {
+                        width: 20px;
+                    }
+                    :hover {
+                        color: ${DT.T_COLOR_TEXT_PRIMARY_HOVER};
+                        border-color: ${DT.T_COLOR_LINE_PRIMARY_HOVER};
+                    }
+                }
+                &-expand-icon-th {
                     width: 20px;
                 }
-                :hover {
-                    color: ${DT.T_COLOR_TEXT_PRIMARY_HOVER};
-                    border-color: ${DT.T_COLOR_LINE_PRIMARY_HOVER}
+                &-row-expand-icon.${prefixCls}-row-collapsed:before {
+                    content: '+';
                 }
-            }
-            &-expand-icon-th {
-                width: 20px;
-            }
-            &-row-expand-icon.${prefixCls}-row-collapsed:before {
-                content: '+';
-            }
-            &-row-expand-icon.${prefixCls}-row-expanded:before {
-                content: '-';
-            }
-            &-row-spaced {
-                visibility: hidden;
-            }
-            &-row-expanded,
-            &-row-collapsed {
-                margin-right: 8px;
-            }
-            &-row-expand-icon-cell .${prefixCls}-row-expand-icon {
-                margin: 0;
-            }
-            
-            ${
-                hideExpandIcon &&
+                &-row-expand-icon.${prefixCls}-row-expanded:before {
+                    content: '-';
+                }
+                &-row-spaced {
+                    visibility: hidden;
+                }
+                &-row-expanded,
+                &-row-collapsed {
+                    margin-right: 8px;
+                }
+                &-row-expand-icon-cell .${prefixCls}-row-expand-icon {
+                    margin: 0;
+                }
+
+                ${hideExpandIcon &&
                 css`
                     &-row-expand-icon-cell,
                     &-expand-icon-th,
@@ -167,163 +166,158 @@ export const TableWrap = withProps({
                     &-expanded-row > td:first-of-type {
                         display: none;
                     }
-                `
-            }
+                `}
 
-            &-fixed-header .${prefixCls}-header {
-                min-width: 100%;
-                overflow: scroll;
-                padding-bottom: 20px;
-                margin-bottom: -20px;
-            }
+                &-fixed-header .${prefixCls}-header {
+                    min-width: 100%;
+                    overflow: scroll;
+                    padding-bottom: 20px;
+                    margin-bottom: -20px;
+                }
 
-            &-content {
-                position: relative;
-                width: 100%;
-                clear: both;
-            }
-            &-thead > tr > th {
-                position: relative;
-                vertical-align: middle;
-                border-bottom: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
-                color: ${DT.T_COLOR_TEXT_DEFAULT_LIGHT};
-                padding: 12px;
-                line-height: 22px;
-                text-align: left;
-                font-weight: 400;
-                &.${prefixCls}-expand-icon-th,
-                &.${selectIconHeaderCls} {
-                    border-color: transparent;
-                    padding-left: 0;
+                &-content {
+                    position: relative;
+                    width: 100%;
+                    clear: both;
                 }
-                &.${placeholderHeaderCls} {
-                    padding: 0px;
-                    font-size: 0px;
-                }
-            }
-            &-scroll-position-right,
-            &-scroll-position-middle,
-            &-scroll-position-left {
-                .${prefixCls}-th-fixed-left-latest,
-                .${prefixCls}-row-cell-fixed-left-latest,
-                .${prefixCls}-th-fixed-right-first,
-                .${prefixCls}-row-cell-fixed-right-first {
-                    ::after {
-                        content: '';
-                        position: absolute;
-                        width: 30px;
-                        height: 100%;
-                        top: 0;
-                        pointer-events: none;
-                        transition: box-shadow .3s;
+                &-thead > tr > th {
+                    position: relative;
+                    vertical-align: middle;
+                    border-bottom: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
+                    color: ${DT.T_COLOR_TEXT_DEFAULT_LIGHT};
+                    padding: ${DT.T_TABLE_HEAD_PADDING_V} ${DT.T_TABLE_HEAD_PADDING_H};
+                    line-height: 22px;
+                    text-align: left;
+                    font-weight: 400;
+                    &.${prefixCls}-expand-icon-th, &.${selectIconHeaderCls} {
+                        border-color: transparent;
+                        padding-left: 0;
+                    }
+                    &.${placeholderHeaderCls} {
+                        padding: 0px;
+                        font-size: 0px;
                     }
                 }
-                .${prefixCls}-th-fixed-left-latest,
-                .${prefixCls}-row-cell-fixed-left-latest {
-                    ::after {
-                        right: -30px;
+                &-scroll-position-right,
+                &-scroll-position-middle,
+                &-scroll-position-left {
+                    .${prefixCls}-th-fixed-left-latest,
+                        .${prefixCls}-row-cell-fixed-left-latest,
+                        .${prefixCls}-th-fixed-right-first,
+                        .${prefixCls}-row-cell-fixed-right-first {
+                        ::after {
+                            content: '';
+                            position: absolute;
+                            width: 30px;
+                            height: 100%;
+                            top: 0;
+                            pointer-events: none;
+                            transition: box-shadow 0.3s;
+                        }
+                    }
+                    .${prefixCls}-th-fixed-left-latest, .${prefixCls}-row-cell-fixed-left-latest {
+                        ::after {
+                            right: -30px;
+                        }
+                    }
+                    .${prefixCls}-th-fixed-right-first, .${prefixCls}-row-cell-fixed-right-first {
+                        ::after {
+                            left: -30px;
+                        }
                     }
                 }
-                .${prefixCls}-th-fixed-right-first,
-                .${prefixCls}-row-cell-fixed-right-first {
-                    ::after {
-                        left: -30px;
+                &-scroll-position-right,
+                &-scroll-position-middle {
+                    .${prefixCls}-th-fixed-left-latest, .${prefixCls}-row-cell-fixed-left-latest {
+                        ::after {
+                            box-shadow: ${DT.T_SHADOW_INSET_LEFT};
+                        }
                     }
                 }
-            }
-            &-scroll-position-right,
-            &-scroll-position-middle {
-                .${prefixCls}-th-fixed-left-latest,
-                .${prefixCls}-row-cell-fixed-left-latest {
-                    ::after {
-                        box-shadow: ${DT.T_SHADOW_INSET_LEFT};
+                &-scroll-position-left,
+                &-scroll-position-middle {
+                    .${prefixCls}-th-fixed-right-first, .${prefixCls}-row-cell-fixed-right-first {
+                        ::after {
+                            box-shadow: ${DT.T_SHADOW_INSET_RIGHT};
+                        }
                     }
                 }
-            }
-            &-scroll-position-left,
-            &-scroll-position-middle {
-                .${prefixCls}-th-fixed-right-first,
-                .${prefixCls}-row-cell-fixed-right-first {
-                    ::after {
-                        box-shadow: ${DT.T_SHADOW_INSET_RIGHT};
-                    }
-                }
-            }
-            &-row, &-row>td, &-thead, &-thead>tr, &-thead>tr>th{
-                background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
-            }
-            &-row > td {
-                position: relative;
-                vertical-align: middle;
-                border-bottom: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
-                padding: 12px;
-                line-height: 22px;
-                text-align: left;
-                overflow-wrap: break-word;
-                &.${prefixCls}-row-expand-icon-cell,
-                &.${selectIconCellCls} {
-                    border-color: transparent;
-                    padding-left: 0;
-                }
-                &.${placeholderCellCls} {
-                    padding: 0;
-                    font-size: 0;
-                }
-            }
-            &-row-level-1 > td,
-            &-row-level-2 > td,
-            &-row-level-3 > td,
-            &-row-level-4 > td,
-            &-row-level-5 > td {
-                background: ${DT.T_TABLE_ROW_COLOR_BG_DEFAULT};
-                &.${prefixCls}-row-expand-icon-cell,
-                &.${prefixCls}-row-select-icon-cell {
+                &-row,
+                &-row > td,
+                &-thead,
+                &-thead > tr,
+                &-thead > tr > th {
                     background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
                 }
-                &.${prefixCls}-row-expand-icon-cell .${prefixCls}-row-spaced {
-                    visibility: visible;
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 10px;
-                    width: 1px;
-                    height: 100%;
-                    background: ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
-                    padding: 0;
-                    border: none;
+                &-row > td {
+                    position: relative;
+                    vertical-align: middle;
                     border-bottom: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
-                    cursor: default;
+                    padding: ${DT.T_TABLE_BODY_PADDING_V} ${DT.T_TABLE_BODY_PADDING_H};
+                    line-height: 22px;
+                    text-align: left;
+                    overflow-wrap: break-word;
+                    &.${prefixCls}-row-expand-icon-cell, &.${selectIconCellCls} {
+                        border-color: transparent;
+                        padding-left: 0;
+                    }
+                    &.${placeholderCellCls} {
+                        padding: 0;
+                        font-size: 0;
+                    }
                 }
-            }
-            &-custom-title {
-                margin-bottom: 16px;
-            }
-            &-tip-wrap {
-                border-bottom: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
-            }
+                &-row-level-1 > td,
+                &-row-level-2 > td,
+                &-row-level-3 > td,
+                &-row-level-4 > td,
+                &-row-level-5 > td {
+                    background: ${DT.T_TABLE_ROW_COLOR_BG_DEFAULT};
+                    &.${prefixCls}-row-expand-icon-cell, &.${prefixCls}-row-select-icon-cell {
+                        background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
+                    }
+                    &.${prefixCls}-row-expand-icon-cell .${prefixCls}-row-spaced {
+                        visibility: visible;
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 10px;
+                        width: 1px;
+                        height: 100%;
+                        background: ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
+                        padding: 0;
+                        border: none;
+                        border-bottom: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
+                        cursor: default;
+                    }
+                }
+                &-custom-title {
+                    margin-bottom: 16px;
+                }
+                &-tip-wrap {
+                    border-bottom: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
+                }
 
-            table > tbody > .${prefixCls}-row:hover > td {
-                background: ${DT.T_TABLE_ROW_COLOR_BG_HOVER};
-                &.${prefixCls}-row-expand-icon-cell, &.${selectIconCellCls} {
-                    background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
+                table > tbody > .${prefixCls}-row:hover > td {
+                    background: ${DT.T_TABLE_ROW_COLOR_BG_HOVER};
+                    &.${prefixCls}-row-expand-icon-cell, &.${selectIconCellCls} {
+                        background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
+                    }
                 }
-            }
-            .${hoverDisplayAreaCls} {
-                display: inline;
-                visibility: hidden;
-            }
-            table > tbody > .${prefixCls}-row:hover {
                 .${hoverDisplayAreaCls} {
-                    visibility: visible;
+                    display: inline;
+                    visibility: hidden;
                 }
-            }
+                table > tbody > .${prefixCls}-row:hover {
+                    .${hoverDisplayAreaCls} {
+                        visibility: visible;
+                    }
+                }
 
-            &-row-indent.indent-level-0 {
-                display: none;
-            }
-            
-            ${
-                zebraCrossing &&
+                &-row-indent.indent-level-0 {
+                    display: none;
+                }
+
+                ${zebraCrossing &&
                 css`
                     &-row:nth-child(odd) > td {
                         background: ${DT.T_TABLE_ROW_COLOR_BG_DEFAULT};
@@ -331,9 +325,9 @@ export const TableWrap = withProps({
                             background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
                         }
                     }
-                `
-            };
-        }`;
+                `};
+            }
+        `;
     })
 );
 
