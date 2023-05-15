@@ -1,8 +1,8 @@
 {
-  "name": "@ucloud-fe/react-components",
-  "version": "1.2.15",
-  "title": "UCloud react components",
-  "description": "UCloud react components",
+  "name": "@ucloud-pccl/react-components",
+  "version": "1.0.0",
+  "title": "UCloud pccl react components",
+  "description": "UCloud pccl react components",
   "keywords": [
     "react",
     "react-component",
