@@ -95,19 +95,22 @@ interface TabBarRootNodeInterface {
     extraContent?: ReactNode;
     onKeyDown?: (e: KeyboardEvent) => void;
     styleType: string;
+    tabBarClassName?: string;
 }
 const TabBarRootNode = ({
     tabBarPosition = 'top',
     children,
     extraContent,
     onKeyDown = noop,
-    styleType
+    styleType,
+    tabBarClassName
 }: TabBarRootNodeInterface) => {
     const { saveRef = () => null } = useContext(RefContext);
     const cls = classnames(
         `${prefixCls}-bar`,
         `${prefixCls}-${tabBarPosition}-bar`,
-        `${prefixCls}-styletype-${styleType}-bar`
+        `${prefixCls}-styletype-${styleType}-bar`,
+        tabBarClassName
     );
     const topOrBottom = isVertical(tabBarPosition);
     const tabBarExtraContentStyle = topOrBottom ? { float: 'right' } : {};
