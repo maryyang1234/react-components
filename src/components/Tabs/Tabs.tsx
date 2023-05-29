@@ -85,6 +85,8 @@ export interface TabsProps {
     styleType?: StyleType;
     /** 尺寸 */
     size?: Size;
+     /** Tabbar 自定义className */
+    tabBarClassName?: string;
 }
 const Tabs = ({
     activeKey: _activeKey,
@@ -97,6 +99,7 @@ const Tabs = ({
     direction = 'ltr',
     styleType = 'default',
     size = 'sm',
+    tabBarClassName,
     ...restProps
 }: TabsProps) => {
     const panes = useMemo(() => getPanesFromChildren(children), [children]);
