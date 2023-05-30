@@ -146,7 +146,8 @@ const Tabs = ({
                 direction,
                 styleType,
                 prevIcon: <SvgIcon type="triangle-left" />,
-                nextIcon: <SvgIcon type="triangle-right" />
+                nextIcon: <SvgIcon type="triangle-right" />,
+                tabBarClassName
             }}
         />
     );
