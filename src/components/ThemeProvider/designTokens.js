@@ -1,7 +1,7 @@
 const designTokens = {
     T_BUTTON_COMMON_COLOR_MASK: '#ffffff',
-    T_BUTTON_PRIMARY_COLOR_BG_DEFAULT: 'linear-gradient(135deg, #6488fc 0%,#3860f4 100%)',
-    T_BUTTON_PRIMARY_COLOR_BG_HOVER: 'linear-gradient(135deg, #5c76e8 0%,#3357df 100%)',
+    T_BUTTON_PRIMARY_COLOR_BG_DEFAULT: '#406AE6',
+    T_BUTTON_PRIMARY_COLOR_BG_HOVER: '#2c4cbf',
     T_BUTTON_PRIMARY_COLOR_TEXT_DEFAULT: '#ffffff',
     T_BUTTON_SECONDARY_COLOR_BG_DEFAULT: '#ffffff',
     T_COLOR_BG_MENU: '#ffffff',
@@ -10,8 +10,8 @@ const designTokens = {
     T_COLOR_BG_TRANSPARENT: 'transparent',
     T_COLOR_BG_PRIMARY_1: '#3860f4',
     T_COLOR_BG_PRIMARY_2: '#3357df',
-    T_COLOR_BG_PRIMARY_3: 'linear-gradient(135deg, #6488fc 0%,#3860f4 100%)',
-    T_COLOR_BG_PRIMARY_4: 'linear-gradient(135deg, #5c76e8 0%,#3357df 100%)',
+    T_COLOR_BG_PRIMARY_3: '#406AE6',
+    T_COLOR_BG_PRIMARY_4: '#2c4cbf',
     T_COLOR_BG_PRIMARY_5: '#f8f8ff',
     // 用于body、tableHeader等中性底色
     T_COLOR_BG_BODY_NORMAL: '#F5F7FA',
@@ -227,13 +227,10 @@ const designTokens = {
     T_SHADOW_BLOCK_TOP_SM: '0 -3px 3px -2px rgba(0,0,0,0.05),0 -8px 6px -6px rgba(0,0,0,0.08)',
     T_SHADOW_BLOCK_TOP_LG:
         '0 -46px 24px -35px rgba(0,0,0,0.05),0 -25px 10px -16px rgba(0,0,0,0.05),0 -10px 6px -6px rgba(0,0,0,0.05)',
-    T_SHADOW_BUTTON_DEFAULT: '0 2px 3px 0 rgba(0,0,0,0.12),inset 0 -2px 0 0 #e3e9ff',
-    T_SHADOW_BUTTON_HOVER:
-        '0 0 1px 0 rgba(0,0,0,0.12),0 8px 12px -4px rgba(0,0,0,0.12),0 2px 1px -1px rgba(0,0,0,0.05), inset 0 -2px 0 0 #e3e9ff',
-    T_SHADOW_BUTTON_PRIMARY:
-        '0 2px 4px -1px #5c76e8, inset 0 -3px 0 0 rgba(0,0,0,0.12), inset 0 1px 0 0 rgba(0,0,0,0.12)',
-    T_SHADOW_BUTTON_PRIMARY_HOVER:
-        '0 5px 8px -4px #5c76e8, inset 0 -3px 0 0 rgba(0,0,0,0.12), inset 0 1px 0 0 rgba(0,0,0,0.12)',
+    T_SHADOW_BUTTON_DEFAULT: '0 2px 0 rgba(0,0,0,.015)',
+    T_SHADOW_BUTTON_HOVER: '0 2px 0 rgba(0,0,0,.015)',
+    T_SHADOW_BUTTON_PRIMARY: '0 2px 0 rgba(0,0,0,.045)',
+    T_SHADOW_BUTTON_PRIMARY_HOVER: '0 2px 0 rgba(0,0,0,.045)',
     T_SHADOW_BUTTON_ERROR: '0 1px 3px -1px #f44336',
     T_SHADOW_BUTTON_ERROR_HOVER: '0 5px 8px -4px #f44336',
     T_SPACING_COMMON_XS: '4px',
