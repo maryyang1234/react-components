@@ -183,16 +183,13 @@ export const TableWrap = withProps({
                 &-thead > tr > th {
                     position: relative;
                     vertical-align: middle;
-                    border-bottom: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
+                    border-bottom: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
                     color: ${DT.T_COLOR_TEXT_DEFAULT_LIGHT};
                     padding: ${DT.T_TABLE_HEAD_PADDING_V} ${DT.T_TABLE_HEAD_PADDING_H};
                     line-height: 22px;
                     text-align: left;
                     font-weight: 400;
-                    &.${prefixCls}-expand-icon-th, &.${selectIconHeaderCls} {
-                        border-color: transparent;
-                        padding-left: 0;
-                    }
+
                     &.${placeholderHeaderCls} {
                         padding: 0px;
                         font-size: 0px;
@@ -242,11 +239,13 @@ export const TableWrap = withProps({
                         }
                     }
                 }
-                &-row,
-                &-row > td,
                 &-thead,
                 &-thead > tr,
                 &-thead > tr > th {
+                    background: ${DT.T_COLOR_BG_BODY_NORMAL};
+                }
+                &-row,
+                &-row > td {
                     background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
                 }
                 &-row > td {
@@ -257,10 +256,7 @@ export const TableWrap = withProps({
                     line-height: 22px;
                     text-align: left;
                     overflow-wrap: break-word;
-                    &.${prefixCls}-row-expand-icon-cell, &.${selectIconCellCls} {
-                        border-color: transparent;
-                        padding-left: 0;
-                    }
+
                     &.${placeholderCellCls} {
                         padding: 0;
                         font-size: 0;
@@ -299,9 +295,6 @@ export const TableWrap = withProps({
 
                 table > tbody > .${prefixCls}-row:hover > td {
                     background: ${DT.T_TABLE_ROW_COLOR_BG_HOVER};
-                    &.${prefixCls}-row-expand-icon-cell, &.${selectIconCellCls} {
-                        background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
-                    }
                 }
                 .${hoverDisplayAreaCls} {
                     display: inline;
@@ -321,9 +314,9 @@ export const TableWrap = withProps({
                 css`
                     &-row:nth-child(odd) > td {
                         background: ${DT.T_TABLE_ROW_COLOR_BG_DEFAULT};
-                        &.${prefixCls}-row-expand-icon-cell, &.${selectIconCellCls} {
-                            background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
-                        }
+                    }
+                    &-thead > tr > th {
+                        background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
                     }
                 `};
             }
