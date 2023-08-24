@@ -9,7 +9,7 @@ const { prefixCls: _prefixCls } = config;
 const colPrefixCls = _prefixCls + '-col';
 const rowPrefixCls = _prefixCls + '-row';
 
-const maxColumns = 12;
+const maxColumns = 24;
 
 const percentage = v => {
     return +(v * 100).toFixed(8) + '%';
@@ -120,42 +120,34 @@ export const RowWrap = withProps({
             height: auto;
 
             ${type === 'flex' ? flexMixin : clearFixMixin};
-            ${
-                gutterHor
-                    ? css`
-                          margin-left: ${-gutterHor + 'px'};
-                          margin-right: ${-gutterHor + 'px'};
-                      `
-                    : null
-            }
-            ${
-                gutterVer
-                    ? css`
-                          margin-top: ${-gutterVer + 'px'};
-                          margin-bottom: ${-gutterVer + 'px'};
-                      `
-                    : null
-            }
+            ${gutterHor
+                ? css`
+                      margin-left: ${-gutterHor + 'px'};
+                      margin-right: ${-gutterHor + 'px'};
+                  `
+                : null}
+            ${gutterVer
+                ? css`
+                      margin-top: ${-gutterVer + 'px'};
+                      margin-bottom: ${-gutterVer + 'px'};
+                  `
+                : null}
             ${justifyMixin(props)};
             ${alignMixin(props)};
 
             > .${colPrefixCls} {
-                ${
-                    gutterHor
-                        ? css`
-                              padding-left: ${gutterHor + 'px'};
-                              padding-right: ${gutterHor + 'px'};
-                          `
-                        : null
-                }
-                ${
-                    gutterVer
-                        ? css`
-                              padding-top: ${gutterVer + 'px'};
-                              padding-bottom: ${gutterVer + 'px'};
-                          `
-                        : null
-                }
+                ${gutterHor
+                    ? css`
+                          padding-left: ${gutterHor + 'px'};
+                          padding-right: ${gutterHor + 'px'};
+                      `
+                    : null}
+                ${gutterVer
+                    ? css`
+                          padding-top: ${gutterVer + 'px'};
+                          padding-bottom: ${gutterVer + 'px'};
+                      `
+                    : null}
             }
         `;
     })
