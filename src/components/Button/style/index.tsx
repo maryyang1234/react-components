@@ -103,8 +103,8 @@ const styleTypeMixin = (props: SButtonPropsFinal) => {
         color: DT.T_COLOR_TEXT_DEFAULT_LIGHT
       },
       ':hover,:active': {
-        color: DT.T_COLOR_TEXT_PRIMARY_DEFAULT,
-        fill: DT.T_COLOR_TEXT_PRIMARY_DEFAULT,
+        color: DT.T_COLOR_TEXT_DEFAULT_BRIGHT,
+        fill: DT.T_COLOR_TEXT_DEFAULT_BRIGHT,
         borderColor: DT.T_COLOR_LINE_PRIMARY_HOVER,
         background: checkAble ? DT.T_COLOR_BG_DEFAULT_LIGHT : DT.T_BUTTON_SECONDARY_COLOR_BG_DEFAULT
       }
@@ -195,9 +195,9 @@ const checkedMixin = (props: SButtonPropsFinal) => {
   } = props;
 
   return css`
-    color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
-    fill: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
-    background: ${DT.T_COLOR_BG_DEFAULT_HOVER};
+    color: ${DT.T_COLOR_TEXT_DEFAULT_BRIGHT};
+    fill: ${DT.T_COLOR_TEXT_DEFAULT_BRIGHT};
+    background: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
     border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
     box-shadow: ${DT.T_SHADOW_BUTTON_HOVER};
     :hover {
