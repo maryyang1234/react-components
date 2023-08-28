@@ -4,9 +4,9 @@ import { designTokens } from './designTokens';
 
 const defaultSizeTheme = {
     // default font-size
-    fontSize: '12px',
+    fontSize: '14px',
     // font-size of title
-    titleFontSize: '14px',
+    titleFontSize: '18px',
     // height of size (px)
     Height: {
         sm: '24px',
