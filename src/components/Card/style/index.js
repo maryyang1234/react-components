@@ -122,7 +122,7 @@ export const CardWrap = withProps()(
             box-shadow: ${DT.T_SHADOW_BLOCK_DEFAULT_MD};
             border-radius: ${DT.T_CORNER_LG};
             .${titleCls} {
-                color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
+                color: ${DT.T_COLOR_TEXT_TITLE_DARK};
                 font-size: ${DT.T_TYPO_FONT_SIZE_3};
             }
             .${commentCls} {
