@@ -33,7 +33,7 @@ export const TitleWrap = withProps({
     className: titleCls
 })(styled('div')`
     line-height: 28px;
-    font-weight: 500;
+    font-weight: bold;
 `);
 
 export const CommentWrap = withProps({
