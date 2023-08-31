@@ -102,8 +102,14 @@ const styleTypeMixin = (props: SButtonPropsFinal) => {
       ':link,:visited': {
         color: DT.T_COLOR_TEXT_DEFAULT_LIGHT
       },
-      ':hover,:active': {
+      ':active': {
         color: DT.T_COLOR_TEXT_DEFAULT_BRIGHT,
+        fill: DT.T_COLOR_TEXT_DEFAULT_BRIGHT,
+        borderColor: DT.T_COLOR_LINE_PRIMARY_HOVER,
+        background: checkAble ? DT.T_COLOR_BG_DEFAULT_LIGHT : DT.T_BUTTON_SECONDARY_COLOR_BG_DEFAULT
+      },
+      ':hover': {
+        color: DT.T_COLOR_TEXT_PRIMARY_DEFAULT,
         fill: DT.T_COLOR_TEXT_DEFAULT_BRIGHT,
         borderColor: DT.T_COLOR_LINE_PRIMARY_HOVER,
         background: checkAble ? DT.T_COLOR_BG_DEFAULT_LIGHT : DT.T_BUTTON_SECONDARY_COLOR_BG_DEFAULT
@@ -201,7 +207,8 @@ const checkedMixin = (props: SButtonPropsFinal) => {
     border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
     box-shadow: ${DT.T_SHADOW_BUTTON_HOVER};
     :hover {
-      background: ${DT.T_COLOR_BG_DEFAULT_HOVER};
+      background: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
+      color: ${DT.T_COLOR_TEXT_DEFAULT_BRIGHT};
     }
   `;
 };
