@@ -158,15 +158,17 @@ export const TableWrap = withProps({
                     margin: 0;
                 }
 
-                ${hideExpandIcon &&
-                css`
-                    &-row-expand-icon-cell,
-                    &-expand-icon-th,
-                    &-expand-icon-col,
-                    &-expanded-row > td:first-of-type {
-                        display: none;
-                    }
-                `}
+                ${
+                    hideExpandIcon &&
+                    css`
+                        &-row-expand-icon-cell,
+                        &-expand-icon-th,
+                        &-expand-icon-col,
+                        &-expanded-row > td:first-of-type {
+                            display: none;
+                        }
+                    `
+                }
 
                 &-fixed-header .${prefixCls}-header {
                     min-width: 100%;
@@ -189,6 +191,7 @@ export const TableWrap = withProps({
                     line-height: 22px;
                     text-align: left;
                     font-weight: 400;
+                    font-size: ${DT.T_TYPO_FONT_SIZE_3};
 
                     &.${placeholderHeaderCls} {
                         padding: 0px;
@@ -310,15 +313,17 @@ export const TableWrap = withProps({
                     display: none;
                 }
 
-                ${zebraCrossing &&
-                css`
-                    &-row:nth-child(odd) > td {
-                        background: ${DT.T_TABLE_ROW_COLOR_BG_DEFAULT};
-                    }
-                    &-thead > tr > th {
-                        background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
-                    }
-                `};
+                ${
+                    zebraCrossing &&
+                    css`
+                        &-row:nth-child(odd) > td {
+                            background: ${DT.T_TABLE_ROW_COLOR_BG_DEFAULT};
+                        }
+                        &-thead > tr > th {
+                            background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
+                        }
+                    `
+                };
             }
         `;
     })
