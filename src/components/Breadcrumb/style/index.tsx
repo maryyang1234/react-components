@@ -17,8 +17,7 @@ export const itemCls = prefixCls + '-item';
 export const backBtnCls = prefixCls + '-back-btn';
 
 const textStyleMixin = css`
-    font-size: 14px;
-    margin-right: 6px;
+    font-size: 16px;
     ${inlineBlockWithVerticalMixin};
 `;
 
@@ -44,6 +43,7 @@ const itemStyle = (props: { theme: Theme } & ItemProps) => {
         cursor: pointer;
         text-decoration: none;
 
+        font-weight: bold;
         ${textStyleMixin};
 
         ${noAction &&
@@ -56,14 +56,14 @@ const itemStyle = (props: { theme: Theme } & ItemProps) => {
         ${current &&
         css`
             pointer-events: none;
-            color: ${DT.T_COLOR_TEXT_DEFAULT_DARK} !important;
+            color: #666 !important;
             font-weight: bold;
         `};
 
         ${disabled &&
         css`
             pointer-events: none;
-            color: ${DT.T_COLOR_TEXT_DISABLED} !important;
+            color: ${DT.T_COLOR_TEXT_TITLE_DARK} !important;
         `};
     `;
 };
@@ -93,11 +93,22 @@ export const ItemA = sWrap({
     })
 );
 
-export const SeparatorWrap = styled('span')`
-    ${textStyleMixin};
-    font-weight: bold;
-    cursor: default;
-`;
+export const SeparatorWrap = sWrap({})(
+    styled.span(props => {
+        const {
+            theme: { designTokens: DT }
+        } = props;
+
+        return css`
+            ${textStyleMixin};
+            font-weight: bold;
+            cursor: default;
+            font-size: 16px;
+            color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
+            margin: 0 4px;
+        `;
+    })
+);
 
 export const BreadcrumbWrap = sWrap<Required<Pick<BreadcrumbProps, 'styleType'>>>({})(
     styled.div(props => {
@@ -107,8 +118,8 @@ export const BreadcrumbWrap = sWrap<Required<Pick<BreadcrumbProps, 'styleType'>>
         } = props;
 
         return css`
-            font-size: 12px;
-            color: ${DT.T_COLOR_TEXT_DEFAULT_LIGHT};
+            font-size: ${DT.T_TYPO_FONT_SIZE_4};
+            color: ${DT.T_COLOR_TEXT_TITLE_DARK};
             vertical-align: baseline;
 
             ${{
