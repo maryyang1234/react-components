@@ -22,19 +22,19 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
         } = props;
 
         const padding = {
-            sm: '10px 20px',
-            md: '14px 22px',
-            lg: '16px 24px'
+            sm: DT.TAB_PANEL_PADDING_SM,
+            md: DT.TAB_PANEL_PADDING_MD,
+            lg: DT.TAB_PANEL_PADDING_LG
         }[size];
         const lineHeight = {
-            sm: '18px',
-            md: '20px',
-            lg: '22px'
+            sm: DT.TAB_PANEL_LINEHEIGHT_SM,
+            md: DT.TAB_PANEL_LINEHEIGHT_MD,
+            lg: DT.TAB_PANEL_LINEHEIGHT_LG
         }[size];
         const fontSize = {
-            sm: '16px',
-            md: '18px',
-            lg: '20px'
+            sm: DT.TAB_PANEL_FONTSIZE_SM,
+            md: DT.TAB_PANEL_FONTSIZE_MD,
+            lg: DT.TAB_PANEL_FONTSIZE_LG
         }[size];
         const fontWeight = {
             sm: 'normal',
@@ -43,7 +43,7 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
         }[size];
 
         return css`
-            /* overflow: hidden; */
+            overflow: hidden;
             ${clearFixMixin};
 
             .${prefixCls} {
@@ -158,6 +158,7 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
                         &-nav {
                             background: none;
                             box-shadow: none;
+                            height: auto;
                         }
                         &-tab:hover {
                             color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
