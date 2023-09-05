@@ -104,7 +104,7 @@ export const ModalWrap = withProps()(
                     height: 20px;
                     font-size: 20px;
                     cursor: pointer;
-                    fill: ${DT.T_COLOR_TEXT_DEFAULT_LIGHT};
+                    fill: ${DT.T_COLOR_TEXT_TITLE_DARK};
                 }
                 &-close-x {
                     display: none;
@@ -114,11 +114,12 @@ export const ModalWrap = withProps()(
                     position: relative;
                     padding: 16px 52px 16px 16px;
                     min-height: 20px;
-                    color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
+                    color: ${DT.T_COLOR_TEXT_TITLE_DARK};
                     border-bottom: 1px solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
                     border-radius: 4px 4px 0 0;
-                    font-size: 16px;
+                    font-size: ${DT.T_TYPO_FONT_SIZE_3};
                     line-height: 20px;
+                    font-weight: bold;
                 }
                 &-footer {
                     padding: 15px 16px;

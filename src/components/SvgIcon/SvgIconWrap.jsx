@@ -14,9 +14,6 @@ class SvgIconWrap extends PureComponent {
         /** icon */
         children: PropTypes.node
     };
-    static defaultProps = {
-        size: '12px'
-    };
     render() {
         const { children, ...rest } = this.props;
         return (
