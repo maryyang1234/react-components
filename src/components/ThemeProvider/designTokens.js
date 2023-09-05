@@ -197,6 +197,22 @@ const designTokens = {
     T_HEIGHT_LG: '32px',
 
     TAB_PANEL_TITLE_HEIGHT: '48px', // Tab标题高度
+    TAB_PANEL_PADDING_SM: '10px 20px', // Tab的padding sm
+    TAB_PANEL_PADDING_MD: '14px 22px', // Tab的padding md
+    TAB_PANEL_PADDING_LG: '16px 24px', // Tab的padding lg
+
+    TAB_PANEL_LINEHEIGHT_SM: '18px', // Tab的行高 sm
+    TAB_PANEL_LINEHEIGHT_MD: '20px', // Tab的行高 md
+    TAB_PANEL_LINEHEIGHT_LG: '22px', // Tab的行高 lg
+
+    TAB_PANEL_FONTSIZE_SM: '16px', // Tab的fontsize sm
+    TAB_PANEL_FONTSIZE_MD: '18px', // Tab的fontsize md
+    TAB_PANEL_FONTSIZE_LG: '20px', // Tab的fontsize lg
+
+    TAB_PANEL_FONTWEIGHT_SM: 'normal', // Tab的fontweight sm
+    TAB_PANEL_FONTWEIGHT_MD: 'normal', // Tab的fontweight md
+    TAB_PANEL_FONTWEIGHT_LG: 'bold', // Tab的fontweight lg
+
     T_IDE_DEFAULT_COLOR_BG_DEFAULT: '#0a1633',
     T_IDE_DEFAULT_COLOR_BG_ACTION: 'rgba(255,255,255,0.12)',
     T_IDE_READONLY_COLOR_BG_DEFAULT: '#f6f6fb',
