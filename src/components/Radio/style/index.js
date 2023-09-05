@@ -215,8 +215,8 @@ export const RadioTagWrap = withProps({
 
             ${checked &&
             css`
-                background: ${DT.T_COLOR_BG_PRIMARY_5};
-                color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
+                background: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
+                color: ${DT.T_COLOR_TEXT_DEFAULT_BRIGHT};
             `};
 
             ${disabled &&
@@ -464,42 +464,36 @@ export const SIconWrap = sWrap({
                 left: -1px;
             }
 
-            ${
-                checked &&
-                css`
-                    &.${iconWrapCls} {
-                        border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
-                    }
-                    .${iconCls} {
-                        visibility: visible;
-                        opacity: 1;
-                        fill: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
-                    }
-                `
-            }
+            ${checked &&
+            css`
+                &.${iconWrapCls} {
+                    border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
+                }
+                .${iconCls} {
+                    visibility: visible;
+                    opacity: 1;
+                    fill: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
+                }
+            `}
 
-            ${
-                disabled &&
-                css`
-                    &.${iconWrapCls} {
-                        border-color: ${DT.T_COLOR_LINE_DISABLED_LIGHT};
-                        background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
-                    }
-                `
-            }
+            ${disabled &&
+            css`
+                &.${iconWrapCls} {
+                    border-color: ${DT.T_COLOR_LINE_DISABLED_LIGHT};
+                    background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
+                }
+            `}
 
-            ${
-                disabled &&
-                checked &&
-                css`
-                    &.${iconWrapCls} {
-                        background: none;
-                    }
-                    .${iconCls} {
-                        fill: ${DT.T_COLOR_TEXT_DISABLED};
-                    }
-                `
-            }
+            ${disabled &&
+            checked &&
+            css`
+                &.${iconWrapCls} {
+                    background: none;
+                }
+                .${iconCls} {
+                    fill: ${DT.T_COLOR_TEXT_DISABLED};
+                }
+            `}
         `;
     })
 );
