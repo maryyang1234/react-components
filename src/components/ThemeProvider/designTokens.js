@@ -52,6 +52,10 @@ const designTokens = {
     T_COLOR_TEXT_DEFAULT_NORMAL: '#ffffff',
     T_COLOR_TEXT_DEFAULT_BRIGHT: '#ffffff',
     T_COLOR_TEXT_DEFAULT_LIGHT: '#526075',
+    T_COLOR_TAB_DEFAULT_LIGHT: '#666666',
+    T_COLOR_TAB_NAV_BG: '#f0f2f5',
+    T_COLOR_TEXT_TAB_ACTIVE: '#ffffff',
+
     T_COLOR_TEXT_DEFAULT_DARK: '#0a1633',
     T_COLOR_TEXT_TITLE_DARK: '#000000',
     T_COLOR_TEXT_PRIMARY_DEFAULT: '#406AE6',
@@ -191,6 +195,8 @@ const designTokens = {
     T_HEIGHT_SM: '24px',
     T_HEIGHT_MD: '28px',
     T_HEIGHT_LG: '32px',
+
+    TAB_PANEL_TITLE_HEIGHT: '48px', // Tab标题高度
     T_IDE_DEFAULT_COLOR_BG_DEFAULT: '#0a1633',
     T_IDE_DEFAULT_COLOR_BG_ACTION: 'rgba(255,255,255,0.12)',
     T_IDE_READONLY_COLOR_BG_DEFAULT: '#f6f6fb',
@@ -203,6 +209,7 @@ const designTokens = {
     T_LINE_STYLE_BASE: 'solid',
     T_LINE_STYLE_DASHED: 'dashed',
     T_PROGRESS_COLOR_BG_DEFAULT: '#dfe0f1',
+    T_SHADOW_TAB_NAV: '0px 0px 4px 0px rgba(62, 89, 184, 0.21)',
     T_SHADOW_INSET_1: 'inset 0 1px 3px 0 #d2d6ea',
     T_SHADOW_INSET_TOP: 'inset 0 10px 8px -8px rgba(0,0,0,0.12)',
     T_SHADOW_INSET_RIGHT: 'inset -10px 0 8px -8px rgba(0,0,0,0.12)',
