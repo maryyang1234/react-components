@@ -241,6 +241,7 @@ const designTokens = {
     T_SPACING_COMMON_XLG: '20px',
     T_SPACING_COMMON_XXLG: '24px',
     T_SPACING_COMMON_XXXLG: '32px',
+    T_FORMITEM_LABEL_MB: '8px',
     T_SQUARE_SM: '24px',
     T_SQUARE_MD: '28px',
     T_SQUARE_LG: '32px',
