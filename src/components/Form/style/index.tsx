@@ -40,7 +40,8 @@ export const GridLabelWrap = sWrap({
       padding-top: 4px;
       line-height: 20px;
       word-break: break-all;
-      color: ${DT.T_COLOR_TEXT_DEFAULT_LIGHT};
+      color: ${DT.TEXT_SECOND_Title_COLOR};
+      font-size: ${DT.TEXT_SECOND_TITLE_FONT_BASE};
     `;
   })
 );
@@ -68,7 +69,8 @@ export const LabelWrap = sWrap({
     return css`
       line-height: 20px;
       font-weight: ${DT.T_TYPO_FONT_WEIGHT_BOLD};
-      color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
+      color: ${DT.TEXT_SECOND_Title_COLOR};
+      font-size: ${DT.TEXT_SECOND_TITLE_FONT_BASE};
       margin-bottom: ${DT.T_FORMITEM_LABEL_MB};
     `;
   })

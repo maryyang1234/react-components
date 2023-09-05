@@ -15,16 +15,6 @@ import LOCALE from './locale/zh_CN';
 
 const Size = ['sm', 'md', 'lg'];
 
-const ModalNotice = ({ notice }) => {
-    return notice ? (
-        React.isValidElement(notice) ? (
-            <Notice className={noticeCls}>{notice}</Notice>
-        ) : (
-            <Notice {...notice} className={classnames(noticeCls, notice.className)}></Notice>
-        )
-    ) : null;
-};
-
 @localeConsumerDecorator({ defaultLocale: LOCALE, localeName: 'Modal', requireRuntimeLocale: true })
 class Modal extends Component {
     static propTypes = {
@@ -140,18 +130,20 @@ class Modal extends Component {
                             {title}
                         </div>,
                         closable && (
-                            <SvgIcon
-                                key="close"
-                                type="cross-circle"
-                                className={`${prefixCls}-close`}
-                                onClick={onClose}
-                            />
+                            <SvgIcon key="close" type="cross" className={`${prefixCls}-close`} onClick={onClose} />
                         )
                     ]}
                     footer={_.isFunction(footer) ? footer({ locale }) : footer}
                 >
                     <div ref={this.savePopupContainer}></div>
-                    <ModalNotice notice={notice} />
+
+                    {notice ? (
+                        React.isValidElement(notice) ? (
+                            <Notice className={noticeCls}>{notice}</Notice>
+                        ) : (
+                            <Notice {...notice} className={classnames(noticeCls, notice.className)}></Notice>
+                        )
+                    ) : null}
                     {children}
                 </ModalWrap>
             </Provider>

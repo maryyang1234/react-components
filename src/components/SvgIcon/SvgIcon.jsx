@@ -123,9 +123,6 @@ class SvgIcon extends PureComponent {
         /** 图标的尺寸大小 */
         size: PropTypes.string
     };
-    static defaultProps = {
-        size: '12px'
-    };
     render() {
         let { type, ...rest } = this.props;
         type = camel2Kebab(type);
