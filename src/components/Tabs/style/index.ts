@@ -126,9 +126,7 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
                             display: none !important;
                         }
                         &-tab:hover {
-                            color: ${DT.T_COLOR_TEXT_TAB_ACTIVE};
-                            border-radius: 4px;
-                            background: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
+                            color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
                         }
                         &-tab-disabled:hover {
                             background: none;
