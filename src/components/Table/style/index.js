@@ -73,8 +73,15 @@ export const TableWrap = withProps({
             theme: { designTokens: DT },
             zebraCrossing,
             customStyle = {},
-            hideExpandIcon
+            hideExpandIcon,
+            size
         } = props;
+
+        const fontSize = {
+            sm: DT.T_TYPO_FONT_SIZE_2,
+            md: DT.T_TYPO_FONT_SIZE_3,
+            lg: DT.T_TYPO_FONT_SIZE_4
+        }[size];
 
         return css`
             ${clearFixMixin};
@@ -191,7 +198,7 @@ export const TableWrap = withProps({
                     line-height: 22px;
                     text-align: left;
                     font-weight: 400;
-                    font-size: ${DT.T_TYPO_FONT_SIZE_3};
+                    font-size: ${fontSize};
 
                     &.${placeholderHeaderCls} {
                         padding: 0px;
