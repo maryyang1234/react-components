@@ -226,8 +226,13 @@ const classNameMixin = ({ size, styleType, shape, loading, disabled, fakeDisable
   );
 
 const buttonStyleMixin = <T extends SButtonProps & { theme: Theme }>(props: T) => {
-  const { theme, loading, shape, checked, block } = props;
+  const { theme, loading, shape, checked, block, size } = props;
   const { designTokens: DT } = theme;
+  const fontSize = {
+      sm: DT.T_TYPO_FONT_SIZE_1,
+      md: DT.T_TYPO_FONT_SIZE_2,
+      lg: DT.T_TYPO_FONT_SIZE_3
+  }[size];
   return css`
     margin: 0;
     box-sizing: border-box;
@@ -236,7 +241,7 @@ const buttonStyleMixin = <T extends SButtonProps & { theme: Theme }>(props: T) =
     text-decoration: none;
     cursor: pointer;
     outline: none;
-    font-size: ${DT.T_TYPO_FONT_SIZE_1};
+    font-size: ${fontSize};
     white-space: nowrap;
     ${inlineBlockWithVerticalMixin};
 
