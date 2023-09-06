@@ -233,7 +233,9 @@ class Table extends Component {
         /** @ignore */
         style: PropTypes.object,
         /** @ignore */
-        locale: PropTypes.object
+        locale: PropTypes.object,
+        /** @表格大小 */
+        size: PropTypes.size
     };
     static defaultProps = {
         pagination: {},
@@ -966,6 +968,7 @@ class Table extends Component {
             tableLayout,
             scroll,
             customStyle,
+            size = 'md',
             ...rest
         } = this.props;
         if (emptyContent === undefined) {
@@ -1009,6 +1012,7 @@ class Table extends Component {
                         hideExpandIcon={hideExpandIcon}
                         zebraCrossing={zebraCrossing}
                         customStyle={customStyle}
+                        size={size}
                     >
                         <PopupContainer ref={this.savePopupContainer} />
                         <RcTable
