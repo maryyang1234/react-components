@@ -41,7 +41,7 @@ export const CheckboxWrap = sWrap<CheckboxProps>({})(
             font-size: 0;
             color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
             > * {
-                font-size: ${DT.T_TYPO_FONT_SIZE_1};
+                font-size: ${DT.T_CONTROL_FONT_SIZE_SM};
             }
 
             .${contentCls} {
@@ -76,8 +76,8 @@ export const SIconWrap = sWrap<CheckboxProps>({
                 box-sizing: border-box;
                 overflow: hidden;
                 position: relative;
-                width: 14px;
-                height: 14px;
+                width: 16px;
+                height: 16px;
                 border: 1px solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
                 border-radius: 2px;
                 vertical-align: middle;
@@ -91,43 +91,37 @@ export const SIconWrap = sWrap<CheckboxProps>({
                 left: -1px;
             }
 
-            ${
-                (indeterminate || checked) &&
-                css`
-                    &.${iconWrapCls} {
-                        border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
-                        background: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
-                    }
-                    .${iconCls} {
-                        visibility: visible;
-                        opacity: 1;
-                        fill: ${DT.T_COLOR_TEXT_DEFAULT_NORMAL};
-                    }
-                `
-            }
+            ${(indeterminate || checked) &&
+            css`
+                &.${iconWrapCls} {
+                    border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
+                    background: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
+                }
+                .${iconCls} {
+                    visibility: visible;
+                    opacity: 1;
+                    fill: ${DT.T_COLOR_TEXT_DEFAULT_NORMAL};
+                }
+            `}
 
-            ${
-                disabled &&
-                css`
-                    &.${iconWrapCls} {
-                        border-color: ${DT.T_COLOR_LINE_DISABLED_LIGHT};
-                        background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
-                    }
-                `
-            }
+            ${disabled &&
+            css`
+                &.${iconWrapCls} {
+                    border-color: ${DT.T_COLOR_LINE_DISABLED_LIGHT};
+                    background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
+                }
+            `}
 
-            ${
-                disabled &&
-                (checked || indeterminate) &&
-                css`
-                    &.${iconWrapCls} {
-                        background: none;
-                    }
-                    .${iconCls} {
-                        fill: ${DT.T_COLOR_TEXT_DISABLED};
-                    }
-                `
-            }
+            ${disabled &&
+            (checked || indeterminate) &&
+            css`
+                &.${iconWrapCls} {
+                    background: none;
+                }
+                .${iconCls} {
+                    fill: ${DT.T_COLOR_TEXT_DISABLED};
+                }
+            `}
         `;
     })
 );

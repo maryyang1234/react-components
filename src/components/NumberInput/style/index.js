@@ -31,10 +31,11 @@ export const NumberInputWrap = withProps()(
         return css`
             position: relative;
             box-sizing: border-box;
-            border-radius: 2px;
             color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
             height: ${Height[size]};
             ${inlineBlockWithVerticalMixin};
+            border: 1px solid ${DT.NUMBER_INPUT_COLOR};
+            border-radius: ${DT.T_CORNER_MD};
 
             .${inputWrapCls} {
                 position: relative;
@@ -47,9 +48,10 @@ export const NumberInputWrap = withProps()(
                 color: inherit;
             }
             .${suffixCls} {
-                color: ${DT.T_COLOR_TEXT_REMARK_DARK};
                 margin: 0 4px;
                 ${inlineBlockWithVerticalMixin};
+                color: ${DT.NUMBER_INPUT_SUFFIX_COLOR};
+                font-size: ${DT.TEXT_REMARK_FONT_BASE};
             }
             .${handlerUpCls}, .${handlerDownCls} {
                 position: absolute;
@@ -115,8 +117,8 @@ export const NumberInputWrap = withProps()(
                 }
 
                 .${inputWrapCls} {
-                    box-shadow: ${DT.T_SHADOW_INSET_DEFAULT};
-                    background: ${DT.T_INPUT_COLOR_BG_DEFAULT};
+                    background: ${DT.NUMBER_INPUT_BG_COLOR};
+                    color: ${DT.NUMBER_INPUT_FONTSIZE_COLOR};
                     :hover {
                         background: ${DT.T_INPUT_COLOR_BG_ACTIVE};
                     }
@@ -141,12 +143,15 @@ export const NumberInputWrap = withProps()(
                 `};
 
                 .${inputCls} {
-                    padding: 0 0 0 8px;
                     text-align: left;
                     box-shadow: none;
                     background: transparent;
-
                     width: ${HeightNumber[size] + 6}px;
+
+                    padding: 0 0 0 15px;
+                    height: 30px;
+                    line-height: ${DT.T_HEIGHT_MD};
+                    font-size: ${DT.T_TYPO_FONT_SIZE_2};
                 }
 
                 .${handlerUpCls}, .${handlerDownCls} {

@@ -199,7 +199,7 @@ const designTokens = {
     T_CORNER_CIRCLE: '50%',
     T_CORNER_ZERO: '0',
     T_HEIGHT_SM: '24px',
-    T_HEIGHT_MD: '28px',
+    T_HEIGHT_MD: '30px',
     T_HEIGHT_LG: '32px',
 
     TAB_PANEL_TITLE_HEIGHT: '48px', // Tab标题高度
@@ -218,6 +218,15 @@ const designTokens = {
     TAB_PANEL_FONTWEIGHT_SM: 'normal', // Tab的fontweight sm
     TAB_PANEL_FONTWEIGHT_MD: 'normal', // Tab的fontweight md
     TAB_PANEL_FONTWEIGHT_LG: 'bold', // Tab的fontweight lg
+
+    NUMBER_INPUT_COLOR: '#c2cff0', // NumberInput的border颜色
+    NUMBER_INPUT_BG_COLOR: '#eef3ff', // NumberInput的背景颜色
+    NUMBER_INPUT_FONTSIZE_COLOR: '#333333', // NumberInput的字体颜色
+    NUMBER_INPUT_SUFFIX_COLOR: '#9ea8c2', // NumberInput的suffix颜色
+
+    SELECT_FONTSIZE_COLOR: '#333333', // Select字体颜色
+    SELECT_BORDER_COLOR: '#c0c4cc', // Select边框颜色
+    CARD_SELECT_FONTSIZE_COLOR: '#666666', // Card下拉select字体颜色
 
     TEXT_NORMAL_TITLE_COLOR: '#303133', // 正文标题文字颜色
 
