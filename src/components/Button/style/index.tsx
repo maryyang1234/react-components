@@ -230,8 +230,8 @@ const buttonStyleMixin = <T extends SButtonProps & { theme: Theme }>(props: T) =
     const { designTokens: DT } = theme;
     const fontSize = {
         sm: DT.T_TYPO_FONT_SIZE_1,
-        md: DT.T_TYPO_FONT_SIZE_2,
-        lg: DT.T_TYPO_FONT_SIZE_3
+        md: DT.T_TYPO_FONT_SIZE_1,
+        lg: DT.T_TYPO_FONT_SIZE_2
     }[size];
     return css`
         margin: 0;
