@@ -27,8 +27,8 @@ export const ContentWrap = sWrap<{ themeType: 'light' | 'dark'; customStyle?: { 
 
         const map = {
             light: {
-                text: DT.T_COLOR_TEXT_DEFAULT_DARK,
-                border: DT.T_POPOVER_COLOR_LINE_LIGHT,
+                text: DT.TEXT_NORMAL_TITLE_COLOR,
+                border: DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT,
                 background: DT.T_POPOVER_COLOR_BG_LIGHT
             },
             dark: {
@@ -208,7 +208,7 @@ export const TooltipWrap = sWrap<{ themeType: 'light' | 'dark' }>({})(
 
         const map = {
             light: {
-                border: DT.T_POPOVER_COLOR_LINE_LIGHT,
+                border: DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT,
                 background: DT.T_POPOVER_COLOR_BG_LIGHT
             },
             dark: {

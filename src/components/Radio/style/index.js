@@ -255,7 +255,7 @@ export const RadioCardWrap = withProps({})(
             overflow: hidden;
             display: inline-block;
             cursor: pointer;
-            border: 1px solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
+            border: 2px solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
             background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
             box-shadow: ${DT.T_SHADOW_BUTTON_DEFAULT};
 
