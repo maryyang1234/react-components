@@ -215,6 +215,8 @@ const designTokens = {
     TAB_PANEL_FONTWEIGHT_MD: 'normal', // Tab的fontweight md
     TAB_PANEL_FONTWEIGHT_LG: 'bold', // Tab的fontweight lg
 
+    TEXT_NORMAL_TITLE_COLOR: '#303133', // 正文标题文字颜色
+
     T_IDE_DEFAULT_COLOR_BG_DEFAULT: '#0a1633',
     T_IDE_DEFAULT_COLOR_BG_ACTION: 'rgba(255,255,255,0.12)',
     T_IDE_READONLY_COLOR_BG_DEFAULT: '#f6f6fb',
