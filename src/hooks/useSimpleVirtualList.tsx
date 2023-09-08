@@ -1,6 +1,6 @@
 import { ReactNode, RefObject, useEffect, useMemo, useState } from 'react';
 
-const CLIENT_HEIGHT = window.innerHeight;
+const CLIENT_HEIGHT = () => typeof window !== undefined ? window.innerHeight : 1080;
 const FAIL_OFFSET = 2;
 
 export const useSimpleVirtualList = <
@@ -12,7 +12,7 @@ export const useSimpleVirtualList = <
     wrapperRef: RefObject<E2>,
     heightWrapperRef: RefObject<E3>,
     children: ReactNode[],
-    { clientHeight = CLIENT_HEIGHT, itemHeight = 20 }: { clientHeight?: number; itemHeight?: number } = {}
+    { clientHeight = CLIENT_HEIGHT(), itemHeight = 20 }: { clientHeight?: number; itemHeight?: number } = {}
 ) => {
     const [scrollTop, setScrollTop] = useState(0);
     const [measuredItemHeight, setMeasuredItemHeight] = useState(itemHeight);

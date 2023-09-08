@@ -1,1 +1,1 @@
-export default navigator?.userAgent?.indexOf?.('Firefox') > -1;
+export default window&&window.navigator?.userAgent?.indexOf?.('Firefox') > -1;
