@@ -78,9 +78,21 @@ export const TableWrap = withProps({
         } = props;
 
         const fontSize = {
-            sm: DT.T_TYPO_FONT_SIZE_2,
-            md: DT.T_TYPO_FONT_SIZE_3,
-            lg: DT.T_TYPO_FONT_SIZE_4
+            sm: DT.T_TYPO_FONT_SIZE_1,
+            md: DT.T_TYPO_FONT_SIZE_2,
+            lg: DT.T_TYPO_FONT_SIZE_3
+        }[size];
+
+        const tableHeadPaddingV = {
+            sm: DT.T_TABLE_HEAD_PADDING_V_SM,
+            md: DT.T_TABLE_HEAD_PADDING_V_MD,
+            lg: DT.T_TABLE_HEAD_PADDING_V_LG
+        }[size];
+
+        const tableBodyPaddingV = {
+            sm: DT.T_TABLE_BODY_PADDING_V_SM,
+            md: DT.T_TABLE_BODY_PADDING_V_MD,
+            lg: DT.T_TABLE_BODY_PADDING_V_LG
         }[size];
 
         return css`
@@ -194,7 +206,7 @@ export const TableWrap = withProps({
                     vertical-align: middle;
                     border-bottom: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
                     color: ${DT.T_COLOR_TEXT_DEFAULT_LIGHT};
-                    padding: ${DT.T_TABLE_HEAD_PADDING_V} ${DT.T_TABLE_HEAD_PADDING_H};
+                    padding: ${tableHeadPaddingV} ${DT.T_TABLE_HEAD_PADDING_H};
                     line-height: 22px;
                     text-align: left;
                     font-weight: 400;
@@ -262,7 +274,7 @@ export const TableWrap = withProps({
                     position: relative;
                     vertical-align: middle;
                     border-bottom: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
-                    padding: ${DT.T_TABLE_BODY_PADDING_V} ${DT.T_TABLE_BODY_PADDING_H};
+                    padding: ${tableBodyPaddingV} ${DT.T_TABLE_BODY_PADDING_H};
                     line-height: 22px;
                     text-align: left;
                     overflow-wrap: break-word;
