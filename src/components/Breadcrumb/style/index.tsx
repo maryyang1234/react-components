@@ -56,7 +56,7 @@ const itemStyle = (props: { theme: Theme } & ItemProps) => {
         ${current &&
         css`
             pointer-events: none;
-            color: #666 !important;
+            color: ${DT.TEXT_NORMAL_TITLE_COLOR} !important;
             font-weight: bold;
         `};
 

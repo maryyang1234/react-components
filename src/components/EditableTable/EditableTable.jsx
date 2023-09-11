@@ -82,7 +82,7 @@ class EditableTable extends PureComponent {
             <AddBar key="add" onClick={_disabled ? null : this.onAdd} disabled={_disabled}>
                 {tip ? (
                     [
-                        <SvgIcon className={btnCls} type="plus" key="add_btn" size="16px" />,
+                        <SvgIcon className={btnCls} type="plus" key="add_btn" size="12px" />,
                         <AddTip key="add_tip">{tip}</AddTip>
                     ]
                 ) : (
@@ -103,7 +103,7 @@ class EditableTable extends PureComponent {
             fixed,
             render: (v, record) => {
                 return getDisabledOfRow && getDisabledOfRow(record) ? null : (
-                    <RemoveBtn type="cross" onClick={() => this.onRemove(record)} size="16px" />
+                    <RemoveBtn type="delete" onClick={() => this.onRemove(record)} size="20px" />
                 );
             }
         };

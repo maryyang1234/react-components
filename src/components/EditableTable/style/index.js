@@ -36,9 +36,9 @@ export const RemoveBtn = withProps()(
 
         return css`
             cursor: pointer;
-            fill: ${DT.T_COLOR_TEXT_DEFAULT_LIGHT};
+            fill: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
             :hover {
-                fill: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
+                fill: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
             }
         `;
     })
@@ -60,9 +60,11 @@ export const AddBar = withProps()(
             text-align: center;
             line-height: 60px;
             border-top: 1px solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
-
+            .uc-fe-button {
+                border-radius: ${DT.T_CORNER_MD};
+            }
             .${btnCls} {
-                fill: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
+                fill: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT} !important;
             }
 
             :hover {
@@ -78,9 +80,11 @@ export const AddBar = withProps()(
                     background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
                     color: ${DT.T_COLOR_TEXT_DISABLED};
                     cursor: default;
+                    background: #eef3ff;
+                    border-radius: ${DT.T_CORNER_MD};
 
                     .${tipCls} {
-                        color: ${DT.T_COLOR_TEXT_DISABLED};
+                        color: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
                     }
 
                     .${btnCls} {

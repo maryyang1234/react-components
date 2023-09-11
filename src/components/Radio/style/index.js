@@ -251,14 +251,12 @@ export const RadioCardWrap = withProps({})(
         } = props;
 
         return css`
-            border-radius: 4px;
             overflow: hidden;
             display: inline-block;
             cursor: pointer;
-            border: 2px solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
             background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
-            box-shadow: ${DT.T_SHADOW_BUTTON_DEFAULT};
-
+            box-shadow: 0px 2px 6px 0px rgba(107, 141, 233, 0.28);
+            border-radius: ${DT.T_CORNER_MD};
             .${cardHeaderCls} {
                 padding: 8px 16px;
                 line-height: 22px;
@@ -266,14 +264,12 @@ export const RadioCardWrap = withProps({})(
                 font-weight: bold;
                 color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
                 font-size: ${titleFontSize};
-                border-bottom: 1px solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
-                background: ${DT.T_COLOR_BG_DEFAULT_LIGHT};
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
 
                 .${cardTitleCls} {
-                    padding-right: 8px;
+                    padding-right: 0px;
                 }
                 .${iconWrapCls} {
                     margin-left: auto;
@@ -282,14 +278,21 @@ export const RadioCardWrap = withProps({})(
             .${cardContentCls} {
                 padding: 16px;
             }
+            .${cardContentCls} > div > button {
+                overflow: hidden;
+                font-size: ${DT.T_TYPO_FONT_SIZE_1};
+            }
+
             ${checked &&
             css`
                 border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
                 background: ${DT.T_COLOR_BG_DEFAULT_LIGHT};
                 box-shadow: ${DT.T_SHADOW_BUTTON_HOVER};
+                border: 2px solid ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
+
                 .${cardHeaderCls} {
-                    border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
-                    background: ${DT.T_COLOR_BG_DEFAULT_LIGHT};
+                    border-color: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
+                    border-bottom: 2px solid ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
                 }
             `};
             ${disabled &&
@@ -302,7 +305,7 @@ export const RadioCardWrap = withProps({})(
             css`
                 border-color: ${DT.T_COLOR_LINE_DISABLED_DARK};
                 .${cardHeaderCls} {
-                    background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
+                    /* background: ${DT.T_COLOR_BG_DISABLED_LIGHT}; */
                     color: ${DT.T_COLOR_TEXT_DISABLED};
                     border-color: ${DT.T_COLOR_LINE_DISABLED_DARK};
                 }
@@ -316,11 +319,10 @@ export const RadioCardWrap = withProps({})(
             !disabled &&
             css`
                 :hover {
-                    box-shadow: ${DT.T_SHADOW_BUTTON_HOVER};
-                    border: 1px solid ${DT.T_COLOR_LINE_PRIMARY_HOVER};
+                    border: 2px solid ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
 
                     .${cardHeaderCls} {
-                        border-color: ${DT.T_COLOR_LINE_PRIMARY_HOVER};
+                        border-color: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
                     }
                 }
             `};
@@ -373,7 +375,6 @@ export const RadioTextWrap = withProps({
             !disabled &&
             css`
                 :hover {
-                    color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
                 }
             `};
 
