@@ -219,7 +219,7 @@ const Selector = ({
         if (!multiple) {
             valueChild = getValueChild(value);
         } else {
-            const _value = ((value as unknown) as Key[]) ? [...((value as unknown) as Key[])] : [];
+            const _value = (value as unknown as Key[]) ? [...(value as unknown as Key[])] : [];
             // only get the top twenty item child for better performance
             if (_value.length > 20) {
                 _value.length = 20;
@@ -245,7 +245,7 @@ const Selector = ({
     }
     const title = typeof content === 'string' ? content : undefined;
     return (
-        <SSelector styleType="border" size={size} disabled={disabled} title={title} {...rest}>
+        <SSelector size={size} disabled={disabled} title={title} {...rest}>
             <div className={selectorContentCls} key="content">
                 {content}
             </div>

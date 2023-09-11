@@ -80,7 +80,7 @@ export const AddBar = withProps()(
                     background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
                     color: ${DT.T_COLOR_TEXT_DISABLED};
                     cursor: default;
-                    background: #eef3ff;
+                    background: ${DT.NUMBER_INPUT_BG_COLOR};
                     border-radius: ${DT.T_CORNER_MD};
 
                     .${tipCls} {

@@ -8,6 +8,7 @@ import Menu from 'src/components/Menu';
 import Button from 'src/components/Button';
 import { inlineBlockWithVerticalMixin, sWrap } from 'src/style';
 import config from 'src/config';
+import { ButtonProps } from 'src/components/Button/Button';
 
 const { prefixCls: _prefixCls } = config;
 export const prefixCls = _prefixCls + '-select';
@@ -20,18 +21,35 @@ export const SelectSearchInput = styled(Input.Search)`
     margin-top: 10px;
 `;
 
-export const SSelector = styled(Button)`
-    padding-right: 28px;
-    width: 100%;
-    min-width: 78px;
-    text-align: left;
-    overflow: hidden;
-    .${selectorContentCls} {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-`;
+export const SSelector = sWrap<ButtonProps, HTMLButtonElement>({
+    styleType: 'border'
+})(
+    styled(Button)(props => {
+        const {
+            theme: { designTokens: DT }
+        } = props;
+
+        return css`
+            padding-right: 28px;
+            width: 100%;
+            min-width: 78px;
+            text-align: left;
+            overflow: hidden;
+            height: ${DT.T_HEIGHT_MD};
+            border-radius: ${DT.T_CORNER_LG};
+            border: 1px solid ${DT.SELECT_BORDER_COLOR};
+            line-height: ${DT.T_HEIGHT_MD};
+            .${selectorContentCls} {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: ${DT.SELECT_FONTSIZE_COLOR};
+                font-size: ${DT.T_TYPO_FONT_SIZE_1};
+                line-height: 16px;
+            }
+        `;
+    })
+);
 
 export const Arrow = styled(SvgIcon)`
     position: absolute;

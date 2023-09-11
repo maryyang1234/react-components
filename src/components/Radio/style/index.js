@@ -159,7 +159,7 @@ export const RadioButtonWrap = withProps({
     styled(FilterStyleTypeButton)(props => {
         const {
             size,
-            theme: { fontSize },
+            theme: { fontSize, designTokens: DT },
             disabled,
             checked
         } = props;
@@ -169,6 +169,7 @@ export const RadioButtonWrap = withProps({
                 min-width: ${{ lg: 80, md: 68, sm: 56 }[size]}px;
                 text-align: center;
                 border-radius: 0;
+
                 ${css`
                     font-size: ${fontSize};
                 `};
@@ -181,6 +182,8 @@ export const RadioButtonWrap = withProps({
 
                 ${checked &&
                 css`
+                    color: ${DT.T_COLOR_TEXT_WHITE} !important;
+                    background: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT} !important;
                     z-index: 2;
                 `};
 
@@ -278,9 +281,14 @@ export const RadioCardWrap = withProps({})(
             .${cardContentCls} {
                 padding: 16px;
             }
+            .uc-fe-select-content {
+                font-size: ${DT.T_CONTROL_FONT_SIZE_SM};
+                border-radius: 0;
+                color: ${DT.CARD_SELECT_FONTSIZE_COLOR};
+            }
             .${cardContentCls} > div > button {
                 overflow: hidden;
-                font-size: ${DT.T_TYPO_FONT_SIZE_1};
+                border-radius: 0;
             }
 
             ${checked &&
@@ -328,6 +336,11 @@ export const RadioCardWrap = withProps({})(
             `};
             ${iconMixin(props)};
             ${checkboxIconMixin(props)}
+            > svg {
+                width: 17px;
+                height: 9px;
+                background: ${DT.CARD_SELECT_FONTSIZE_COLOR};
+            }
         `;
     })
 );
@@ -394,46 +407,58 @@ export const RadioTextWrap = withProps({
     })
 );
 
-export const RadioGroupWrap = styled('div')`
-    position: relative;
-    margin-bottom: -8px;
-    .${genStyleTypeCls('default')}, .${genStyleTypeCls('tag')} {
-        margin-right: 8px;
-        margin-bottom: 8px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-    .${genStyleTypeCls('card')} {
-        margin-right: 12px;
-        margin-bottom: 8px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-    .${genStyleTypeCls('text')}+.${genStyleTypeCls('text')} {
-        margin-left: -1px;
-    }
-
-    .${genStyleTypeCls('button')} {
-        margin-right: -1px;
-        margin-bottom: 8px;
-        &:first-of-type {
-            border-radius: 2px 0 0 2px;
-        }
-        &:last-of-type {
-            border-radius: 0 2px 2px 0;
-            margin-right: 0;
-        }
-    }
-    .${genStyleTypeCls('list')} {
-        &:last-of-type {
+export const RadioGroupWrap = styled('div')(props => {
+    const {
+        theme: { designTokens: DT }
+    } = props;
+    return css`
+        position: relative;
+        margin-bottom: -8px;
+        .${genStyleTypeCls('default')}, .${genStyleTypeCls('tag')} {
+            margin-right: 8px;
             margin-bottom: 8px;
+
+            &:last-child {
+                margin-right: 0;
+            }
         }
-    }
-`;
+        .${genStyleTypeCls('card')} {
+            margin-right: 12px;
+            margin-bottom: 8px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        .${genStyleTypeCls('text')}+.${genStyleTypeCls('text')} {
+            margin-left: -1px;
+        }
+
+        .${genStyleTypeCls('button')} {
+            margin-right: -1px;
+            margin-bottom: 8px;
+            padding: 5px 20px;
+            line-height: 20px;
+            &:first-of-type {
+                border-radius: 4px 0px 0px 4px;
+            }
+            &:last-of-type {
+                border-radius: 0px 4px 4px 0px;
+                margin-right: 0;
+            }
+        }
+        &.${checkedCls} {
+            color: ${DT.T_COLOR_TEXT_WHITE};
+            background: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
+        }
+
+        .${genStyleTypeCls('list')} {
+            &:last-of-type {
+                margin-bottom: 8px;
+            }
+        }
+    `;
+});
 
 export const SIconWrap = sWrap({
     className: iconWrapCls
@@ -450,8 +475,8 @@ export const SIconWrap = sWrap({
                 box-sizing: border-box;
                 overflow: hidden;
                 position: relative;
-                width: 14px;
-                height: 14px;
+                width: 16px;
+                height: 16px;
                 border: 1px solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
                 border-radius: 8px;
                 vertical-align: middle;
