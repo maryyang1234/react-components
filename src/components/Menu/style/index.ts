@@ -3,7 +3,6 @@ import { css } from '@emotion/core';
 
 import SvgIcon from 'src/components/SvgIcon';
 import config from 'src/config';
-import isFirefox from 'src/utils/isFirefox';
 import { sWrap, Theme } from 'src/style';
 
 const { prefixCls: _prefixCls } = config;
@@ -25,27 +24,28 @@ export const popupContentCls = prefixCls + '-popup-content';
 export const checkboxCls = prefixCls + '-checkbox';
 
 export const SubMenuIcon = styled(SvgIcon)`
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    margin-top: -0.5em;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  margin-top: -0.5em;
 `;
 
 interface MenuProps {
-    customStyle?: {
-        maxHeight?: string;
-        maxWidth?: string;
-    };
+  customStyle?: {
+    maxHeight?: string;
+    maxWidth?: string;
+  };
 }
 
 const menuStyle = ({
-    customStyle = {},
-    theme: { designTokens: DT }
+  customStyle = {},
+  theme: { designTokens: DT }
 }: MenuProps & {
-    theme: Theme;
+  theme: Theme;
 }) => {
-    const { maxWidth } = customStyle;
-    return css`
+  const { maxWidth } = customStyle;
+  const isFirefox = window && window?.navigator?.userAgent?.indexOf?.('Firefox') > -1;
+  return css`
         display: inline-block;
         box-sizing: border-box;
         overflow: auto;
@@ -63,14 +63,14 @@ const menuStyle = ({
         background: ${DT.T_COLOR_BG_MENU};
 
         ${
-            isFirefox &&
-            css`
-                & {
-                    overflow-y: scroll;
-                }
-            `
+          isFirefox &&
+          css`
+            & {
+              overflow-y: scroll;
+            }
+          `
         }
-        
+
         .${itemCls}, .${selectallWrapCls}, .${popupTitleCls},.${collapseTitleCls} {
             cursor: pointer;
             white-space: nowrap;
@@ -134,31 +134,31 @@ const menuStyle = ({
 };
 
 export const MenuWrap = sWrap<MenuProps>({})(
-    styled.div(props => {
-        const { customStyle = {} } = props;
-        return css`
-            ${menuStyle(props)};
-            max-height: ${customStyle.maxHeight};
-            &.${blockCls} {
-                min-width: 0;
-                max-width: none;
-                width: 100%;
-                height: 100%;
-                box-shadow: none;
-            }
-        `;
-    })
+  styled.div(props => {
+    const { customStyle = {} } = props;
+    return css`
+      ${menuStyle(props)};
+      max-height: ${customStyle.maxHeight};
+      &.${blockCls} {
+        min-width: 0;
+        max-width: none;
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+      }
+    `;
+  })
 );
 
 export const PopupMenuWrap = sWrap<MenuProps>({})(
-    styled('div')(props => {
-        return css`
-            display: inline-block;
-            padding: 0px 8px;
-            .${popupContentCls} {
-                ${menuStyle(props)};
-                max-height: 380px;
-            }
-        `;
-    })
+  styled('div')(props => {
+    return css`
+      display: inline-block;
+      padding: 0px 8px;
+      .${popupContentCls} {
+        ${menuStyle(props)};
+        max-height: 380px;
+      }
+    `;
+  })
 );
