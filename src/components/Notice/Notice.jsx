@@ -62,7 +62,7 @@ class Notice extends Component {
         } else if (React.isValidElement(_icon)) {
             icon = _icon;
         } else {
-            icon = <SvgIcon size="15px" className={iconCls} type="exclamation-circle-filled" />;
+            icon = <SvgIcon size="16px" className={iconCls} type="exclamation-circle-filled" />;
         }
         return closed ? null : (
             <NoticeWrap {...rest} styleType={styleType}>

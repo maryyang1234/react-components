@@ -23,12 +23,13 @@ export const NoticeIconWrap = styled('span')`
     font-size: 15px;
     width: 15px;
     color: inherit;
-    padding-right: 8px;
+    padding-right: 10px;
 `;
 
 export const ContentWrap = styled('div')`
     display: table-cell;
     vertical-align: middle;
+    line-height: 22px;
 `;
 
 export const ActionWrap = styled('div')`
@@ -94,7 +95,6 @@ const themeMixin = props => {
     }[style];
     return css`
         color: ${colorMap.color};
-        border: ${DT.T_LINE_WIDTH_BASE} solid ${colorMap.border};
         background: ${colorMap.background};
         .${iconCls} {
             fill: ${colorMap.icon};
@@ -112,7 +112,7 @@ export const NoticeWrap = withProps()(styled('div')`
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    padding: 10px 16px;
+    padding: 12px 30px;
     margin: 0;
     border-radius: 1px;
     line-height: 18px;
