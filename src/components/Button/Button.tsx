@@ -46,6 +46,7 @@ export interface ButtonProps {
      * 内部使用，请勿使用，选中状态
      */
     checked?: boolean;
+    disabled?: boolean;
 }
 
 export default class Button extends PureComponent<
