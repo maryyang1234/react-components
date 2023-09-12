@@ -588,7 +588,7 @@ const Select = ({
                         <SelectWrap {...rest}>
                             <Popover
                                 onVisibleChange={handleVisibleChange}
-                                placement="bottomLeft"
+                                placement="bottom"
                                 trigger={['click']}
                                 {...popupConfigProps}
                                 visible={visible}
