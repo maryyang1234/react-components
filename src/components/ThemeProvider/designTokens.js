@@ -229,6 +229,8 @@ const designTokens = {
     TEXT_NORMAL_TITLE_COLOR: '#303133', // 正文标题文字颜色
     RADIO_FONTSIZE_LINEHEIGHT: '18px', // Radio行高
 
+    ITEM_COLUMN_SPACE: '40px', // Item垂直方向的距离
+
     T_IDE_DEFAULT_COLOR_BG_DEFAULT: '#0a1633',
     T_IDE_DEFAULT_COLOR_BG_ACTION: 'rgba(255,255,255,0.12)',
     T_IDE_READONLY_COLOR_BG_DEFAULT: '#f6f6fb',

@@ -133,13 +133,16 @@ export const FormWrap = sWrap<{ size: string }>({
     className: prefixCls
 })(
     styled('form')(props => {
-        const { size } = props;
+        const {
+            size,
+            theme: { designTokens: DT }
+        } = props;
 
         return css`
             font-size: 12px;
 
             .${itemCls} {
-                margin-bottom: 16px;
+                margin-bottom: ${DT.ITEM_COLUMN_SPACE};
                 &:last-child {
                     margin-bottom: 0;
                 }
