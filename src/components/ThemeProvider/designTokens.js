@@ -221,14 +221,13 @@ const designTokens = {
 
     NUMBER_INPUT_COLOR: '#c2cff0', // NumberInput的border颜色
     NUMBER_INPUT_BG_COLOR: '#eef3ff', // NumberInput的背景颜色
-    NUMBER_INPUT_FONTSIZE_COLOR: '#333333', // NumberInput的字体颜色
     NUMBER_INPUT_SUFFIX_COLOR: '#9ea8c2', // NumberInput的suffix颜色
 
-    SELECT_FONTSIZE_COLOR: '#333333', // Select字体颜色
     SELECT_BORDER_COLOR: '#c0c4cc', // Select边框颜色
     CARD_SELECT_FONTSIZE_COLOR: '#666666', // Card下拉select字体颜色
 
     TEXT_NORMAL_TITLE_COLOR: '#303133', // 正文标题文字颜色
+    RADIO_FONTSIZE_LINEHEIGHT: '18px', // Radio行高
 
     T_IDE_DEFAULT_COLOR_BG_DEFAULT: '#0a1633',
     T_IDE_DEFAULT_COLOR_BG_ACTION: 'rgba(255,255,255,0.12)',

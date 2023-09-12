@@ -17,10 +17,17 @@ export const footerCls = prefixCls + '-footer';
 export const subAreaCls = prefixCls + '-sub-area';
 export const subAreaContentCls = prefixCls + '-sub-area-content';
 
-const sharedGutter = css`
-    padding: 0 24px;
-    margin-top: 16px;
-`;
+const sharedGutter = withProps()(
+    styled()(props => {
+        const {
+            theme: { designTokens: DT }
+        } = props;
+        return css`
+            padding: 0 ${DT.T_SPACING_COMMON_XXXLG};
+            margin-top: 16px;
+        `;
+    })
+);
 
 export const HeaderWrap = withProps({
     className: headerCls
@@ -114,7 +121,7 @@ export const CardWrap = withProps()(
             .${headerCls}:nth-of-type(2),
             .${actionCls}:nth-of-type(2),
             .${contentCls}:nth-of-type(2) {
-                margin-top: 24px;
+                margin-top: ${DT.T_SPACING_COMMON_XXXLG};
             }
 
             background: ${DT.T_CARD_COLOR_BG_DEFAULT};

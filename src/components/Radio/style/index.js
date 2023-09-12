@@ -438,7 +438,7 @@ export const RadioGroupWrap = styled('div')(props => {
             margin-right: -1px;
             margin-bottom: 8px;
             padding: 5px 20px;
-            line-height: 20px;
+            line-height: ${DT.RADIO_FONTSIZE_LINEHEIGHT};
             &:first-of-type {
                 border-radius: 4px 0px 0px 4px;
             }

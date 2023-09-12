@@ -118,7 +118,6 @@ export const NumberInputWrap = withProps()(
 
                 .${inputWrapCls} {
                     background: ${DT.NUMBER_INPUT_BG_COLOR};
-                    color: ${DT.NUMBER_INPUT_FONTSIZE_COLOR};
                     :hover {
                         background: ${DT.T_INPUT_COLOR_BG_ACTIVE};
                     }
