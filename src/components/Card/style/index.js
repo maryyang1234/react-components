@@ -17,17 +17,15 @@ export const footerCls = prefixCls + '-footer';
 export const subAreaCls = prefixCls + '-sub-area';
 export const subAreaContentCls = prefixCls + '-sub-area-content';
 
-const sharedGutter = withProps()(
-    styled()(props => {
-        const {
-            theme: { designTokens: DT }
-        } = props;
-        return css`
-            padding: 0 ${DT.T_SPACING_COMMON_XXXLG};
-            margin-top: 16px;
-        `;
-    })
-);
+const sharedGutter = props => {
+    const {
+        theme: { designTokens: DT }
+    } = props;
+    return css`
+        padding: 0 ${DT.T_SPACING_COMMON_XXXLG};
+        margin-top: 16px;
+    `;
+};
 
 export const HeaderWrap = withProps({
     className: headerCls

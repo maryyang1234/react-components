@@ -43,7 +43,6 @@ export const SSelector = sWrap<ButtonProps, HTMLButtonElement>({
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
-                color: ${DT.SELECT_FONTSIZE_COLOR};
                 font-size: ${DT.T_TYPO_FONT_SIZE_1};
                 line-height: 16px;
             }
