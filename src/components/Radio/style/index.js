@@ -260,6 +260,8 @@ export const RadioCardWrap = withProps({})(
             background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
             box-shadow: 0px 2px 6px 0px rgba(107, 141, 233, 0.28);
             border-radius: ${DT.T_CORNER_MD};
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
             .${cardHeaderCls} {
                 padding: 8px 16px;
                 line-height: 22px;
@@ -289,6 +291,7 @@ export const RadioCardWrap = withProps({})(
             .${cardContentCls} > div > button {
                 overflow: hidden;
                 border-radius: 0;
+                border: none;
             }
 
             ${checked &&
@@ -313,7 +316,6 @@ export const RadioCardWrap = withProps({})(
             css`
                 border-color: ${DT.T_COLOR_LINE_DISABLED_DARK};
                 .${cardHeaderCls} {
-                    /* background: ${DT.T_COLOR_BG_DISABLED_LIGHT}; */
                     color: ${DT.T_COLOR_TEXT_DISABLED};
                     border-color: ${DT.T_COLOR_LINE_DISABLED_DARK};
                 }
@@ -330,7 +332,8 @@ export const RadioCardWrap = withProps({})(
                     border: 2px solid ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
 
                     .${cardHeaderCls} {
-                        border-color: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
+                        border-bottom: solid 2px ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
+                        transition: border-color 0.3s;
                     }
                 }
             `};

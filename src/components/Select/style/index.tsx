@@ -37,7 +37,6 @@ export const SSelector = sWrap<ButtonProps, HTMLButtonElement>({
             overflow: hidden;
             height: ${DT.T_HEIGHT_MD};
             border-radius: ${DT.T_CORNER_LG};
-            border: 1px solid ${DT.SELECT_BORDER_COLOR};
             line-height: ${DT.T_HEIGHT_MD};
             .${selectorContentCls} {
                 overflow: hidden;
