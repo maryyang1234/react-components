@@ -449,6 +449,9 @@ export const RadioGroupWrap = styled('div')(props => {
                 border-radius: 0px 4px 4px 0px;
                 margin-right: 0;
             }
+            &:only-of-type {
+                border-radius: ${DT.T_CORNER_MD};
+            }
         }
         &.${checkedCls} {
             color: ${DT.T_COLOR_TEXT_WHITE};
