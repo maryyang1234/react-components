@@ -29,8 +29,8 @@ const switchTheme = {
         lg: '2px'
     },
     BtnSize: {
-        sm: '24px',
-        md: '28px',
+        sm: '28px',
+        md: '30px',
         lg: '32px'
     }
 };
