@@ -89,6 +89,8 @@ export const SIconWrap = sWrap<CheckboxProps>({
                 position: absolute;
                 top: -1px;
                 left: -1px;
+                width: 16px;
+                height: 16px;
             }
 
             ${(indeterminate || checked) &&
