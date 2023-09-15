@@ -10,7 +10,7 @@ const defaultSizeTheme = {
     // height of size (px)
     Height: {
         sm: '24px',
-        md: '28px',
+        md: '30px',
         lg: '32px'
     },
     // padding of size (px)

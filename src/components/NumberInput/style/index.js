@@ -146,9 +146,7 @@ export const NumberInputWrap = withProps()(
                     box-shadow: none;
                     background: transparent;
                     width: ${HeightNumber[size] + 6}px;
-
                     padding: 0 0 0 15px;
-                    height: 30px;
                     line-height: ${DT.T_HEIGHT_MD};
                     font-size: ${DT.T_TYPO_FONT_SIZE_2};
                 }
