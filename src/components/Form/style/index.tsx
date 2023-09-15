@@ -139,7 +139,7 @@ export const FormWrap = sWrap<{ size: string }>({
         } = props;
 
         return css`
-            font-size: 12px;
+            font-size: ${DT.T_TYPO_FONT_SIZE_1};
 
             .${itemCls} {
                 margin-bottom: ${DT.ITEM_COLUMN_SPACE};
