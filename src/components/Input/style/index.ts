@@ -60,13 +60,13 @@ export const SWrap = sWrap<
             height: ${height};
             max-width: 100%;
             font-size: ${fontSize};
-            border-radius: ${DT.T_CORNER_SM};
+            border-radius: ${DT.T_CORNER_MD};
             color: ${DT.T_COLOR_TEXT_DEFAULT_LIGHT};
             fill: currentColor;
             border: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
             box-shadow: ${DT.T_SHADOW_INSET_DEFAULT};
             background: ${DT.T_INPUT_COLOR_BG_DEFAULT};
-            transition: .18s cubic-bezier(.4,0,.2,1);
+            transition: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
             ${inlineBlockWithVerticalMixin};
 
             :hover {
@@ -126,76 +126,62 @@ export const SWrap = sWrap<
                     display: none;
                 }
             }
-            ${
-                !empty &&
-                !disabled &&
-                css`
-                    :hover,
-                    &.${focusedCls} {
-                        .${clearCls} {
-                            opacity: 1;
-                            cursor: pointer;
-                        }
+            ${!empty &&
+            !disabled &&
+            css`
+                :hover,
+                &.${focusedCls} {
+                    .${clearCls} {
+                        opacity: 1;
+                        cursor: pointer;
                     }
-                `
-            }
+                }
+            `}
 
-            ${
-                focused &&
-                !disabled &&
-                css`
-                    && {
-                        color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
-                        border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
-                        background: ${DT.T_INPUT_COLOR_BG_ACTIVE};
-                    }
-                `
-            };
+            ${focused &&
+            !disabled &&
+            css`
+                && {
+                    color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
+                    border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
+                    background: ${DT.T_INPUT_COLOR_BG_ACTIVE};
+                }
+            `};
 
-            ${
-                status === 'error' &&
-                css`
-                    &&& {
-                        box-shadow: ${DT.T_SHADOW_INSET_ERROR};
-                        border-color: ${DT.T_COLOR_LINE_ERROR_DARK};
-                        background: ${DT.T_COLOR_BG_ERROR_LIGHT};
-                    }
-                `
-            };
+            ${status === 'error' &&
+            css`
+                &&& {
+                    box-shadow: ${DT.T_SHADOW_INSET_ERROR};
+                    border-color: ${DT.T_COLOR_LINE_ERROR_DARK};
+                    background: ${DT.T_COLOR_BG_ERROR_LIGHT};
+                }
+            `};
 
-            ${
-                disabled &&
-                css`
-                    box-shadow: none;
-                    &,
-                    &:hover {
-                        color: ${DT.T_COLOR_TEXT_DISABLED};
-                        /* fix disabled color in safari */
-                        -webkit-text-fill-color: ${DT.T_COLOR_TEXT_DISABLED};
-                        border-color: ${DT.T_COLOR_LINE_DISABLED_LIGHT};
-                        background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
-                    }
-                `
-            };
+            ${disabled &&
+            css`
+                box-shadow: none;
+                &,
+                &:hover {
+                    color: ${DT.T_COLOR_TEXT_DISABLED};
+                    /* fix disabled color in safari */
+                    -webkit-text-fill-color: ${DT.T_COLOR_TEXT_DISABLED};
+                    border-color: ${DT.T_COLOR_LINE_DISABLED_LIGHT};
+                    background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
+                }
+            `};
 
-            ${
-                customStyle?.border &&
-                css`
-                    border: ${customStyle.border} !important;
-                `
-            }
-            ${
-                customStyle?.boxShadow &&
-                css`
-                    box-shadow: ${customStyle.boxShadow} !important;
-                `
-            }
-            ${
-                customStyle?.background &&
-                css`
-                    background: ${customStyle.background} !important;
-                `
-            }
+            ${customStyle?.border &&
+            css`
+                border: ${customStyle.border} !important;
+            `}
+            ${customStyle?.boxShadow &&
+            css`
+                box-shadow: ${customStyle.boxShadow} !important;
+            `}
+            ${customStyle?.background &&
+            css`
+                background: ${customStyle.background} !important;
+            `}
         `;
     })
 );
