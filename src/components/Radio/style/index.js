@@ -492,8 +492,8 @@ export const SIconWrap = sWrap({
                 visibility: hidden;
                 opacity: 0;
                 position: absolute;
-                top: -1px;
-                left: -1px;
+                top: 0;
+                left: 0;
             }
 
             ${checked &&

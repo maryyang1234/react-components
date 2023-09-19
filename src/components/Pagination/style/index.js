@@ -107,6 +107,9 @@ export const PaginationWrap = withProps()(
                         display: inline-block;
                         vertical-align: middle;
                     }
+                    &-quick-jumper .uc-fe-numberinput {
+                        border: none;
+                    }
                     &-size-changer {
                         margin-right: 5px;
                     }
