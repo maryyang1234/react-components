@@ -111,7 +111,7 @@ export const CardWrap = withProps()(
         return css`
             box-sizing: border-box;
             text-align: left;
-            overflow: auto;
+            overflow-x: hidden;
 
             .${headerCls}:last-of-type, .${actionCls}:last-of-type, .${contentCls}:last-of-type {
                 margin-bottom: 24px;
