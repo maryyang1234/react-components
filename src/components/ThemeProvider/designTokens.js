@@ -312,7 +312,12 @@ const designTokens = {
     T_CONTROL_SPACING_LG: '12px',
     T_CONTROL_FONT_SIZE_SM: '12px',
     T_CONTROL_FONT_SIZE_MD: '12px',
-    T_CONTROL_FONT_SIZE_LG: '14px'
+    T_CONTROL_FONT_SIZE_LG: '14px',
+
+    T_COLOR_TEXT_NOTICE_INFO: '#365ABD', // notice-info 字体颜色
+    T_COLOR_TEXT_NOTICE_SUCCESS: '#00CA87', // notice-success 字体颜色
+    T_COLOR_TEXT_NOTICE_ERROR: '#FF3E3E', // notice-error 字体颜色
+    T_COLOR_TEXT_NOTICE_DISABLED: '#DDDDDD' // notice-disabled 字体颜色
 };
 
 export { designTokens };

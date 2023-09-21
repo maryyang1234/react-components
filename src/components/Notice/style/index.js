@@ -63,31 +63,31 @@ const themeMixin = props => {
     const style = map[styleType];
     const colorMap = {
         info: {
-            color: DT.T_COLOR_TEXT_DEFAULT_DARK,
+            color: DT.T_COLOR_TEXT_NOTICE_INFO,
             border: DT.T_COLOR_LINE_NOTICE_LIGHT,
             background: DT.T_COLOR_BG_NOTICE_LIGHT,
             icon: DT.T_COLOR_TEXT_PRIMARY_DEFAULT
         },
         success: {
-            color: DT.T_COLOR_TEXT_DEFAULT_DARK,
+            color: DT.T_COLOR_TEXT_NOTICE_SUCCESS,
             border: DT.T_COLOR_LINE_SUCCESS_LIGHT,
             background: DT.T_COLOR_BG_SUCCESS_LIGHT,
             icon: DT.T_COLOR_TEXT_SUCCESS
         },
         warning: {
-            color: DT.T_COLOR_TEXT_DEFAULT_DARK,
+            color: DT.T_COLOR_TAB_DEFAULT_LIGHT,
             border: DT.T_COLOR_LINE_WARNING_LIGHT,
             background: DT.T_COLOR_BG_WARNING_LIGHT,
             icon: DT.T_COLOR_TEXT_WARNING
         },
         error: {
-            color: DT.T_COLOR_TEXT_DEFAULT_DARK,
+            color: DT.T_COLOR_TEXT_NOTICE_ERROR,
             border: DT.T_COLOR_LINE_ERROR_LIGHT,
             background: DT.T_COLOR_BG_ERROR_LIGHT,
             icon: DT.T_COLOR_TEXT_ERROR
         },
         disabled: {
-            color: DT.T_COLOR_TEXT_DISABLED,
+            color: DT.T_COLOR_TEXT_NOTICE_DISABLED,
             border: DT.T_COLOR_LINE_DISABLED_LIGHT,
             background: DT.T_COLOR_BG_DISABLED,
             icon: DT.T_COLOR_TEXT_DISABLED
