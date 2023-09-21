@@ -1,4 +1,4 @@
-import React, { ComponentType, HTMLAttributes, ReactNode, useCallback, useMemo, useState } from 'react';
+import React, { ComponentType, HTMLAttributes, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import Popover from 'src/components/Popover';
 import ConfigContext from 'src/components/ConfigProvider/ConfigContext';
@@ -165,6 +165,7 @@ export interface SelectProps {
               simple?: true;
               height?: number;
           };
+    width?: number;
 }
 
 const Selector = ({
@@ -272,7 +273,8 @@ const Popup = ({
     dataSource,
     searchValue,
     setSearchValue,
-    virtualList
+    virtualList,
+    width
 }: Pick<
     SelectProps,
     | 'extra'
@@ -285,6 +287,7 @@ const Popup = ({
     | 'renderPopup'
     | 'options'
     | 'virtualList'
+    | 'width'
 > &
     Required<Pick<SelectProps, 'onChange'>> & {
         children?: ReactNode;
@@ -355,7 +358,7 @@ const Popup = ({
     };
 
     return (
-        <MenuWrap>
+        <MenuWrap width={width}>
             {search && <SelectSearchInput onChange={handleSearchInput} value={searchValue} status="default" />}
             {children || options ? (
                 <BlockMenu
@@ -498,8 +501,11 @@ const Select = ({
     virtualList,
     ...rest
 }: SelectProps & Override<HTMLAttributes<HTMLDivElement>, SelectProps>) => {
+    const ref = useRef(null);
     const [value, onChange] = useUncontrolled(_value, defaultValue, _onChange);
     const [visible, setVisible] = useState(false);
+    const [width, setWidth] = useState(0);
+
     const locale = useLocale(LOCALE, 'Select', _locale);
     if (search === true) search = {};
     const [searchValue, setSearchValue] = useUncontrolled(
@@ -573,6 +579,10 @@ const Select = ({
 
     const hidePopup = useCallback(() => handleVisibleChange(false), [handleVisibleChange]);
 
+    useEffect(() => {
+        setWidth((ref.current as any)?.offsetWidth || 0)
+    }, []);
+
     return (
         <ConfigContext.Consumer>
             {configContext => {
@@ -585,7 +595,7 @@ const Select = ({
                             searchValue
                         }}
                     >
-                        <SelectWrap {...rest}>
+                        <SelectWrap {...rest} ref={ref}>
                             <Popover
                                 onVisibleChange={handleVisibleChange}
                                 placement="bottom"
@@ -614,7 +624,8 @@ const Select = ({
                                             dataSource,
                                             searchValue,
                                             setSearchValue,
-                                            virtualList
+                                            virtualList,
+                                            width
                                         }}
                                     />
                                 }
