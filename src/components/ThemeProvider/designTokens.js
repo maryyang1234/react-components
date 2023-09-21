@@ -304,9 +304,11 @@ const designTokens = {
     T_WIDTH_SM: '144px',
     T_WIDTH_MD: '192px',
     T_WIDTH_LG: '320px',
+
     T_CONTROL_HEIGHT_SM: '24px',
-    T_CONTROL_HEIGHT_MD: '28px',
-    T_CONTROL_HEIGHT_LG: '32px',
+    T_CONTROL_HEIGHT_MD: '36px',
+    T_CONTROL_HEIGHT_LG: '48px',
+
     T_CONTROL_SPACING_SM: '8px',
     T_CONTROL_SPACING_MD: '8px',
     T_CONTROL_SPACING_LG: '12px',
