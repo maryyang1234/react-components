@@ -10,6 +10,8 @@ import { inlineBlockWithVerticalMixin, sWrap } from 'src/style';
 import config from 'src/config';
 import { ButtonProps } from 'src/components/Button/Button';
 
+import { getControlHeightBySize, getControlFontSizeBySize } from 'src/style';
+
 const { prefixCls: _prefixCls } = config;
 export const prefixCls = _prefixCls + '-select';
 export const selectorContentCls = prefixCls + '-content';
@@ -26,8 +28,12 @@ export const SSelector = sWrap<ButtonProps, HTMLButtonElement>({
 })(
     styled(Button)(props => {
         const {
-            theme: { designTokens: DT }
+            theme: { designTokens: DT },
+            size
         } = props;
+
+        const height = getControlHeightBySize(DT, size || 'md');
+        const fontSize = getControlFontSizeBySize(DT, size || 'md');
 
         return css`
             padding-right: 28px;
@@ -35,14 +41,14 @@ export const SSelector = sWrap<ButtonProps, HTMLButtonElement>({
             min-width: 78px;
             text-align: left;
             overflow: hidden;
-            height: ${DT.T_HEIGHT_MD};
+            height: ${height};
             border-radius: ${DT.T_CORNER_MD};
-            line-height: ${DT.T_HEIGHT_MD};
+            line-height: ${height};
             .${selectorContentCls} {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
-                font-size: ${DT.T_TYPO_FONT_SIZE_1};
+                font-size: ${fontSize};
                 line-height: 16px;
             }
         `;
