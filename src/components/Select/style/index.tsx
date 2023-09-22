@@ -80,10 +80,11 @@ export const FooterWrap = sWrap({})(
 export const ExtraWrap = styled('div')`
     margin: 0 8px;
 `;
-export const MenuWrap = sWrap({})(
+export const MenuWrap = sWrap<{width?: number}>({})(
     styled('div')(props => {
         const {
-            theme: { designTokens: DT }
+            theme: { designTokens: DT },
+            width
         } = props;
 
         return css`
@@ -92,7 +93,7 @@ export const MenuWrap = sWrap({})(
             border-radius: ${DT.T_CORNER_SM};
             display: inline-block;
             width: 100%;
-            min-width: 78px;
+            min-width: ${width || 78}px;
             /* stylelint-disable selector-type-no-unknown */
             & > ${ExtraWrap}:last-child {
                 margin-bottom: 10px;
