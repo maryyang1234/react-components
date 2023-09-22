@@ -199,9 +199,10 @@ const designTokens = {
     T_CORNER_MD: '4px',
     T_CORNER_CIRCLE: '50%',
     T_CORNER_ZERO: '0',
+
     T_HEIGHT_SM: '24px',
-    T_HEIGHT_MD: '30px',
-    T_HEIGHT_LG: '32px',
+    T_HEIGHT_MD: '36px',
+    T_HEIGHT_LG: '48px',
 
     TAB_PANEL_TITLE_HEIGHT: '48px', // Tab标题高度
     TAB_PANEL_PADDING_SM: '10px 20px', // Tab的padding sm
