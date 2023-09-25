@@ -54,17 +54,22 @@ export const AddBar = withProps()(
         return css`
             width: 100%;
             height: 60px;
-            background: ${DT.T_TABLE_ROW_COLOR_BG_DEFAULT};
             color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
             cursor: pointer;
             text-align: center;
             line-height: 60px;
             border-top: 1px solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
+            background: ${DT.NUMBER_INPUT_BG_COLOR};
+            border-radius: ${DT.T_CORNER_MD};
             .uc-fe-button {
                 border-radius: ${DT.T_CORNER_MD};
             }
             .${btnCls} {
-                fill: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT} !important;
+                fill: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
+            }
+
+            .${tipCls} {
+                color: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
             }
 
             :hover {
@@ -80,11 +85,8 @@ export const AddBar = withProps()(
                     background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
                     color: ${DT.T_COLOR_TEXT_DISABLED};
                     cursor: default;
-                    background: ${DT.NUMBER_INPUT_BG_COLOR};
-                    border-radius: ${DT.T_CORNER_MD};
-
                     .${tipCls} {
-                        color: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
+                        color: ${DT.T_COLOR_TEXT_DISABLED};
                     }
 
                     .${btnCls} {
