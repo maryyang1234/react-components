@@ -254,7 +254,6 @@ export const RadioCardWrap = withProps({})(
         } = props;
 
         return css`
-            overflow: hidden;
             display: inline-block;
             cursor: pointer;
             background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
