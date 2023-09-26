@@ -20,6 +20,9 @@ export const PaginationWrap = withProps()(
             font-size: ${fontSize};
             user-select: none;
             ${inlineBlockWithVerticalMixin};
+            .uc-fe-button {
+                border-radius: ${DT.T_CORNER_SM};
+            }
 
             .${prefixCls} {
                 &-item,
