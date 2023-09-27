@@ -12,7 +12,8 @@ import {
     getPaddingBySize,
     offsetPaddingBySize,
     transitionFlat,
-    offsetHeightBySize
+    offsetHeightBySize,
+    getMiddleHeightBySize
 } from 'src/style';
 
 import { StyleTypes, Sizes, Shapes } from '../shared';
@@ -42,8 +43,8 @@ const sizeMixin = (props: SButtonPropsFinal) => {
     } = props;
 
     return css`
-        height: ${getHeightBySize(DT, size)};
-        line-height: ${getHeightBySize(DT, size)};
+        height: ${getMiddleHeightBySize(DT, size)};
+        line-height: 0;
         padding: 0 ${getPaddingBySize(DT, size)};
     `;
 };
@@ -132,7 +133,7 @@ const styleTypeMixin = (props: SButtonPropsFinal) => {
             border-width: ${DT.T_LINE_WIDTH_BASE};
             border-style: solid;
             padding: 0 ${offsetPaddingBySize(DT, size, -1)};
-            line-height: ${offsetHeightBySize(DT, size, -2)};
+            /* line-height: ${offsetHeightBySize(DT, size, -2)}; */
         `};
     `;
 };

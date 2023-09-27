@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import config from 'src/config';
 import Button from 'src/components/Button';
 import withProps from 'src/utils/withProps';
-import { inlineBlockWithVerticalMixin, sWrap } from 'src/style';
+import { inlineBlockWithVerticalMixin, sWrap, getHeightBySize } from 'src/style';
 import { iconMixin as checkboxIconMixin } from 'src/components/Checkbox/style';
 
 const { prefixCls: _prefixCls } = config;
@@ -166,6 +166,7 @@ export const RadioButtonWrap = withProps({
 
         return css`
             && {
+                height: ${getHeightBySize(DT, size)};
                 min-width: ${{ lg: 80, md: 68, sm: 56 }[size]}px;
                 text-align: center;
                 border-radius: 0;
