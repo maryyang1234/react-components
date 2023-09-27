@@ -204,6 +204,10 @@ const designTokens = {
     T_HEIGHT_MD: '36px',
     T_HEIGHT_LG: '48px',
 
+    T_MIDDLE_HEIGHT_SM: '24px',
+    T_MIDDLE_HEIGHT_MD: '30px',
+    T_MIDDLE_HEIGHT_LG: '36px',
+
     TAB_PANEL_TITLE_HEIGHT: '48px', // Tab标题高度
     TAB_PANEL_PADDING_SM: '10px 20px', // Tab的padding sm
     TAB_PANEL_PADDING_MD: '14px 22px', // Tab的padding md

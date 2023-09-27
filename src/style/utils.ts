@@ -5,12 +5,19 @@ import { DesignToken, DesignTokens } from './interface';
 export const tuple = <T extends string[]>(...args: T) => args;
 
 export const Sizes = tuple('sm', 'md', 'lg');
-export type Size = typeof Sizes[number];
+export type Size = (typeof Sizes)[number];
 const keyMap: Record<Size, DesignToken> = {
     sm: 'T_HEIGHT_SM',
     md: 'T_HEIGHT_MD',
     lg: 'T_HEIGHT_LG'
 };
+
+const keyMiddleMap: Record<Size, DesignToken> = {
+    sm: 'T_MIDDLE_HEIGHT_SM',
+    md: 'T_MIDDLE_HEIGHT_MD',
+    lg: 'T_MIDDLE_HEIGHT_LG'
+};
+
 const paddingKeyMap: Record<Size, DesignToken> = {
     sm: 'T_SPACING_COMMON_SM',
     md: 'T_SPACING_COMMON_SM',
@@ -39,6 +46,11 @@ export const offsetValue = (value: string, offset: number) => {
 
 export const getHeightBySize = (DT: DesignTokens, size: Size) => {
     const token = keyMap[size];
+    return DT[token];
+};
+
+export const getMiddleHeightBySize = (DT: DesignTokens, size: Size) => {
+    const token = keyMiddleMap[size];
     return DT[token];
 };
 
