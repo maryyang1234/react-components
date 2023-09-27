@@ -14,6 +14,7 @@ const themeMixin = props => {
         border: 1px solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
         background: ${DT.T_INPUT_COLOR_BG_DEFAULT};
         box-shadow: ${DT.T_SHADOW_INSET_DEFAULT};
+        border-radius: ${DT.T_CORNER_MD};
         &:hover,
         &:focus {
             border-color: ${DT.T_COLOR_LINE_DEFAULT_DARK};
@@ -40,7 +41,6 @@ export const TextareaWrap = withProps()(styled('textarea')`
     box-sizing: border-box;
     width: 100%;
     padding: 4px 8px;
-    border-radius: 2px;
     line-height: 1.5;
     min-height: ${12 * 1.5 + (4 + 1) * 2}px;
     resize: vertical;
