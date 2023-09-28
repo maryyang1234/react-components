@@ -79,51 +79,49 @@ export const SRangeInputWrap = sWrap<{
             height: ${height};
             align-items: center;
             box-sizing: border-box;
-            ${
-                !readonly &&
-                css`
-                    border: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
-                    border-radius: ${DT.T_CORNER_SM};
-                    box-shadow: ${DT.T_SHADOW_INSET_DEFAULT};
+            ${!readonly &&
+            css`
+                border: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
+                border-radius: ${DT.T_CORNER_MD};
+                box-shadow: ${DT.T_SHADOW_INSET_DEFAULT};
+                background: ${DT.T_INPUT_COLOR_BG_DEFAULT};
+                :hover {
+                    border-color: ${DT.T_COLOR_LINE_DEFAULT_DARK};
                     background: ${DT.T_INPUT_COLOR_BG_DEFAULT};
-                    :hover {
-                        border-color: ${DT.T_COLOR_LINE_DEFAULT_DARK};
-                        background: ${DT.T_INPUT_COLOR_BG_DEFAULT};
+                }
+                ${focused &&
+                !disabled &&
+                css`
+                    && {
+                        border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
+                        background: ${DT.T_INPUT_COLOR_BG_ACTIVE};
                     }
-                    ${focused &&
-                    !disabled &&
-                    css`
-                        && {
-                            border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
-                            background: ${DT.T_INPUT_COLOR_BG_ACTIVE};
-                        }
-                    `};
-                    ${disabled &&
-                    css`
-                        box-shadow: none;
-                        &,
-                        &:hover {
-                            border-color: ${DT.T_COLOR_LINE_DISABLED_LIGHT};
-                            background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
-                        }
-                    `};
-                    ${status === 'error' &&
-                    css`
-                        &&& {
-                            box-shadow: ${DT.T_SHADOW_INSET_ERROR};
-                            border-color: ${DT.T_COLOR_LINE_ERROR_DARK};
-                            background: ${DT.T_COLOR_BG_ERROR_LIGHT};
-                        }
-                    `};
-                `
-            }
+                `};
+                ${disabled &&
+                css`
+                    box-shadow: none;
+                    &,
+                    &:hover {
+                        border-color: ${DT.T_COLOR_LINE_DISABLED_LIGHT};
+                        background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
+                    }
+                `};
+                ${status === 'error' &&
+                css`
+                    &&& {
+                        box-shadow: ${DT.T_SHADOW_INSET_ERROR};
+                        border-color: ${DT.T_COLOR_LINE_ERROR_DARK};
+                        background: ${DT.T_COLOR_BG_ERROR_LIGHT};
+                    }
+                `};
+            `}
             .${inputPrefixCls} {
                 flex-grow: 1;
                 height: 100%;
             }
             .${readonlyInputCls} {
                 min-width: 100px;
-                padding: 0 8px
+                padding: 0 8px;
             }
         `;
     })
