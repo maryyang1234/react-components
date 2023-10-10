@@ -318,7 +318,7 @@ const designTokens = {
     T_CONTROL_SPACING_MD: '8px',
     T_CONTROL_SPACING_LG: '12px',
     T_CONTROL_FONT_SIZE_SM: '12px',
-    T_CONTROL_FONT_SIZE_MD: '12px',
+    T_CONTROL_FONT_SIZE_MD: '14px',
     T_CONTROL_FONT_SIZE_LG: '14px',
 
     T_COLOR_TEXT_NOTICE_INFO: '#365ABD', // notice-info 字体颜色
