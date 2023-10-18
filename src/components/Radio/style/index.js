@@ -127,9 +127,17 @@ export const RadioListWrap = withProps({
                 margin-left: 8px;
             }
             &.${checkedCls} {
-                background: ${DT.T_COLOR_BG_PRIMARY_5};
+                background: ${DT.T_BUTTON_PRIMARY_COLOR_BG_DEFAULT};
+                color: ${DT.T_COLOR_TEXT_DEFAULT_BRIGHT};
                 .${contentCls} {
                     font-weight: bold;
+                }
+                .uc-fe-radio-icon-wrap {
+                    border-color: ${DT.T_COLOR_TEXT_DEFAULT_BRIGHT};
+
+                    svg {
+                        fill: ${DT.T_COLOR_TEXT_DEFAULT_BRIGHT};
+                    }
                 }
             }
             &.${disabledCls} {
