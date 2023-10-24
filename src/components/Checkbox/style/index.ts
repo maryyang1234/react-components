@@ -17,142 +17,142 @@ export const indeterminateCls = prefixCls + '-indeterminate';
 export const groupCls = prefixCls + '-group';
 
 interface CheckboxProps {
-    size?: Size;
-    checked?: boolean;
-    indeterminate?: boolean;
-    disabled?: boolean;
+  size?: Size;
+  checked?: boolean;
+  indeterminate?: boolean;
+  disabled?: boolean;
 }
 
 export const CheckboxWrap = sWrap<CheckboxProps>({})(
-    styled.span(props => {
-        const {
-            theme: { designTokens: DT },
-            size = 'md'
-        } = props;
+  styled.span(props => {
+    const {
+      theme: { designTokens: DT },
+      size = 'md'
+    } = props;
 
-        return css`
-            cursor: pointer;
-            position: relative;
-            white-space: nowrap;
-            min-height: ${getHeightBySize(DT, size)};
-            line-height: ${getHeightBySize(DT, size)};
-            ${inlineBlockWithVerticalMixin};
+    return css`
+      cursor: pointer;
+      position: relative;
+      white-space: nowrap;
+      min-height: ${getHeightBySize(DT, size)};
+      line-height: ${getHeightBySize(DT, size)};
+      ${inlineBlockWithVerticalMixin};
 
-            font-size: 0;
-            color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
-            > * {
-                font-size: ${DT.T_CONTROL_FONT_SIZE_SM};
-            }
+      font-size: 0;
+      color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
+      > * {
+        font-size: ${DT.T_TYPO_FONT_SIZE_1};
+      }
 
-            .${contentCls} {
-                display: inline-block;
-                vertical-align: middle;
-                max-height: 100%;
-                margin-left: 8px;
-            }
+      .${contentCls} {
+        display: inline-block;
+        vertical-align: middle;
+        max-height: 100%;
+        margin-left: 8px;
+      }
 
-            &.${disabledCls} {
-                cursor: default;
-                color: ${DT.T_COLOR_TEXT_DISABLED};
-            }
-            ${iconMixin(props)};
-        `;
-    })
+      &.${disabledCls} {
+        cursor: default;
+        color: ${DT.T_COLOR_TEXT_DISABLED};
+      }
+      ${iconMixin(props)};
+    `;
+  })
 );
 
 export const SIconWrap = sWrap<CheckboxProps>({
-    className: iconWrapCls
+  className: iconWrapCls
 })(
-    styled.span(props => {
-        const {
-            theme: { designTokens: DT },
-            checked,
-            indeterminate,
-            disabled
-        } = props;
-        return css`
-            &.${iconWrapCls} {
-                display: inline-block;
-                box-sizing: border-box;
-                overflow: hidden;
-                position: relative;
-                width: 16px;
-                height: 16px;
-                border: 1px solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
-                border-radius: 2px;
-                vertical-align: middle;
-            }
+  styled.span(props => {
+    const {
+      theme: { designTokens: DT },
+      checked,
+      indeterminate,
+      disabled
+    } = props;
+    return css`
+      &.${iconWrapCls} {
+        display: inline-block;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+        width: 16px;
+        height: 16px;
+        border: 1px solid ${DT.T_COLOR_LINE_DEFAULT_DARK};
+        border-radius: 2px;
+        vertical-align: middle;
+      }
 
-            .${iconCls} {
-                visibility: hidden;
-                opacity: 0;
-                position: absolute;
-                top: -1px;
-                left: -1px;
-                width: 16px;
-                height: 16px;
-            }
+      .${iconCls} {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: 16px;
+        height: 16px;
+      }
 
-            ${(indeterminate || checked) &&
-            css`
-                &.${iconWrapCls} {
-                    border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
-                    background: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
-                }
-                .${iconCls} {
-                    visibility: visible;
-                    opacity: 1;
-                    fill: ${DT.T_COLOR_TEXT_DEFAULT_NORMAL};
-                }
-            `}
+      ${(indeterminate || checked) &&
+      css`
+        &.${iconWrapCls} {
+          border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
+          background: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
+        }
+        .${iconCls} {
+          visibility: visible;
+          opacity: 1;
+          fill: ${DT.T_COLOR_TEXT_DEFAULT_NORMAL};
+        }
+      `}
+
+      ${disabled &&
+      css`
+        &.${iconWrapCls} {
+          border-color: ${DT.T_COLOR_LINE_DISABLED_LIGHT};
+          background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
+        }
+      `}
 
             ${disabled &&
-            css`
-                &.${iconWrapCls} {
-                    border-color: ${DT.T_COLOR_LINE_DISABLED_LIGHT};
-                    background: ${DT.T_COLOR_BG_DISABLED_LIGHT};
-                }
-            `}
-
-            ${disabled &&
-            (checked || indeterminate) &&
-            css`
-                &.${iconWrapCls} {
-                    background: none;
-                }
-                .${iconCls} {
-                    fill: ${DT.T_COLOR_TEXT_DISABLED};
-                }
-            `}
-        `;
-    })
+      (checked || indeterminate) &&
+      css`
+        &.${iconWrapCls} {
+          background: none;
+        }
+        .${iconCls} {
+          fill: ${DT.T_COLOR_TEXT_DISABLED};
+        }
+      `}
+    `;
+  })
 );
 
 export const iconMixin = (props: CheckboxProps & { theme: Theme }) => {
-    const {
-        theme: { designTokens: DT },
-        disabled
-    } = props;
-    return (
-        !disabled &&
-        css`
-            :hover {
-                .${iconWrapCls} {
-                    border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
-                }
-            }
-        `
-    );
+  const {
+    theme: { designTokens: DT },
+    disabled
+  } = props;
+  return (
+    !disabled &&
+    css`
+      :hover {
+        .${iconWrapCls} {
+          border-color: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
+        }
+      }
+    `
+  );
 };
 
 export const CheckboxGroupWrap = sWrap({
-    className: groupCls
+  className: groupCls
 })(styled.div`
-    .${prefixCls} {
-        margin-right: 8px;
+  .${prefixCls} {
+    margin-right: 8px;
 
-        &:last-child {
-            margin-right: 0;
-        }
+    &:last-child {
+      margin-right: 0;
     }
+  }
 `);

@@ -46,91 +46,89 @@ const menuStyle = ({
   const { maxWidth } = customStyle;
   const isFirefox = window && window?.navigator?.userAgent?.indexOf?.('Firefox') > -1;
   return css`
-        display: inline-block;
-        box-sizing: border-box;
-        overflow: auto;
-        line-height: 32px;
-        font-size: 12px;
-        max-width: ${maxWidth || '360px'};
-        min-width: 64px;
-        padding: 4px 0px;
-        border-radius: 2px;
-        text-align: left;
-        border-style: none !important;
-        border: none;
-        color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
-        box-shadow: ${DT.T_SHADOW_BLOCK_DEFAULT_LG};
-        background: ${DT.T_COLOR_BG_MENU};
+    display: inline-block;
+    box-sizing: border-box;
+    overflow: auto;
+    line-height: 32px;
+    font-size: ${DT.T_TYPO_FONT_SIZE_1};
+    max-width: ${maxWidth || '360px'};
+    min-width: 64px;
+    padding: 4px 0px;
+    border-radius: 2px;
+    text-align: left;
+    border-style: none !important;
+    border: none;
+    color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
+    box-shadow: ${DT.T_SHADOW_BLOCK_DEFAULT_LG};
+    background: ${DT.T_COLOR_BG_MENU};
 
-        ${
-          isFirefox &&
-          css`
-            & {
-              overflow-y: scroll;
-            }
-          `
-        }
+    ${isFirefox &&
+    css`
+      & {
+        overflow-y: scroll;
+      }
+    `}
 
-        .${itemCls}, .${selectallWrapCls}, .${popupTitleCls},.${collapseTitleCls} {
-            cursor: pointer;
-            white-space: nowrap;
-            text-decoration: none;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            :hover {
-                background: ${DT.T_COLOR_BG_DEFAULT_HOVER};
-            }
-        }
-        .${itemCls}, .${selectallWrapCls}, .${popupTitleCls}, .${collapseTitleCls} {
-            padding: 0 8px;
-            margin: 0 8px;
-        }
-        .${itemCls}.${disabledCls}, .${selectallWrapCls}.${disabledCls} {
-            color: ${DT.T_COLOR_TEXT_DISABLED};
-            cursor: default;
-            :hover {
-                background: none;
-            }
-        }
-        .${popupTitleCls}, .${collapseTitleCls} {
-            position: relative;
-            padding: 0px 40px 0px 8px;
-            &.${selectedCls} {
-                color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
-            }
-        }
-        &.${singleCls} .${itemCls}.${selectedCls} {
-            color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
-        }
-        .${collapseWrapCls} {
-            ::after,
-            ::before {
-                content: '';
-                display: block;
-                margin: 4px 8px;
-                height: 1px;
-                background: ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
-            }
-        }
-        .${firstCls}.${collapseWrapCls} {
-            ::before {
-                display: none;
-            }
-        }
-        .${collapseWrapCls}+.${collapseWrapCls} {
-            ::before {
-                display: none;
-            }
-        }
-        .${lastCls}.${collapseWrapCls} {
-            ::after {
-                display: none;
-            }
-        }
-        .${checkboxCls} {
-            width: 100%;
-        }
-    `;
+    .${itemCls}, .${selectallWrapCls}, .${popupTitleCls},.${collapseTitleCls} {
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      :hover {
+        background: ${DT.T_COLOR_BG_DEFAULT_HOVER};
+      }
+    }
+    .${itemCls}, .${selectallWrapCls}, .${popupTitleCls}, .${collapseTitleCls} {
+      padding: 0 8px;
+      margin: 0 8px;
+    }
+    .${itemCls}.${disabledCls}, .${selectallWrapCls}.${disabledCls} {
+      color: ${DT.T_COLOR_TEXT_DISABLED};
+      cursor: default;
+      :hover {
+        background: none;
+      }
+    }
+    .${popupTitleCls}, .${collapseTitleCls} {
+      position: relative;
+      padding: 0px 40px 0px 8px;
+      &.${selectedCls} {
+        color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
+      }
+    }
+    &.${singleCls} .${itemCls}.${selectedCls} {
+      color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
+    }
+    .${collapseWrapCls} {
+      ::after,
+      ::before {
+        content: '';
+        display: block;
+        margin: 4px 8px;
+        height: 1px;
+        background: ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
+      }
+    }
+    .${firstCls}.${collapseWrapCls} {
+      ::before {
+        display: none;
+      }
+    }
+    .${collapseWrapCls}+.${collapseWrapCls} {
+      ::before {
+        display: none;
+      }
+    }
+    .${lastCls}.${collapseWrapCls} {
+      ::after {
+        display: none;
+      }
+    }
+    .${checkboxCls} {
+      width: 100%;
+    }
+  `;
 };
 
 export const MenuWrap = sWrap<MenuProps>({})(
