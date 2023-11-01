@@ -77,7 +77,6 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
           display: inline-block;
           white-space: nowrap;
           position: relative;
-          height: ${DT.TAB_PANEL_TITLE_HEIGHT};
         }
         &-nav-animated {
           transition: transform 0.2s cubic-bezier(0.35, 0, 0.25, 1);
@@ -285,6 +284,7 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
                   border-right-color: ${DT.T_TABS_DEFAULT_COLOR_BG_DEFAULT};
                 }
                 text-align: right;
+                padding-left: 12px;
               }
 
               &-ink-bar {
@@ -338,6 +338,9 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
     ${(tabBarPosition === 'top' || tabBarPosition === 'bottom') &&
         css`
           .${prefixCls}-top-bar, .${prefixCls}-bottom-bar {
+            .${prefixCls}-nav {
+              height: ${DT.TAB_PANEL_TITLE_HEIGHT};
+            }
             .${prefixCls}-nav-scroll {
               width: 100%;
             }
