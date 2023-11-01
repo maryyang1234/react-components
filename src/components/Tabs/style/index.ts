@@ -62,7 +62,6 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
         }
         &-tab {
           color: ${DT.T_COLOR_TEXT_REMARK_LIGHT};
-          border: 1px solid transparent;
           border-radius: 2px 2px 0 0;
           box-sizing: border-box;
           cursor: pointer;
@@ -123,11 +122,7 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
         &-styletype-default-bar {
           .${prefixCls} {
             &-ink-bar {
-              width: 2px;
-              height: 2px;
-              position: absolute;
-              transition: transform 0.3s ease-out 0s;
-              background: ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
+              display: none;
             }
             &-tab:hover {
               color: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
@@ -206,8 +201,8 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
                 &-disabled:hover {
                   border-bottom-color: transparent;
                 }
-                &-active,
-                &-active:hover {
+                &-active {
+                  border-bottom: 2px solid ${DT.T_COLOR_LINE_PRIMARY_DEFAULT};
                 }
               }
               &-ink-bar {
