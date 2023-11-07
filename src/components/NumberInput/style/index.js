@@ -108,15 +108,15 @@ export const NumberInputWrap = withProps()(
 
             ${styleType === 'default' &&
             css`
-                border: ${DT.T_LINE_WIDTH_BASE} solid ${DT.T_COLOR_LINE_DEFAULT_LIGHT};
-                padding-right: ${HeightNumber[size] - 6}px;
-                border-right-width: 0;
+                border: ${DT.T_LINE_WIDTH_BASE} solid ${DT.NUMBER_INPUT_COLOR};
+                padding-right: ${HeightNumber[size] - 10}px;
 
                 &:hover {
-                    border-color: ${DT.T_COLOR_LINE_DEFAULT_DARK};
+                    border-color: ${DT.NUMBER_INPUT_COLOR};
                 }
 
                 .${inputWrapCls} {
+                    border-radius: ${DT.T_CORNER_MD};
                     background: ${DT.NUMBER_INPUT_BG_COLOR};
                     :hover {
                         background: ${DT.T_INPUT_COLOR_BG_ACTIVE};
@@ -152,8 +152,8 @@ export const NumberInputWrap = withProps()(
                 }
 
                 .${handlerUpCls}, .${handlerDownCls} {
-                    height: ${(+Height[size].replace('px', '') - 2) / 2}px;
-                    width: ${HeightNumber[size] - 6}px;
+                    height: ${(+Height[size].replace('px', '') - 8) / 2}px;
+                    width: ${HeightNumber[size] - 10}px;
                     right: 0;
                     box-sizing: content-box;
                     border-radius: 0;
@@ -164,14 +164,10 @@ export const NumberInputWrap = withProps()(
                 }
 
                 .${handlerUpCls} {
-                    border-width: 0 0 0 1px;
-                    top: -1px;
-                    padding-top: 1px;
+                    top: 2px;
                 }
                 .${handlerDownCls} {
-                    border-width: 1px 0 0 1px;
-                    bottom: 0;
-                    border-top-color: ${DT.T_COLOR_LINE_DEFAULT_DARK};
+                    bottom: 2px;
                 }
 
                 ${hideHandler &&
