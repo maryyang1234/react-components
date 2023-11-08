@@ -22,8 +22,8 @@ const sharedGutter = props => {
         theme: { designTokens: DT }
     } = props;
     return css`
-        padding: 0 ${DT.T_SPACING_COMMON_XXXLG};
-        margin-top: 16px;
+        padding: 0 ${DT.T_SPACING_COMMON_LG};
+        margin-top: ${DT.T_SPACING_COMMON_LG};
     `;
 };
 
@@ -119,7 +119,7 @@ export const CardWrap = withProps()(
             .${headerCls}:nth-of-type(2),
             .${actionCls}:nth-of-type(2),
             .${contentCls}:nth-of-type(2) {
-                margin-top: ${DT.T_SPACING_COMMON_XXXLG};
+                margin-top: ${DT.T_SPACING_COMMON_LG};
             }
 
             background: ${DT.T_CARD_COLOR_BG_DEFAULT};

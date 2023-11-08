@@ -66,7 +66,7 @@ class Group extends Component {
             options,
             children,
             disabled,
-            size,
+            size = 'lg',
             styleType,
             selectable,
             multiple,
