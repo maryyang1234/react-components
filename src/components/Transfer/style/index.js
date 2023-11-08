@@ -40,7 +40,7 @@ export const TransferWrap = withProps()(
             }
             .${titleCls} {
                 color: ${DT.T_COLOR_TEXT_DEFAULT_DARK};
-                font-size: 12px;
+                font-size: ${DT.TEXT_FONT_BASE};
                 line-height: 20px;
                 padding: 6px 4px;
             }
