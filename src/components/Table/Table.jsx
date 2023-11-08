@@ -255,6 +255,7 @@ class Table extends Component {
             if (column.key === undefined) missingColumnKeyWarn();
         });
     };
+    // eslint-disable-next-line react/no-deprecated
     componentWillReceiveProps = nextProps => {
         const { rowSelection } = nextProps;
         if (_.isObject(rowSelection) && 'selectedRowKeys' in rowSelection) {
@@ -733,6 +734,7 @@ class Table extends Component {
                     }}
                     checked={isAllSelected}
                     indeterminate={!isAllSelected && selectedEnableDataSourceOfCurrentPageCount > 0}
+                    size="sm"
                 />
             );
             newColumns.unshift({
@@ -788,6 +790,7 @@ class Table extends Component {
                             disabled={disabled}
                             onChange={() => this.handleSelectRecord(rowKey, !selectedRowKeyMap[rowKey])}
                             checked={!!selectedRowKeyMap[rowKey]}
+                            size="sm"
                         />
                     );
                 }

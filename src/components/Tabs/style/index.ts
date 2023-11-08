@@ -65,9 +65,9 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
           border-radius: 2px 2px 0 0;
           box-sizing: border-box;
           cursor: pointer;
-          margin-right: 30px;
+          margin-right: ${DT.TAB_PANEL_MARGIN};
           ${css`
-            padding: ${padding};
+            padding: ${padding} 0;
             font-size: ${fontSize};
             font-weight: ${fontWeight};
           `}

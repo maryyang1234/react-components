@@ -72,18 +72,8 @@ class Radio extends PureComponent {
     };
     renderRadio(props) {
         /* eslint-disable no-unused-vars */
-        const {
-            children,
-            checked,
-            defaultChecked,
-            value,
-            onChange,
-            onClick,
-            multiple,
-            disabled,
-            title,
-            ...rest
-        } = props;
+        const { children, checked, defaultChecked, value, onChange, onClick, multiple, disabled, title, ...rest } =
+            props;
         /* eslint-enable no-unused-vars */
 
         return (
@@ -174,7 +164,7 @@ class Radio extends PureComponent {
                     const { defaultChecked, value, multiple, ...restProps } = this.props;
                     /* eslint-enable no-unused-vars */
                     const props = {
-                        size: 'md',
+                        size: 'lg',
                         styleType: 'default',
                         ...context,
                         ...restProps

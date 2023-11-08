@@ -520,7 +520,7 @@ const groupOptionsAsDataSource = <
 };
 
 const Select = ({
-  size = 'md',
+  size = 'lg',
   value: _value,
   defaultValue,
   onChange: _onChange,

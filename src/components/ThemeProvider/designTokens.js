@@ -212,6 +212,7 @@ const designTokens = {
     TAB_PANEL_PADDING_SM: '10px 0', // Tab的padding sm
     TAB_PANEL_PADDING_MD: '14px 0', // Tab的padding md
     TAB_PANEL_PADDING_LG: '16px 0', // Tab的padding lg
+    TAB_PANEL_MARGIN: '30px', // Tab的margin
 
     TAB_PANEL_LINEHEIGHT_SM: '18px', // Tab的行高 sm
     TAB_PANEL_LINEHEIGHT_MD: '20px', // Tab的行高 md
