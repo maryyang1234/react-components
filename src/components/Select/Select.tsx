@@ -280,20 +280,15 @@ const Selector = ({
   };
 
   return (
-    <SSelector size={size} disabled={disabled} title={title} {...rest}>
+    <SSelector size={size} disabled={disabled} title={title} clearable={clearable} {...rest}>
       <div className={selectorContentCls} key="content">
         {content}
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore */}
-        {clearable && (multiple ? (value as unknown)?.length : !!value) && (
-          <ClearIcon
-            onClick={handleClear}
-            className={`${prefixCls}-clearIcon`}
-            key="icon"
-            type={'cross-circle-filled'}
-          />
-        )}
       </div>
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
+      {clearable && (multiple ? (value as unknown)?.length : !!value) && (
+        <ClearIcon onClick={handleClear} className={`${prefixCls}-clearIcon`} key="icon" type={'cross-circle-filled'} />
+      )}
       <Arrow key="icon" type={visible ? 'arrow-up' : 'arrow-down'} />
     </SSelector>
   );

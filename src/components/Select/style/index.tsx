@@ -24,20 +24,21 @@ export const SelectSearchInput = styled(Input.Search)`
   margin-top: 10px;
 `;
 
-export const SSelector = sWrap<ButtonProps, HTMLButtonElement>({
+export const SSelector = sWrap<ButtonProps & { clearable?: boolean }, HTMLButtonElement>({
   styleType: 'border'
 })(
   styled(Button)(props => {
     const {
       theme: { designTokens: DT },
-      size
+      size,
+      clearable
     } = props;
 
     const height = getControlHeightBySize(DT, size || 'md');
     const fontSize = getControlFontSizeBySize(DT, size || 'md');
 
     return css`
-      padding-right: 28px;
+      padding-right: ${clearable ? '40px' : '28px'};
       width: 100%;
       min-width: 78px;
       text-align: left;
@@ -51,15 +52,19 @@ export const SSelector = sWrap<ButtonProps, HTMLButtonElement>({
         white-space: nowrap;
         font-size: ${fontSize};
         line-height: 16px;
-
-        &:hover {
-          .${prefixCls}-clearIcon {
-            visibility: visible;
-          }
+      }
+      &:hover {
+        .${prefixCls}-clearIcon {
+          visibility: visible;
         }
       }
+
       .${prefixCls}-clearIcon {
         visibility: hidden;
+        position: absolute;
+        top: 50%;
+        margin-top: -6px;
+        right: 24px;
       }
       .${selectorContentHolder} {
         color: rgba(10, 22, 51, 0.2);
