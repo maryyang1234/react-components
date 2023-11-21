@@ -154,7 +154,7 @@ const UnGridItem = (props: ItemProps) => {
 
   return (
     <ItemWrap {...rest}>
-      <LabelWrap {...labelCol}>
+      <LabelWrap label={label} {...labelCol}>
         {label}
         {required && <RequiredLabel>*</RequiredLabel>}
         {/* {help && <CommentWrap>{help}</CommentWrap>} */}
