@@ -117,9 +117,6 @@ export const RadioListWrap = withProps({
             .${contentCls} {
                 flex: 1 1 auto;
                 line-height: 20px;
-                overflow-x: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
             }
             .${extraCls} {
                 flex-shrink: 0;
