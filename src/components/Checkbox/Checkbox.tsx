@@ -35,6 +35,8 @@ export interface CheckboxProps {
      * @deprecated 弃用
      */
     disabledLabel?: ReactNode;
+    /** 置灰时候的提示信息,disabled才显示*/
+    disabledTip?: string;
 }
 
 const IconCheckboxWithoutMemo = ({
