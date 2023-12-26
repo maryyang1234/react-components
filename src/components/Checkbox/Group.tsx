@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 
 import { SelectedStatus, useGroup } from 'src/hooks/selectable';
 import useUncontrolled from 'src/hooks/useUncontrolled';
+import Tooltip from '../Tooltip';
 
 import Checkbox, { CheckboxProps } from './Checkbox';
 import CheckboxContext from './CheckboxContext';
@@ -45,9 +46,9 @@ const Group = ({
             return options.map?.(option => {
                 const { label, ...restOptionProps } = option;
                 return (
-                    <Checkbox key={option.value} {...restOptionProps}>
-                        {label !== undefined ? label : option.value}
-                    </Checkbox>
+                    <Tooltip key={option.value} popup={option.disabled ? option.disabledTip : null}>
+                        <Checkbox {...restOptionProps}>{label !== undefined ? label : option.value}</Checkbox>
+                    </Tooltip>
                 );
             });
         } else {
