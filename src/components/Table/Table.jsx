@@ -1013,6 +1013,7 @@ class Table extends Component {
                         className={className}
                         style={style}
                         hideExpandIcon={hideExpandIcon}
+                        expandIconAsCell={expandIconAsCell}
                         zebraCrossing={zebraCrossing}
                         customStyle={customStyle}
                         size={size}

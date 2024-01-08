@@ -74,6 +74,7 @@ export const TableWrap = withProps({
             zebraCrossing,
             customStyle = {},
             hideExpandIcon,
+            expandIconAsCell,
             size
         } = props;
 
@@ -159,6 +160,9 @@ export const TableWrap = withProps({
                 }
                 &-expand-icon-th {
                     width: 20px;
+                    position: sticky !important;
+                    z-index: 2;
+                    left: 0;
                 }
                 &-row-expand-icon.${prefixCls}-row-collapsed:before {
                     content: '+';
@@ -175,6 +179,22 @@ export const TableWrap = withProps({
                 }
                 &-row-expand-icon-cell .${prefixCls}-row-expand-icon {
                     margin: 0;
+                }
+
+                ${
+                    !!expandIconAsCell &&
+                    css`
+                        &-row-expand-icon-cell {
+                            position: sticky !important;
+                            z-index: 2;
+                            left: 0px;
+                        }
+
+                        &-row-select-icon-cell,
+                        &-th-fixed-left-latest {
+                            left: 30px !important;
+                        }
+                    `
                 }
 
                 ${
