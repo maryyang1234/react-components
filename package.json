@@ -1,6 +1,6 @@
 {
   "name": "@ucloud-pccl/react-components",
-  "version": "1.2.15",
+  "version": "1.2.16",
   "title": "UCloud pccl react components",
   "description": "UCloud pccl react components",
   "keywords": [
@@ -84,6 +84,7 @@
     "warning": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-methods": "^7.18.6",
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
