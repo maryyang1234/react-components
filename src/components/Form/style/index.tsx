@@ -39,7 +39,7 @@ export const GridLabelWrap = sWrap({
     return css`
       padding-top: 4px;
       line-height: 20px;
-      word-break: break-all;
+      word-break: break-word;
       color: ${DT.TEXT_SECOND_Title_COLOR};
       font-size: ${DT.TEXT_SECOND_TITLE_FONT_BASE};
     `;
@@ -73,6 +73,7 @@ export const LabelWrap = sWrap<{ label?: ReactNode }>({
       color: ${DT.TEXT_SECOND_Title_COLOR};
       font-size: ${DT.TEXT_SECOND_TITLE_FONT_BASE};
       margin-bottom: ${label ? DT.T_FORMITEM_LABEL_MB : 0};
+      word-break: break-word;
     `;
   })
 );
