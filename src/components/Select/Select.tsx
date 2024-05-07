@@ -182,6 +182,8 @@ export interface SelectProps {
    * 支持清除功能
    */
   clearable?: boolean;
+  /** 自定义创建和搜索等其他内容 */
+  extraChildren?: ReactNode;
 }
 
 const Selector = ({
@@ -313,7 +315,8 @@ const Popup = ({
   searchValue,
   setSearchValue,
   virtualList,
-  width
+  width,
+  extraChildren
 }: Pick<
   SelectProps,
   | 'extra'
@@ -327,6 +330,7 @@ const Popup = ({
   | 'options'
   | 'virtualList'
   | 'width'
+  | 'extraChildren'
 > &
   Required<Pick<SelectProps, 'onChange'>> & {
     children?: ReactNode;
@@ -398,6 +402,7 @@ const Popup = ({
 
   return (
     <MenuWrap width={width}>
+      {extraChildren && extraChildren}
       {search && <SelectSearchInput onChange={handleSearchInput} value={searchValue} status="default" />}
       {children || options ? (
         <BlockMenu
@@ -538,6 +543,7 @@ const Select = ({
   renderPopup,
   virtualList,
   clearable,
+  extraChildren,
   ...rest
 }: SelectProps & Override<HTMLAttributes<HTMLDivElement>, SelectProps>) => {
   const ref = useRef(null);
@@ -664,7 +670,8 @@ const Select = ({
                       searchValue,
                       setSearchValue,
                       virtualList,
-                      width
+                      width,
+                      extraChildren
                     }}
                   />
                 }
