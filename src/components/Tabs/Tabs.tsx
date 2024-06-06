@@ -87,6 +87,8 @@ export interface TabsProps {
     size?: Size;
      /** Tabbar 自定义className */
     tabBarClassName?: string;
+    /**支持删除按钮：传入处理删除函数，就展示 */
+    handlePaneDelete?: (activeKey: string) => void;
 }
 const Tabs = ({
     activeKey: _activeKey,
@@ -100,6 +102,7 @@ const Tabs = ({
     styleType = 'default',
     size = 'sm',
     tabBarClassName,
+    handlePaneDelete,
     ...restProps
 }: TabsProps) => {
     const panes = useMemo(() => getPanesFromChildren(children), [children]);
@@ -147,7 +150,8 @@ const Tabs = ({
                 styleType,
                 prevIcon: <SvgIcon type="triangle-left" />,
                 nextIcon: <SvgIcon type="triangle-right" />,
-                tabBarClassName
+                tabBarClassName,
+                handlePaneDelete
             }}
         />
     );
