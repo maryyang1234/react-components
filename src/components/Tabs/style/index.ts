@@ -194,7 +194,8 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
                     .${prefixCls}-top-bar {
                         .${prefixCls} {
                             &-tab {
-                                display: inline-block;
+                                display: inline-flex;
+                                align-items: center;
 
                                 &:hover {
                                 }
@@ -229,7 +230,8 @@ export const SWrap = sWrap<Required<Pick<TabsProps, 'size' | 'tabBarPosition' | 
                         }
                         .${prefixCls} {
                             &-tab {
-                                display: inline-block;
+                                display: inline-flex;
+                                align-items: center;
 
                                 &:hover {
                                     border-top-color: ${DT.T_TABS_DEFAULT_COLOR_BG_HOVER};

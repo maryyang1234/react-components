@@ -37,6 +37,7 @@ import Sort from './icons/Sort';
 import Filter from './icons/Filter';
 import Cog from './icons/Cog';
 import Delete from './icons/Delete';
+import Close from './icons/Close';
 
 // circle
 import QuestionCircle from './icons/QuestionCircle';
@@ -53,6 +54,7 @@ const IconMap = {
     'tick-small': TickSmall,
     cross: Cross,
     delete: Delete,
+    close: Close,
     'cross-bold': CrossBold,
     'ring-loading': RingLoading,
     'dotted-line-arrow-right': DottedLineArrowRight,

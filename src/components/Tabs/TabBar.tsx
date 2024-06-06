@@ -21,6 +21,7 @@ import { setTransform, isTransform3dSupported, getStyle, isVertical } from './ut
 import RefContext, { GetRef } from './RefContext';
 import { Panes, TabBarPosition } from './shared';
 import { prefixCls } from './style';
+import SvgIcon from '../SvgIcon';
 
 const noop = () => undefined;
 const warning = (skip: boolean, msg: string) => !skip && console.warn(msg);
@@ -41,6 +42,7 @@ interface TabBarTabsNodeProps {
     tabBarPosition: TabBarPosition;
     direction: string;
     onTabClick: (activeKey: Key) => void;
+    handlePaneDelete?: (activeKey: string) => void;
 }
 const TabBarTabsNode = ({
     activeKey,
@@ -48,7 +50,8 @@ const TabBarTabsNode = ({
     tabBarGutter,
     tabBarPosition,
     direction,
-    onTabClick = noop
+    onTabClick = noop,
+    handlePaneDelete
 }: TabBarTabsNodeProps) => {
     const { saveRef } = useContext(RefContext);
     const rst: ReactNode[] = [];
@@ -79,6 +82,17 @@ const TabBarTabsNode = ({
                 {...(paneProps.disabled ? {} : { onClick: onTabClick.bind(this, key) })}
             >
                 {paneProps.tab}
+                {!handlePaneDelete ? null : (
+                    <SvgIcon
+                       style={{marginLeft: "5px"}}
+                        type="close"
+                        size="16px"
+                        onClick={(event: React.MouseEvent) => {
+                            event.stopPropagation(); // 取消父级的点击事件
+                            handlePaneDelete(key);
+                        }}
+                    />
+                )}
             </div>
         );
         rst.push(node);
@@ -562,6 +576,7 @@ interface TabBarProps {
     activeKey: Key | null;
     direction: string;
     styleType: string;
+    handlePaneDelete?: (activeKey: string) => void;
 }
 const TabBar = (props: TabBarProps) => {
     const refs = useRef<Record<string, HTMLElement | null>>({});
