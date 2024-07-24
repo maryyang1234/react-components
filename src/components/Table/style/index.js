@@ -181,33 +181,34 @@ export const TableWrap = withProps({
                     margin: 0;
                 }
 
-                ${
-                    !!expandIconAsCell &&
-                    css`
-                        &-row-expand-icon-cell {
-                            position: sticky !important;
-                            z-index: 2;
-                            left: 0px;
-                        }
+                ${!!expandIconAsCell &&
+                css`
+                    &-row-expand-icon-cell {
+                        position: sticky !important;
+                        z-index: 2;
+                        left: 0px;
+                    }
 
-                        &-row-select-icon-cell,
-                        &-th-fixed-left-latest {
-                            left: 30px !important;
-                        }
-                    `
-                }
+                    &-select-icon-th,
+                    &-row-select-icon-cell {
+                        left: 30px !important;
+                    }
 
-                ${
-                    hideExpandIcon &&
-                    css`
-                        &-row-expand-icon-cell,
-                        &-expand-icon-th,
-                        &-expand-icon-col,
-                        &-expanded-row > td:first-of-type {
-                            display: none;
-                        }
-                    `
-                }
+                    &-th-fixed-left-latest,
+                    &-row-cell-fixed-left-latest {
+                        left: 62px !important;
+                    }
+                `}
+
+                ${hideExpandIcon &&
+                css`
+                    &-row-expand-icon-cell,
+                    &-expand-icon-th,
+                    &-expand-icon-col,
+                    &-expanded-row > td:first-of-type {
+                        display: none;
+                    }
+                `}
 
                 &-fixed-header .${prefixCls}-header {
                     min-width: 100%;
@@ -352,17 +353,15 @@ export const TableWrap = withProps({
                     display: none;
                 }
 
-                ${
-                    zebraCrossing &&
-                    css`
-                        &-row:nth-child(odd) > td {
-                            background: ${DT.T_TABLE_ROW_COLOR_BG_DEFAULT};
-                        }
-                        &-thead > tr > th {
-                            background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
-                        }
-                    `
-                };
+                ${zebraCrossing &&
+                css`
+                    &-row:nth-child(odd) > td {
+                        background: ${DT.T_TABLE_ROW_COLOR_BG_DEFAULT};
+                    }
+                    &-thead > tr > th {
+                        background: ${DT.T_COLOR_BG_DEFAULT_NORMAL};
+                    }
+                `};
             }
         `;
     })
