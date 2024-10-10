@@ -4,6 +4,7 @@ import { css } from '@emotion/core';
 import { clearFixMixin } from 'src/style';
 import config from 'src/config';
 import withProps from 'src/utils/withProps';
+import { sizes } from '../Col';
 
 const { prefixCls: _prefixCls } = config;
 const colPrefixCls = _prefixCls + '-col';
@@ -86,6 +87,19 @@ export const ColWrap = withProps({
     className: colPrefixCls
 })(
     styled('div')(props => {
+        const {
+            theme: { designTokens: DT }
+        } = props;
+
+        const sizeScreenMap = {
+            xs: DT.T_SCREEN_XS,
+            sm: DT.T_SCREEN_SM,
+            md: DT.T_SCREEN_MD,
+            lg: DT.T_SCREEN_LG,
+            xl: DT.T_SCREEN_XL,
+            xxl: DT.T_SCREEN_XXL
+        };
+
         return css`
             position: relative;
             display: block;
@@ -97,6 +111,17 @@ export const ColWrap = withProps({
             ${props.pull && pullMixin(props)};
             ${props.offset && offsetMixin(props)};
             ${props.order && orderMixin(props)};
+
+            ${sizes
+                .filter(s => props[s] !== undefined)
+                .map(s => {
+                    return `@media (min-width: ${sizeScreenMap[s]}px) {
+                        & {
+                            width: ${percentage(props[s] / maxColumns)};
+                        }
+                    }`;
+                })
+                .join('')}
         `;
     })
 );
