@@ -325,7 +325,15 @@ const designTokens = {
     T_COLOR_TEXT_NOTICE_INFO: '#365ABD', // notice-info 字体颜色
     T_COLOR_TEXT_NOTICE_SUCCESS: '#00CA87', // notice-success 字体颜色
     T_COLOR_TEXT_NOTICE_ERROR: '#FF3E3E', // notice-error 字体颜色
-    T_COLOR_TEXT_NOTICE_DISABLED: '#DDDDDD' // notice-disabled 字体颜色
+    T_COLOR_TEXT_NOTICE_DISABLED: '#DDDDDD', // notice-disabled 字体颜色
+
+    // 响应式大小
+    T_SCREEN_XS: 480,
+    T_SCREEN_SM: 576,
+    T_SCREEN_MD: 768,
+    T_SCREEN_LG: 992,
+    T_SCREEN_XL: 1200,
+    T_SCREEN_XXL: 1600
 };
 
 export { designTokens };
