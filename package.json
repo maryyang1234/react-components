@@ -1,6 +1,6 @@
 {
   "name": "@ucloud-pccl/react-components",
-  "version": "1.2.26",
+  "version": "1.2.27",
   "title": "UCloud pccl react components",
   "description": "UCloud pccl react components",
   "keywords": [
@@ -58,6 +58,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "@emotion/styled-base": "^10.3.0",
     "@z-r/calendar": "0.1.2",
     "classnames": "^2.2.5",
     "color": "^3.0.0",
