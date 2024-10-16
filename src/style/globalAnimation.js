@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import { injectGlobal } from 'emotion';
 
 import config from 'src/config';
@@ -84,3 +85,13 @@ injectGlobal`
         }
     }
 `;
+
+/**
+ * 当没有这段的时候injectGlobal会被编译成_injectGlobal
+ * 而编译文件中_injectGlobal没有引用，导致页面打开会报错
+ */
+export class AnimationTest extends Component {
+    render() {
+        return <div>解决_injectGlobal编译报错</div>;
+    }
+}
