@@ -42,6 +42,7 @@ export const GridLabelWrap = sWrap({
       word-break: break-word;
       color: ${DT.TEXT_SECOND_Title_COLOR};
       font-size: ${DT.TEXT_SECOND_TITLE_FONT_BASE};
+      text-align: right;
     `;
   })
 );
