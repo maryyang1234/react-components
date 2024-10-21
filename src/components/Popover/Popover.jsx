@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { number } from 'prop-types';
 import _ from 'lodash';
 import { polyfill } from 'react-lifecycles-compat';
 
@@ -72,7 +72,11 @@ class Popover extends Component {
         /** 滚动时强制重新定位 */
         forceAlignWhenScroll: PropTypes.bool,
         /** @ignore */
-        className: PropTypes.string
+        className: PropTypes.string,
+        /** 鼠标移入后延时多少才显示 Tooltip，单位：秒 */
+        mouseEnterDelay: number,
+        /** 鼠标移出后延时多少才隐藏 Tooltip，单位：秒 */
+        mouseLeaveDelay: number
     };
 
     static defaultProps = {
@@ -87,7 +91,9 @@ class Popover extends Component {
         placement: 'bottomLeft',
         builtinPlacements: placements,
         forceAlignWhenScroll: true,
-        prefixCls: prefixCls
+        prefixCls: prefixCls,
+        mouseEnterDelay: 0,
+        mouseLeaveDelay: 0.1
     };
 
     constructor(props) {
