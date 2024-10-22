@@ -28,12 +28,13 @@ export const GridItemWrap = styled(
   `)
 )();
 
-export const GridLabelWrap = sWrap({
-  className: labelCls
+export const GridLabelWrap = sWrap<{ textAlign?: string }>({
+  className: labelCls,
 })(
   styled(Col)(props => {
     const {
-      theme: { designTokens: DT }
+      theme: { designTokens: DT },
+      textAlign
     } = props;
 
     return css`
@@ -42,7 +43,7 @@ export const GridLabelWrap = sWrap({
       word-break: break-word;
       color: ${DT.TEXT_SECOND_Title_COLOR};
       font-size: ${DT.TEXT_SECOND_TITLE_FONT_BASE};
-      text-align: right;
+      text-align: ${textAlign};
     `;
   })
 );
@@ -195,13 +196,14 @@ export const Tip = sWrap<{ status: string } & CombineProps>({ className: tipCls 
   })
 );
 
-export const RequiredLabel = sWrap()(
+export const RequiredLabel = sWrap<{ textAlign?: string }>()(
   styled.span(props => {
     const {
-      theme: { designTokens: DT }
+      theme: { designTokens: DT },
+      textAlign
     } = props;
-    return css`
-      margin-left: 4px;
+    return  css`
+      ${textAlign === "right" ? `margin-right: 4px;` : `margin-left: 4px`};
       color: ${DT.T_COLOR_TEXT_ERROR};
     `;
   })

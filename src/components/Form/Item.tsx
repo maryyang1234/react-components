@@ -71,6 +71,8 @@ export interface DefinedItemProps {
         content?: ReactNode;
       }
     | ReactNode;
+  /** 表单label位置 */
+  textAlign?: "left" | "right";
 }
 
 export type ItemProps = DefinedItemProps & Omit<InputHTMLAttributes<HTMLDivElement>, keyof DefinedItemProps>;
@@ -118,14 +120,16 @@ const GridItem = (props: ItemProps) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     shareStatus,
     help,
+    textAlign = "right",
     ...rest
   } = props;
 
   const item = (
     <GridItemWrap {...rest}>
-      <GridLabelWrap {...labelCol}>
+      <GridLabelWrap textAlign={textAlign} {...labelCol} >
+        {textAlign === "right" && required && <RequiredLabel textAlign={textAlign}>*</RequiredLabel>}
         {label}
-        {required && <RequiredLabel>*</RequiredLabel>}
+        {textAlign === "left" && required && <RequiredLabel textAlign={textAlign}>*</RequiredLabel>}
         <Help help={help} />
       </GridLabelWrap>
       <GridControllerWrap {...controllerCol}>
