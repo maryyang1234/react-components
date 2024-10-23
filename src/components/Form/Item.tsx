@@ -19,7 +19,7 @@ import {
   GridControllerWrap
 } from './style';
 
-const HelpWithoutMemo = ({ help }: { help: ReactNode }) => {
+const HelpWithoutMemo = ({ help, textAlign }: { help: ReactNode, textAlign?: "left" | "right" }) => {
   return help ? (
     <Tooltip
       popup={help}
@@ -30,7 +30,7 @@ const HelpWithoutMemo = ({ help }: { help: ReactNode }) => {
         targetOffset: [0, 0]
       }}
     >
-      <HelpIcon type="question-circle" size="14px" />
+      <HelpIcon type="question-circle" size="14px" textAlign={textAlign} />
     </Tooltip>
   ) : null;
 };
@@ -127,10 +127,11 @@ const GridItem = (props: ItemProps) => {
   const item = (
     <GridItemWrap {...rest}>
       <GridLabelWrap textAlign={textAlign} {...labelCol} >
+        {textAlign === "right" && <Help help={help} textAlign={textAlign} />}
         {textAlign === "right" && required && <RequiredLabel textAlign={textAlign}>*</RequiredLabel>}
         {label}
         {textAlign === "left" && required && <RequiredLabel textAlign={textAlign}>*</RequiredLabel>}
-        <Help help={help} />
+        {textAlign === "left" && <Help help={help} textAlign={textAlign} />}
       </GridLabelWrap>
       <GridControllerWrap {...controllerCol}>
         {children}

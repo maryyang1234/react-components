@@ -209,13 +209,14 @@ export const RequiredLabel = sWrap<{ textAlign?: string }>()(
   })
 );
 
-export const HelpIcon = sWrap<{ type: string; size?: string }>()(
+export const HelpIcon = sWrap<{ type: string; size?: string, textAlign?: string }>()(
   styled(SvgIcon)(props => {
     const {
-      theme: { designTokens: DT }
+      theme: { designTokens: DT },
+      textAlign
     } = props;
     return css`
-      margin-left: 8px;
+      ${textAlign === "right" ? `margin-right: 8px;` : `margin-left: 8px`};
       vertical-align: middle;
       fill: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
     `;
