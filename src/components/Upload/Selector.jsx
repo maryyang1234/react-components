@@ -23,7 +23,9 @@ export default class Selector extends PureComponent {
         /** 文件大小限制 */
         maxSize: PropTypes.number,
         /** @ignore */
-        locale: PropTypes.object
+        locale: PropTypes.object,
+        /** 自定义选择按钮样式: styleType: string; icon: React.Node */
+        selectorBtnProps: PropTypes.object
     };
     /**
      * 触发选择操作
@@ -43,7 +45,7 @@ export default class Selector extends PureComponent {
     };
     render() {
         // eslint-disable-next-line no-unused-vars
-        const { disabled, multiple, accept, selector, locale, onSelect, ...rest } = this.props;
+        const { disabled, multiple, accept, selector, locale, onSelect, selectorBtnProps, ...rest } = this.props;
         return selector === null ? null : (
             <SelectorWrap onClick={this.trigger} disabled={disabled} {...rest}>
                 <input
@@ -58,8 +60,20 @@ export default class Selector extends PureComponent {
                 {selector
                     ? selector
                     : [
-                          <Button size="md" styleType="primary" disabled={disabled} key="button">
-                              {locale.selectFile}
+                          <Button
+                              size="md"
+                              styleType={selectorBtnProps.styleType || 'primary'}
+                              disabled={disabled}
+                              key="button"
+                          >
+                              <div style={{ display: 'flex', alignItems: 'center' }}>
+                                  {!!selectorBtnProps.icon && selectorBtnProps.icon}
+                                  {!!locale.selectFile && (
+                                      <span style={selectorBtnProps.icon ? { marginLeft: '4px' } : {}}>
+                                          {locale.selectFile}
+                                      </span>
+                                  )}
+                              </div>
                           </Button>,
                           <span className={tipCls} key="tip">
                               {locale.selectFileTip}
