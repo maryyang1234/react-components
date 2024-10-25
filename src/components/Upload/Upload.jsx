@@ -133,13 +133,16 @@ class Upload extends PureComponent {
         /** @ignore */
         className: PropTypes.string,
         /** @ignore */
-        locale: PropTypes.object
+        locale: PropTypes.object,
+        /** 自定义选择按钮样式: styleType: string; icon: React.Node */
+        selectorBtnProps: PropTypes.object
     };
     static defaultProps = {
         onChange: () => {},
         onAdd: () => {},
         onRemove: () => {},
-        listType: 'list'
+        listType: 'list',
+        selectorBtnProps: {}
     };
     componentDidUpdate = () => {
         /** 检查props是否更改了controlled类型 */
@@ -331,7 +334,7 @@ class Upload extends PureComponent {
         }
     };
     render() {
-        const { disabled, multiple, accept, maxSize, selector, locale, ...rest } = this.props;
+        const { disabled, multiple, accept, maxSize, selector, locale, selectorBtnProps, ...rest } = this.props;
         /** clean unused rest props for div */
         [
             'maxCount',
@@ -357,6 +360,7 @@ class Upload extends PureComponent {
                     maxSize={maxSize}
                     selector={selector}
                     locale={locale}
+                    selectorBtnProps={selectorBtnProps}
                 />
                 {this.renderList()}
             </UploadWrap>
