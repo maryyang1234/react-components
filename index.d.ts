@@ -13,20 +13,20 @@ export { default as Button } from './lib/components/Button';
 // Box
 type BoxSpacing = 'sm' | 'md' | 'lg' | number | string;
 export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
-    container?: boolean;
-    spacing?: BoxSpacing | [BoxSpacing, BoxSpacing?];
-    direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
-    wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
-    alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch';
-    alignContent?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around';
-    justifyContent?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'stretch';
-    padding?: BoxSpacing;
-    width?: string;
-    height?: string;
-    span?: number;
-    order?: number;
-    flex?: string;
-    cleanMargin?: boolean;
+  container?: boolean;
+  spacing?: BoxSpacing | [BoxSpacing, BoxSpacing?];
+  direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
+  wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
+  alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch';
+  alignContent?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around';
+  justifyContent?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'stretch';
+  padding?: BoxSpacing;
+  width?: string;
+  height?: string;
+  span?: number;
+  order?: number;
+  flex?: string;
+  cleanMargin?: boolean;
 }
 export declare class Box extends PureComponent<BoxProps> {}
 
@@ -35,72 +35,72 @@ export type RowType = 'flex';
 export type RowAlign = 'top' | 'middle' | 'bottom';
 export type RowJustify = 'start' | 'end' | 'center' | 'space-around' | 'space-between';
 export interface RowProps extends HTMLAttributes<HTMLDivElement> {
-    type?: RowType;
-    align?: RowAlign;
-    justify?: RowJustify;
-    gutter?: number;
+  type?: RowType;
+  align?: RowAlign;
+  justify?: RowJustify;
+  gutter?: number;
 }
 export declare class Row extends Component<RowProps> {}
 
 // Col
 export interface ColProps extends HTMLAttributes<HTMLDivElement> {
-    span?: number;
-    offset?: number;
-    pull?: number;
-    push?: number;
-    order?: number;
+  span?: number;
+  offset?: number;
+  pull?: number;
+  push?: number;
+  order?: number;
 }
 export declare class Col extends Component<ColProps> {}
 
 // Grid
 export interface GridType {
-    Row: Row;
-    Col: Col;
+  Row: Row;
+  Col: Col;
 }
 export declare const Grid: GridType;
 
 // Combine
 export interface CombineProps extends HTMLAttributes<HTMLDivElement> {
-    sharedProps?: CompactSharedProps;
-    spacing?: 'compact' | 'smart' | 'sm' | 'md' | 'lg' | string;
+  sharedProps?: CompactSharedProps;
+  spacing?: 'compact' | 'smart' | 'sm' | 'md' | 'lg' | string;
 }
 export declare class Combine extends PureComponent<CombineProps> {}
 
 // Compact
 export interface CompactSharedProps {
-    [key: string]: any;
+  [key: string]: any;
 }
 export interface CompactProps extends HTMLAttributes<HTMLDivElement> {
-    sharedProps?: CompactSharedProps;
+  sharedProps?: CompactSharedProps;
 }
 export declare class Compact extends Component<CompactProps> {}
 
 // NumberInput
 export type NumberInputStyleType = 'default' | 'split' | 'pagination';
 export type NumberInputProps = Override<
-    HTMLAttributes<HTMLInputElement>,
-    {
-        value?: number | string;
-        defaultValue?: number | string;
-        onChange?: (value: number | string) => void;
-        onNumberChange?: (value: number) => void;
-        disabled?: boolean;
-        readOnly?: boolean;
-        max?: number;
-        min?: number;
-        step?: number | string;
-        upHandler?: ReactNode;
-        downHandler?: ReactNode;
-        formatter?: (value: number) => number | string;
-        parser?: (value: string) => string;
-        precision?: number;
-        styleType?: NumberInputStyleType;
-        size?: SizeType;
-        suffix?: ReactNode;
-        inputStyle?: CSSProperties;
-        computeValidNumber?: (value: number) => number;
-        hideHandler?: boolean;
-    }
+  HTMLAttributes<HTMLInputElement>,
+  {
+    value?: number | string;
+    defaultValue?: number | string;
+    onChange?: (value: number | string) => void;
+    onNumberChange?: (value: number) => void;
+    disabled?: boolean;
+    readOnly?: boolean;
+    max?: number;
+    min?: number;
+    step?: number | string;
+    upHandler?: ReactNode;
+    downHandler?: ReactNode;
+    formatter?: (value: number) => number | string;
+    parser?: (value: string) => string;
+    precision?: number;
+    styleType?: NumberInputStyleType;
+    size?: SizeType;
+    suffix?: ReactNode;
+    inputStyle?: CSSProperties;
+    computeValidNumber?: (value: number) => number;
+    hideHandler?: boolean;
+  }
 >;
 export declare class NumberInput extends Component<NumberInputProps> {}
 
@@ -111,118 +111,122 @@ export declare class Textarea extends Component<TextareaProps> {}
 // Radio
 export type RadioStyleType = 'default' | 'button' | 'tag' | 'card' | 'text';
 export interface RadioProps {
-    checked?: boolean;
-    defaultChecked?: boolean;
-    disabled?: boolean;
-    onChange?: (checked: boolean) => void;
-    value?: any;
-    styleType?: RadioStyleType;
-    size?: SizeType;
-    title?: ReactNode;
-    disabledLabel?: ReactNode;
+  checked?: boolean;
+  defaultChecked?: boolean;
+  disabled?: boolean;
+  onChange?: (checked: boolean) => void;
+  value?: any;
+  styleType?: RadioStyleType;
+  size?: SizeType;
+  title?: ReactNode;
+  disabledLabel?: ReactNode;
 }
 interface RadioOption extends RadioProps {
-    label?: ReactNode;
+  label?: ReactNode;
 }
 export type RadioOptions = RadioGroup[];
 export interface RadioGroupProps {
-    value?: any;
-    defaultValue?: any;
-    onChange?: (value: any) => void;
-    options?: RadioOptions;
-    disabled?: boolean;
-    size?: SizeType;
-    styleType?: RadioStyleType;
+  value?: any;
+  defaultValue?: any;
+  onChange?: (value: any) => void;
+  options?: RadioOptions;
+  disabled?: boolean;
+  size?: SizeType;
+  styleType?: RadioStyleType;
 }
 declare class RadioGroup extends Component<RadioGroupProps> {}
 export declare class Radio extends Component<RadioProps> {
-    static Group: typeof RadioGroup;
+  static Group: typeof RadioGroup;
 }
 
 // Slider
 export interface SliderMark {
-    label?: string;
-    step?: number;
-    ratio?: number;
+  label?: string;
+  step?: number;
+  ratio?: number;
 }
 export interface SliderMarks {
-    [key: string]: SliderMark;
+  [key: string]: SliderMark;
 }
 interface NumberInputTipFormatterOption {
-    currentValue: number;
-    inputValue: number;
-    isSensitive: boolean;
-    locale: any;
+  currentValue: number;
+  inputValue: number;
+  isSensitive: boolean;
+  locale: any;
 }
 export type SliderProps = Override<
-    HTMLAttributes<HTMLDivElement>,
-    {
-        value?: number;
-        defaultValue?: number;
-        onChange?: (value: number) => void;
-        onLastChange?: (value: number) => void;
-        disabled?: boolean;
-        min?: number;
-        max?: number;
-        step?: number | string;
-        marks?: SliderMarks;
-        className?: string;
-        style?: CSSProperties;
-        sliderClassName?: string;
-        numberInput?: NumberInputProps;
-        isSensitive?: boolean;
-        numberInputTipFormatter?: (option: NumberInputTipFormatterOption) => ReactNode;
-        tipFormatter?: (value: number) => ReactNode;
-        size?: SizeType;
-    }
+  HTMLAttributes<HTMLDivElement>,
+  {
+    value?: number;
+    defaultValue?: number;
+    onChange?: (value: number) => void;
+    onLastChange?: (value: number) => void;
+    disabled?: boolean;
+    min?: number;
+    max?: number;
+    step?: number | string;
+    marks?: SliderMarks;
+    className?: string;
+    style?: CSSProperties;
+    sliderClassName?: string;
+    numberInput?: NumberInputProps;
+    isSensitive?: boolean;
+    numberInputTipFormatter?: (option: NumberInputTipFormatterOption) => ReactNode;
+    tipFormatter?: (value: number) => ReactNode;
+    size?: SizeType;
+  }
 >;
 export declare class Slider extends Component<SliderProps> {}
 
 // Upload
 export interface UploadFile {
-    name: string;
-    uid: string;
-    size: number;
-    type: string;
-    status?: 'uploading' | 'success' | 'error';
-    lastModified?: number;
-    lastModifiedDate?: Date;
+  name: string;
+  uid: string;
+  size: number;
+  type: string;
+  status?: 'uploading' | 'success' | 'error';
+  lastModified?: number;
+  lastModifiedDate?: Date;
 }
 interface UpdateProgress {
-    (progress: number): void;
+  (progress: number): void;
 }
 type UploadListTypeOption<T> = [T, 'none' | 'dropzone' | 'thumbnail'];
 export type UploadListType =
-    | 'none'
-    | 'text'
-    | 'list'
-    | 'dropzone'
-    | UploadListTypeOption<'list'>
-    | UploadListTypeOption<'dropzone'>;
+  | 'none'
+  | 'text'
+  | 'list'
+  | 'dropzone'
+  | UploadListTypeOption<'list'>
+  | UploadListTypeOption<'dropzone'>;
 export interface UploadCustomStyle {
-    listMaxHeight?: string;
-    [key: string]: any;
+  listMaxHeight?: string;
+  [key: string]: any;
 }
 export interface UploadProps {
-    onChange?: (fileList: UploadFile[]) => void;
-    onAdd?: (fileList: UploadFile[]) => boolean;
-    onRemove?: (file: UploadFile, index: number) => boolean;
-    getRemovableOfItem?: (file: UploadFile) => boolean;
-    onError?: (error: Error) => void;
-    onPreview?: (file: UploadFile, index: number) => void;
-    getPreviewableOfItem?: (file: UploadFile) => boolean;
-    handleUpload?: <T = any>(file: UploadFile, updateProgress: UpdateProgress) => Promise<any>;
-    disabled?: boolean;
-    multiple?: boolean;
-    accept?: string;
-    maxSize?: number;
-    maxCount?: number;
-    selector?: ReactNode;
-    listType?: UploadListType;
-    defaultFileList?: File[];
-    fileList?: File[];
-    style?: CSSProperties;
-    customStyle?: UploadCustomStyle;
+  onChange?: (fileList: UploadFile[]) => void;
+  onAdd?: (fileList: UploadFile[]) => boolean;
+  onRemove?: (file: UploadFile, index: number) => boolean;
+  getRemovableOfItem?: (file: UploadFile) => boolean;
+  onError?: (error: Error) => void;
+  onPreview?: (file: UploadFile, index: number) => void;
+  getPreviewableOfItem?: (file: UploadFile) => boolean;
+  handleUpload?: <T = any>(file: UploadFile, updateProgress: UpdateProgress) => Promise<any>;
+  disabled?: boolean;
+  multiple?: boolean;
+  accept?: string;
+  maxSize?: number;
+  maxCount?: number;
+  selector?: ReactNode;
+  listType?: UploadListType;
+  defaultFileList?: File[];
+  fileList?: File[];
+  style?: CSSProperties;
+  customStyle?: UploadCustomStyle;
+  selectorBtnProps?: {
+    styleType?: 'primary' | 'border' | 'border-gray';
+    icon?: ReactNode;
+  };
 }
 export declare class Upload extends Component<UploadProps> {}
 
@@ -234,121 +238,121 @@ export { default as DatePicker } from './lib/components/DatePicker';
 
 // ZForm
 export interface FormShape {
-    getFieldsValue: Function;
-    getFieldValue: Function;
-    getFieldInstance: Function;
-    setFieldsValue: Function;
-    setFields: Function;
-    setFieldsInitialValue: Function;
-    getFieldDecorator: Function;
-    getFieldProps: Function;
-    getFieldsError: Function;
-    getFieldError: Function;
-    isFieldValidating: Function;
-    isFieldsValidating: Function;
-    isFieldsTouched: Function;
-    isFieldTouched: Function;
-    isSubmitting: Function;
-    submit: Function;
-    validateFields: Function;
-    resetFields: Function;
+  getFieldsValue: Function;
+  getFieldValue: Function;
+  getFieldInstance: Function;
+  setFieldsValue: Function;
+  setFields: Function;
+  setFieldsInitialValue: Function;
+  getFieldDecorator: Function;
+  getFieldProps: Function;
+  getFieldsError: Function;
+  getFieldError: Function;
+  isFieldValidating: Function;
+  isFieldsValidating: Function;
+  isFieldsTouched: Function;
+  isFieldTouched: Function;
+  isSubmitting: Function;
+  submit: Function;
+  validateFields: Function;
+  resetFields: Function;
 }
 export interface ZFormProps extends FormProps {
-    form?: FormShape;
+  form?: FormShape;
 }
 interface ControllerDecoratorOptions {
-    [key: string]: any;
+  [key: string]: any;
 }
 export declare class ZForm extends Component<ZFormProps> {
-    static formDecorator?: (options: FormShape) => Function;
-    static controllerDecorator?: (options: ControllerDecoratorOptions) => Function;
-    static formShape?: FormShape;
+  static formDecorator?: (options: FormShape) => Function;
+  static controllerDecorator?: (options: ControllerDecoratorOptions) => Function;
+  static formShape?: FormShape;
 }
 
 // Transfer
 interface TransferSource {
-    title?: ReactNode;
-    footer?: ReactNode;
-    search?: boolean | SelectSearch;
-    disabled?: boolean;
+  title?: ReactNode;
+  footer?: ReactNode;
+  search?: boolean | SelectSearch;
+  disabled?: boolean;
 }
 export type TransferProps = Override<
-    HTMLAttributes<HTMLDivElement>,
-    {
-        dataSource?: any[];
-        renderList?: (options: TransferProps) => ReactNode;
-        selectedKeys?: string[];
-        defaultSelectedKeys?: string[];
-        onChange?: (keys: string[]) => void;
-        disabled?: boolean;
-        search?: boolean | SelectSearch;
-        source?: TransferSource;
-        target?: TransferSource;
-    }
+  HTMLAttributes<HTMLDivElement>,
+  {
+    dataSource?: any[];
+    renderList?: (options: TransferProps) => ReactNode;
+    selectedKeys?: string[];
+    defaultSelectedKeys?: string[];
+    onChange?: (keys: string[]) => void;
+    disabled?: boolean;
+    search?: boolean | SelectSearch;
+    source?: TransferSource;
+    target?: TransferSource;
+  }
 >;
 export declare class Transfer extends PureComponent<TransferProps> {}
 
 // TransferMenu
 export interface TransferMenuProps extends TransferProps {
-    renderItem?: (item: any) => ReactNode;
+  renderItem?: (item: any) => ReactNode;
 }
 
 export declare class TransferMenu extends PureComponent<TransferMenuProps> {}
 
 // TransferTable
 export interface TransferTableProps extends TransferProps {
-    columns?: Column[];
-    tableProps?: TableProps;
+  columns?: Column[];
+  tableProps?: TableProps;
 }
 
 export declare class TransferTable extends PureComponent<TransferTableProps> {}
 
 // EditableTable
 interface EditableTableAddition extends EditableListAddition {
-    tip?: ReactNode;
+  tip?: ReactNode;
 }
 interface EditableTableRowDeletion {
-    onDelete?: (record: any) => void;
-    getDisabledOfRow?: (record: any) => boolean;
-    fixed?: boolean;
+  onDelete?: (record: any) => void;
+  getDisabledOfRow?: (record: any) => boolean;
+  fixed?: boolean;
 }
 export interface EditableTableProps extends TableProps {
-    addition?: boolean | EditableTableAddition;
-    rowDeletion?: boolean | EditableTableRowDeletion;
+  addition?: boolean | EditableTableAddition;
+  rowDeletion?: boolean | EditableTableRowDeletion;
 }
 export declare class EditableTable extends PureComponent<EditableTableProps> {}
 
 // EditableList
 interface EditableListAddition {
-    onAdd?: Function;
-    disabled?: boolean;
+  onAdd?: Function;
+  disabled?: boolean;
 }
 interface EditableListRowDeletion {
-    onDelete?: (item: any) => void;
-    getDisabledOfItem?: (item: any) => boolean;
+  onDelete?: (item: any) => void;
+  getDisabledOfItem?: (item: any) => boolean;
 }
 interface EditableListGrid {
-    itemCol?: ColProps;
-    actionCol?: ColProps;
+  itemCol?: ColProps;
+  actionCol?: ColProps;
 }
 export interface EditableListProps {
-    dataSource?: any[];
-    renderItem?: (item: any) => ReactNode;
-    grid?: EditableListGrid;
-    size?: SizeType;
-    addition?: boolean | EditableListAddition;
-    itemDeletion?: boolean | EditableListRowDeletion;
+  dataSource?: any[];
+  renderItem?: (item: any) => ReactNode;
+  grid?: EditableListGrid;
+  size?: SizeType;
+  addition?: boolean | EditableListAddition;
+  itemDeletion?: boolean | EditableListRowDeletion;
 }
 export declare class EditableList extends PureComponent<EditableListProps> {}
 
 // Notice
 export type NoticeStyleType = 'default' | 'success' | 'warning' | 'error' | 'disabled';
 export interface NoticeProps extends HTMLAttributes<HTMLDivElement> {
-    closable?: boolean;
-    icon?: ReactNode;
-    onClose?: Function;
-    styleType?: NoticeStyleType;
-    action?: ReactNode;
+  closable?: boolean;
+  icon?: ReactNode;
+  onClose?: Function;
+  styleType?: NoticeStyleType;
+  action?: ReactNode;
 }
 export declare class Notice extends Component<NoticeProps> {}
 
@@ -357,296 +361,296 @@ export { default as Badge } from './lib/components/Badge';
 
 // Tag
 export type TagStyleType =
-    | 'default'
-    | 'green'
-    | 'yellow'
-    | 'red'
-    | 'primary'
-    | 'purple'
-    | 'lightblue'
-    | 'blue'
-    | 'orange'
-    | 'cyan'
-    | 'success'
-    | 'warning'
-    | 'error'
-    | 'purple-fill'
-    | 'lightblue-fill'
-    | 'blue-fill'
-    | 'orange-fill'
-    | 'yellow-fill'
-    | 'cyan-fill'
-    | string;
+  | 'default'
+  | 'green'
+  | 'yellow'
+  | 'red'
+  | 'primary'
+  | 'purple'
+  | 'lightblue'
+  | 'blue'
+  | 'orange'
+  | 'cyan'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'purple-fill'
+  | 'lightblue-fill'
+  | 'blue-fill'
+  | 'orange-fill'
+  | 'yellow-fill'
+  | 'cyan-fill'
+  | string;
 export interface TagProps extends HTMLAttributes<HTMLSpanElement> {
-    styleType?: TagStyleType;
-    closable?: boolean;
-    onClose?: () => void;
-    icon?: 'circle-fill' | 'circle' | 'loading' | 'custom' | ReactNode;
-    disabled?: boolean;
+  styleType?: TagStyleType;
+  closable?: boolean;
+  onClose?: () => void;
+  icon?: 'circle-fill' | 'circle' | 'loading' | 'custom' | ReactNode;
+  disabled?: boolean;
 }
 export declare class Tag extends PureComponent<TagProps> {}
 
 // Popover
 interface PopupAlign {
-    points?: string[];
-    offset?: number[];
+  points?: string[];
+  offset?: number[];
 }
 export type PopoverPlacement =
-    | 'topLeft'
-    | 'top'
-    | 'topRight'
-    | 'bottomLeft'
-    | 'bottom'
-    | 'bottomRight'
-    | 'leftTop'
-    | 'left'
-    | 'leftBottom'
-    | 'rightTop'
-    | 'right'
-    | 'rightBottom';
+  | 'topLeft'
+  | 'top'
+  | 'topRight'
+  | 'bottomLeft'
+  | 'bottom'
+  | 'bottomRight'
+  | 'leftTop'
+  | 'left'
+  | 'leftBottom'
+  | 'rightTop'
+  | 'right'
+  | 'rightBottom';
 export interface GetPopupContainer {
-    (): HTMLElement;
+  (): HTMLElement;
 }
 export interface PopoverProps extends HTMLAttributes<HTMLDivElement> {
-    visible?: boolean;
-    defaultVisible?: boolean;
-    onVisibleChange?: (visible: boolean) => void;
-    trigger?: 'hover' | 'focus' | 'click' | 'contextMenu';
-    alignPoint?: boolean;
-    placement?: PopoverPlacement;
-    align?: PopupAlign;
-    stretch?: 'with' | 'minWidth' | 'height' | 'minHeight';
-    popup?: ReactNode;
-    popupClassName?: string;
-    popupStyle?: CSSProperties;
-    zIndex?: number;
-    getPopupContainer?: GetPopupContainer;
-    forwardPopupContainer?: boolean | GetPopupContainer;
-    prefixCls?: string;
-    animation?: 'fade' | 'zoom' | 'bounce' | 'slide-up';
+  visible?: boolean;
+  defaultVisible?: boolean;
+  onVisibleChange?: (visible: boolean) => void;
+  trigger?: 'hover' | 'focus' | 'click' | 'contextMenu';
+  alignPoint?: boolean;
+  placement?: PopoverPlacement;
+  align?: PopupAlign;
+  stretch?: 'with' | 'minWidth' | 'height' | 'minHeight';
+  popup?: ReactNode;
+  popupClassName?: string;
+  popupStyle?: CSSProperties;
+  zIndex?: number;
+  getPopupContainer?: GetPopupContainer;
+  forwardPopupContainer?: boolean | GetPopupContainer;
+  prefixCls?: string;
+  animation?: 'fade' | 'zoom' | 'bounce' | 'slide-up';
 }
 export declare class Popover extends Component<PopoverProps> {}
 
 // Modal
 interface ModalGetFooter {
-    (): ReactNode;
+  (): ReactNode;
 }
 interface ModalCustomStyle {
-    [key: string]: any;
+  [key: string]: any;
 }
 export interface ModalProps {
-    title?: ReactNode;
-    footer?: ReactNode | ModalGetFooter;
-    visible?: boolean;
-    size?: SizeType;
-    zIndex?: number;
-    closable?: boolean;
-    mask?: boolean;
-    maskClosable?: boolean;
-    keyboard?: boolean;
-    onClose?: Function;
-    onOk?: Function;
-    afterClose?: Function;
-    destroyOnClose?: boolean;
-    maskAnimation?: string;
-    animation?: string;
-    className?: string;
-    wrapClassName?: string;
-    customStyle?: ModalCustomStyle;
-    style?: CSSProperties;
-    bodyStyle?: CSSProperties;
-    maskStyle?: CSSProperties;
+  title?: ReactNode;
+  footer?: ReactNode | ModalGetFooter;
+  visible?: boolean;
+  size?: SizeType;
+  zIndex?: number;
+  closable?: boolean;
+  mask?: boolean;
+  maskClosable?: boolean;
+  keyboard?: boolean;
+  onClose?: Function;
+  onOk?: Function;
+  afterClose?: Function;
+  destroyOnClose?: boolean;
+  maskAnimation?: string;
+  animation?: string;
+  className?: string;
+  wrapClassName?: string;
+  customStyle?: ModalCustomStyle;
+  style?: CSSProperties;
+  bodyStyle?: CSSProperties;
+  maskStyle?: CSSProperties;
 }
 interface ModalConfirmHandle {
-    destroy(): void;
+  destroy(): void;
 }
 interface ModalConfirm {
-    (options: ModalProps): ModalConfirmHandle;
+  (options: ModalProps): ModalConfirmHandle;
 }
 export declare class Modal extends Component<ModalProps> {
-    static confirm: ModalConfirm;
-    static alert: ModalConfirm;
-    static open: ModalConfirm;
+  static confirm: ModalConfirm;
+  static alert: ModalConfirm;
+  static open: ModalConfirm;
 }
 
 // Drawer
 export interface DrawerProps {
-    visible?: boolean;
-    mask?: boolean;
-    maskClosable?: boolean;
-    keyboard?: boolean;
-    onClose?: () => void;
-    destroyOnClose?: boolean;
-    placement?: 'left' | 'right' | 'top' | 'bottom';
-    width?: string | number;
-    height?: string | number;
-    getContainer?: () => ReactNode;
-    zIndex?: number;
-    closeHandler?: null | false;
+  visible?: boolean;
+  mask?: boolean;
+  maskClosable?: boolean;
+  keyboard?: boolean;
+  onClose?: () => void;
+  destroyOnClose?: boolean;
+  placement?: 'left' | 'right' | 'top' | 'bottom';
+  width?: string | number;
+  height?: string | number;
+  getContainer?: () => ReactNode;
+  zIndex?: number;
+  closeHandler?: null | false;
 }
 export declare class Drawer extends Component<DrawerProps> {}
 
 // Table
 export interface TableScroll {
-    x?: number;
-    y?: number;
-    onScroll?: (e: WheelEvent) => void;
+  x?: number;
+  y?: number;
+  onScroll?: (e: WheelEvent) => void;
 }
 type RowKey = () => string;
 export interface RowSelection {
-    fixed?: boolean;
-    onChange?: Function;
-    defaultSelectedRowKeys?: string[];
-    selectedRowKeys?: string[];
-    getDisabledOfRow?: (row: any) => boolean;
-    multiple?: boolean;
-    selectedTip?: boolean | 'button';
-    disabled?: boolean;
+  fixed?: boolean;
+  onChange?: Function;
+  defaultSelectedRowKeys?: string[];
+  selectedRowKeys?: string[];
+  getDisabledOfRow?: (row: any) => boolean;
+  multiple?: boolean;
+  selectedTip?: boolean | 'button';
+  disabled?: boolean;
 }
 interface GetRowClassName {
-    (): string;
+  (): string;
 }
 interface ColumnRender {
-    (col: any, row?: any): ReactNode;
+  (col: any, row?: any): ReactNode;
 }
 export interface Column {
-    key?: string;
-    className?: string;
-    colSpan?: number;
-    title?: ReactNode;
-    dataIndex?: string;
-    width?: string | number;
-    fixed?: 'left' | 'right';
-    render?: ColumnRender;
-    onCellClick?: Function;
-    onCell?: Function;
-    onHeaderCell?: Function;
-    [key: string]: any;
+  key?: string;
+  className?: string;
+  colSpan?: number;
+  title?: ReactNode;
+  dataIndex?: string;
+  width?: string | number;
+  fixed?: 'left' | 'right';
+  render?: ColumnRender;
+  onCellClick?: Function;
+  onCell?: Function;
+  onHeaderCell?: Function;
+  [key: string]: any;
 }
 interface DefaultColumnConfig {
-    [key: string]: string;
+  [key: string]: string;
 }
 interface TableRowBack extends HTMLTableDataCellElement {}
 interface TableCustomStyle {
-    outerPadding?: string;
-    [key: string]: any;
+  outerPadding?: string;
+  [key: string]: any;
 }
 interface TableDefaultOrder {
-    key: string;
-    state: 'desc' | 'asc';
+  key: string;
+  state: 'desc' | 'asc';
 }
 export interface TableConditionChangeEventOrder {
-    order: string;
-    filter: string[];
-    searchValue: string;
+  order: string;
+  filter: string[];
+  searchValue: string;
 }
 interface ConditionChangeEvent {
-    (condition: TableConditionChangeEventOrder): void;
+  (condition: TableConditionChangeEventOrder): void;
 }
 interface TableContextMenu {
-    (row: object, hide: boolean): ReactNode;
+  (row: object, hide: boolean): ReactNode;
 }
 export interface TableProps {
-    pagination?: PaginationProps;
-    dataSource?: any[];
-    columns?: Column[];
-    columnPlaceholder?: boolean;
-    defaultColumnConfig?: DefaultColumnConfig;
-    onColumnConfigChange?: (config: DefaultColumnConfig) => void;
-    expandedRowRender?: (row: any) => ReactNode;
-    expandIconAsCell?: boolean;
-    expandIconColumnIndex?: number;
-    hideExpandIcon?: boolean;
-    defaultExpandedRowKeys?: string[];
-    expandedRowKeys?: string[];
-    defaultExpandAllRows?: boolean;
-    onExpandedRowsChange?: (row: any) => void;
-    onExpand?: Function;
-    onRow?: (row: any, index: number) => TableRowBack;
-    onHeaderRow?: (row: any, index: number) => TableRowBack;
-    rowSelection?: RowSelection | true;
-    onRowSelect?: (keys: string[]) => void;
-    showHeader?: boolean;
-    title?: () => ReactNode;
-    footer?: () => ReactNode;
-    emptyContent?: ReactNode;
-    errorContent?: ReactNode;
-    handleSearch?: (row: any, searchValue: string) => boolean;
-    customStyle?: TableCustomStyle;
-    scroll?: TableScroll;
-    tableLayout?: 'auto' | 'fixed';
-    rowKey?: string | RowKey;
-    zebraCrossing?: boolean;
-    components?: any;
-    defaultOrder?: TableDefaultOrder;
-    onConditionChange?: ConditionChangeEvent;
-    doNotHandleCondition?: boolean;
-    contextMenu?: TableContextMenu;
-    className?: string;
-    rowClassName?: string | GetRowClassName;
+  pagination?: PaginationProps;
+  dataSource?: any[];
+  columns?: Column[];
+  columnPlaceholder?: boolean;
+  defaultColumnConfig?: DefaultColumnConfig;
+  onColumnConfigChange?: (config: DefaultColumnConfig) => void;
+  expandedRowRender?: (row: any) => ReactNode;
+  expandIconAsCell?: boolean;
+  expandIconColumnIndex?: number;
+  hideExpandIcon?: boolean;
+  defaultExpandedRowKeys?: string[];
+  expandedRowKeys?: string[];
+  defaultExpandAllRows?: boolean;
+  onExpandedRowsChange?: (row: any) => void;
+  onExpand?: Function;
+  onRow?: (row: any, index: number) => TableRowBack;
+  onHeaderRow?: (row: any, index: number) => TableRowBack;
+  rowSelection?: RowSelection | true;
+  onRowSelect?: (keys: string[]) => void;
+  showHeader?: boolean;
+  title?: () => ReactNode;
+  footer?: () => ReactNode;
+  emptyContent?: ReactNode;
+  errorContent?: ReactNode;
+  handleSearch?: (row: any, searchValue: string) => boolean;
+  customStyle?: TableCustomStyle;
+  scroll?: TableScroll;
+  tableLayout?: 'auto' | 'fixed';
+  rowKey?: string | RowKey;
+  zebraCrossing?: boolean;
+  components?: any;
+  defaultOrder?: TableDefaultOrder;
+  onConditionChange?: ConditionChangeEvent;
+  doNotHandleCondition?: boolean;
+  contextMenu?: TableContextMenu;
+  className?: string;
+  rowClassName?: string | GetRowClassName;
 }
 interface ColumnConfigButtonProps extends ButtonProps {
-    modalProps?: ModalProps;
+  modalProps?: ModalProps;
 }
 declare class TableColumnConfigButton extends Component<ColumnConfigButtonProps> {}
 interface TableExpandedRowContentProps extends HTMLAttributes<HTMLDivElement> {}
 declare class TableExpandedRowContent extends Component<TableExpandedRowContentProps> {}
 export declare class Table extends Component<TableProps> {
-    static ColumnConfigButton: typeof TableColumnConfigButton;
-    static SearchInput: typeof SearchInput;
-    static ActionList: typeof ActionList;
-    static ExpandedRowContent: typeof TableExpandedRowContent;
-    static getColumnConfigFromLocalStorage: typeof Function;
-    static setColumnConfigToLocalStorage: typeof Function;
+  static ColumnConfigButton: typeof TableColumnConfigButton;
+  static SearchInput: typeof SearchInput;
+  static ActionList: typeof ActionList;
+  static ExpandedRowContent: typeof TableExpandedRowContent;
+  static getColumnConfigFromLocalStorage: typeof Function;
+  static setColumnConfigToLocalStorage: typeof Function;
 }
 
 // Form
 export interface FormLabelCol {
-    span?: number;
-    offset?: number;
-    pull?: number;
-    push?: number;
+  span?: number;
+  offset?: number;
+  pull?: number;
+  push?: number;
 }
 interface FormItemTip {
-    icon?: ReactNode;
-    content?: ReactNode;
+  icon?: ReactNode;
+  content?: ReactNode;
 }
 export interface FormItemProps extends RowProps {
-    label?: ReactNode;
-    labelCol?: FormLabelCol;
-    controllerCol?: FormLabelCol;
-    help?: ReactNode;
-    required?: boolean;
-    status?: 'default' | 'success' | 'warning' | 'error' | 'loading';
-    shareStatus?: boolean;
-    tip?: ReactNode | FormItemTip;
+  label?: ReactNode;
+  labelCol?: FormLabelCol;
+  controllerCol?: FormLabelCol;
+  help?: ReactNode;
+  required?: boolean;
+  status?: 'default' | 'success' | 'warning' | 'error' | 'loading';
+  shareStatus?: boolean;
+  tip?: ReactNode | FormItemTip;
 }
 export type FormGroupProps = Override<
-    HTMLAttributes<HTMLDivElement>,
-    {
-        title?: ReactNode;
-        itemProps?: FormItemProps;
-    }
+  HTMLAttributes<HTMLDivElement>,
+  {
+    title?: ReactNode;
+    itemProps?: FormItemProps;
+  }
 >;
 export interface FormSubAreaProps extends HTMLAttributes<HTMLFormElement> {
-    itemProps?: FormItemProps;
+  itemProps?: FormItemProps;
 }
 export interface FormProps extends HTMLAttributes<HTMLFormElement> {
-    size?: 'md' | 'lg';
-    itemProps?: FormItemProps;
+  size?: 'md' | 'lg';
+  itemProps?: FormItemProps;
 }
 declare class FormItem extends PureComponent<FormItemProps> {}
 declare class FormGroup extends Component<FormGroupProps> {}
 declare class FormSubArea extends PureComponent<FormSubAreaProps> {}
 export declare class Form extends PureComponent<FormProps> {
-    static Item: typeof FormItem;
-    static Group: typeof FormGroup;
-    static SubArea: typeof FormSubArea;
+  static Item: typeof FormItem;
+  static Group: typeof FormGroup;
+  static SubArea: typeof FormSubArea;
 }
 
 // Card
 export interface CardHeaderProps extends HTMLAttributes<HTMLDivElement> {
-    comment?: ReactNode;
+  comment?: ReactNode;
 }
 declare class CardHeader extends Component<CardHeaderProps> {}
 declare class CardContent extends Component<HTMLAttributes<HTMLDivElement>> {}
@@ -654,124 +658,124 @@ declare class CardFooter extends Component<HTMLAttributes<HTMLDivElement>> {}
 declare class CardAction extends Component<HTMLAttributes<HTMLDivElement>> {}
 export type CardProps = HTMLAttributes<HTMLDivElement>;
 export declare class Card extends PureComponent<CardProps> {
-    static Header: typeof CardHeader;
-    static Content: typeof CardContent;
-    static Footer: typeof CardFooter;
-    static Action: typeof CardAction;
+  static Header: typeof CardHeader;
+  static Content: typeof CardContent;
+  static Footer: typeof CardFooter;
+  static Action: typeof CardAction;
 }
 
 // Steps
 interface Step {
-    key?: string | number;
-    step?: ReactNode;
-    title?: ReactNode;
-    remark?: ReactNode;
+  key?: string | number;
+  step?: ReactNode;
+  title?: ReactNode;
+  remark?: ReactNode;
 }
 export interface StepsProps extends HTMLAttributes<HTMLDivElement> {
-    steps: Step[];
-    current?: string | number;
-    status?: 'current' | 'loading' | 'error';
+  steps: Step[];
+  current?: string | number;
+  status?: 'current' | 'loading' | 'error';
 }
 export declare class Steps extends Component<StepsProps> {}
 
 // Message
 export type MessageProps = Override<
-    HTMLAttributes<HTMLDivElement>,
-    {
-        closable?: boolean;
-        title?: ReactNode;
-        footer?: ReactNode;
-        styleType?: 'default' | 'success' | 'loading' | 'warning' | 'error';
-    }
+  HTMLAttributes<HTMLDivElement>,
+  {
+    closable?: boolean;
+    title?: ReactNode;
+    footer?: ReactNode;
+    styleType?: 'default' | 'success' | 'loading' | 'warning' | 'error';
+  }
 >;
 interface MessageOption {
-    zIndex?: number;
-    style?: CSSProperties;
-    className?: string;
+  zIndex?: number;
+  style?: CSSProperties;
+  className?: string;
 }
 interface MessageHandle {
-    destroy(): void;
+  destroy(): void;
 }
 interface MessageMethod {
-    (content: ReactNode, duration?: number, onClose?: () => void, option?: MessageOption): MessageHandle;
+  (content: ReactNode, duration?: number, onClose?: () => void, option?: MessageOption): MessageHandle;
 }
 interface MessageConfig {
-    duration?: number;
-    getContainer?: () => ReactNode;
-    top?: number;
+  duration?: number;
+  getContainer?: () => ReactNode;
+  top?: number;
 }
 export declare class Message extends Component<MessageProps> {
-    static message: MessageMethod;
-    static info: MessageMethod;
-    static warning: MessageMethod;
-    static success: MessageMethod;
-    static error: MessageMethod;
-    static loading: MessageMethod;
-    static config: (config: MessageConfig) => void;
+  static message: MessageMethod;
+  static info: MessageMethod;
+  static warning: MessageMethod;
+  static success: MessageMethod;
+  static error: MessageMethod;
+  static loading: MessageMethod;
+  static config: (config: MessageConfig) => void;
 }
 
 // Pagination
 interface GetPaginationShowTotal {
-    (total: number): string;
+  (total: number): string;
 }
 interface ShowQuickJumperObject {
-    goButton?: ReactNode;
+  goButton?: ReactNode;
 }
 export type PaginationProps = Override<
-    HTMLAttributes<HTMLUListElement>,
-    {
-        current?: number;
-        defaultCurrent?: number;
-        total?: number;
-        showTotal?: number | GetPaginationShowTotal;
-        pageSize?: number;
-        defaultPageSize?: number;
-        onChange?: (page: number, pageSize: number) => void;
-        onAdvise?: (newCurrent: number, pageSize: number) => void;
-        showSizeChanger?: boolean;
-        showLessItems?: boolean;
-        onPageSizeChange?: (current: number, pageSize: number) => void;
-        showPrevNextJumpers?: boolean;
-        showQuickJumper?: boolean | ShowQuickJumperObject;
-        showTitle?: boolean;
-        pageSizeOptions?: Array<number | string>;
-        simple?: boolean;
-        size?: SizeType;
-    }
+  HTMLAttributes<HTMLUListElement>,
+  {
+    current?: number;
+    defaultCurrent?: number;
+    total?: number;
+    showTotal?: number | GetPaginationShowTotal;
+    pageSize?: number;
+    defaultPageSize?: number;
+    onChange?: (page: number, pageSize: number) => void;
+    onAdvise?: (newCurrent: number, pageSize: number) => void;
+    showSizeChanger?: boolean;
+    showLessItems?: boolean;
+    onPageSizeChange?: (current: number, pageSize: number) => void;
+    showPrevNextJumpers?: boolean;
+    showQuickJumper?: boolean | ShowQuickJumperObject;
+    showTitle?: boolean;
+    pageSizeOptions?: Array<number | string>;
+    simple?: boolean;
+    size?: SizeType;
+  }
 >;
 export declare class Pagination extends Component<PaginationProps> {}
 
 // Progress
 interface ProgressFormat {
-    (percent: number): string;
+  (percent: number): string;
 }
 export interface ProgressProps extends HTMLAttributes<HTMLDivElement> {
-    percent?: number;
-    color?: 'success' | 'warn' | 'error' | string;
-    format?: null | ProgressFormat;
+  percent?: number;
+  color?: 'success' | 'warn' | 'error' | string;
+  format?: null | ProgressFormat;
 }
 export declare class Progress extends Component<ProgressProps> {}
 
 // Loading
 export interface LoadingProps extends HTMLAttributes<HTMLDivElement> {
-    loading?: boolean;
-    indicator?: ReactNode;
-    tip?: ReactNode;
-    maskStyle?: CSSProperties;
-    maskClassName?: string;
+  loading?: boolean;
+  indicator?: ReactNode;
+  tip?: ReactNode;
+  maskStyle?: CSSProperties;
+  maskClassName?: string;
 }
 export declare class Loading extends Component<LoadingProps> {}
 
 // LocaleProvider
 interface LocaleProviderProps {
-    children?: ReactNode;
-    locale?: any;
+  children?: ReactNode;
+  locale?: any;
 }
 export declare class LocaleProvider extends Component<LocaleProviderProps> {}
 
 // ThemeProvider
 interface ThemeProviderProps {
-    theme: any;
+  theme: any;
 }
 export declare class ThemeProvider extends Component<ThemeProviderProps> {}
 
