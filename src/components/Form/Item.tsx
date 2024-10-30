@@ -19,7 +19,7 @@ import {
   GridControllerWrap
 } from './style';
 
-const HelpWithoutMemo = ({ help, textAlign }: { help: ReactNode, textAlign?: "left" | "right" }) => {
+const HelpWithoutMemo = ({ help, textAlign }: { help: ReactNode; textAlign?: 'left' | 'right' }) => {
   return help ? (
     <Tooltip
       popup={help}
@@ -72,7 +72,7 @@ export interface DefinedItemProps {
       }
     | ReactNode;
   /** 表单label位置 */
-  textAlign?: "left" | "right";
+  textAlign?: 'left' | 'right';
 }
 
 export type ItemProps = DefinedItemProps & Omit<InputHTMLAttributes<HTMLDivElement>, keyof DefinedItemProps>;
@@ -120,18 +120,20 @@ const GridItem = (props: ItemProps) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     shareStatus,
     help,
-    textAlign = "right",
+    textAlign = 'right',
     ...rest
   } = props;
 
   const item = (
     <GridItemWrap {...rest}>
-      <GridLabelWrap textAlign={textAlign} {...labelCol} >
-        {textAlign === "right" && <Help help={help} textAlign={textAlign} />}
-        {textAlign === "right" && required && <RequiredLabel textAlign={textAlign}>*</RequiredLabel>}
-        {label}
-        {textAlign === "left" && required && <RequiredLabel textAlign={textAlign}>*</RequiredLabel>}
-        {textAlign === "left" && <Help help={help} textAlign={textAlign} />}
+      <GridLabelWrap textAlign={textAlign} {...labelCol}>
+        <div className="GridLabel_container">
+          {textAlign === 'right' && <Help help={help} textAlign={textAlign} />}
+          {textAlign === 'right' && required && <RequiredLabel textAlign={textAlign}>*</RequiredLabel>}
+          {label}
+          {textAlign === 'left' && required && <RequiredLabel textAlign={textAlign}>*</RequiredLabel>}
+          {textAlign === 'left' && <Help help={help} textAlign={textAlign} />}
+        </div>
       </GridLabelWrap>
       <GridControllerWrap {...controllerCol}>
         {children}
@@ -160,10 +162,11 @@ const UnGridItem = (props: ItemProps) => {
   return (
     <ItemWrap {...rest}>
       <LabelWrap label={label} {...labelCol}>
-        {label}
-        {required && <RequiredLabel>*</RequiredLabel>}
-        {/* {help && <CommentWrap>{help}</CommentWrap>} */}
-        <Help help={help} />
+        <div className="unGridLabel_container">
+          {label}
+          {required && <RequiredLabel>*</RequiredLabel>}
+          <Help help={help} />
+        </div>
       </LabelWrap>
       <ControllerWrap {...controllerCol}>
         {children}
