@@ -29,7 +29,7 @@ export const GridItemWrap = styled(
 )();
 
 export const GridLabelWrap = sWrap<{ textAlign?: string }>({
-  className: labelCls,
+  className: labelCls
 })(
   styled(Col)(props => {
     const {
@@ -44,6 +44,12 @@ export const GridLabelWrap = sWrap<{ textAlign?: string }>({
       color: ${DT.TEXT_SECOND_Title_COLOR};
       font-size: ${DT.TEXT_SECOND_TITLE_FONT_BASE};
       text-align: ${textAlign};
+
+      .GridLabel_container {
+        display: flex;
+        align-items: center;
+        justify-content: ${textAlign === 'right' ? 'flex-end' : 'flex-start'};
+      }
     `;
   })
 );
@@ -76,6 +82,11 @@ export const LabelWrap = sWrap<{ label?: ReactNode }>({
       font-size: ${DT.TEXT_SECOND_TITLE_FONT_BASE};
       margin-bottom: ${label ? DT.T_FORMITEM_LABEL_MB : 0};
       word-break: break-word;
+
+      .unGridLabel_container {
+        display: flex;
+        align-items: center;
+      }
     `;
   })
 );
@@ -202,21 +213,21 @@ export const RequiredLabel = sWrap<{ textAlign?: string }>()(
       theme: { designTokens: DT },
       textAlign
     } = props;
-    return  css`
-      ${textAlign === "right" ? `margin-right: 4px;` : `margin-left: 4px`};
+    return css`
+      ${textAlign === 'right' ? `margin-right: 4px;` : `margin-left: 4px`};
       color: ${DT.T_COLOR_TEXT_ERROR};
     `;
   })
 );
 
-export const HelpIcon = sWrap<{ type: string; size?: string, textAlign?: string }>()(
+export const HelpIcon = sWrap<{ type: string; size?: string; textAlign?: string }>()(
   styled(SvgIcon)(props => {
     const {
       theme: { designTokens: DT },
       textAlign
     } = props;
     return css`
-      ${textAlign === "right" ? `margin-right: 8px;` : `margin-left: 8px`};
+      ${textAlign === 'right' ? `margin-right: 4px;` : `margin-left: 4px`};
       vertical-align: middle;
       fill: ${DT.T_COLOR_TEXT_PRIMARY_DEFAULT};
     `;
