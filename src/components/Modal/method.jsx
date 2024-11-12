@@ -13,7 +13,8 @@ class ModalWrap extends PureComponent {
     static propTypes = {
         reportUpdate: PropTypes.func
     };
-    componentWillMount() {
+    constructor(props) {
+        super(props);
         this.props.reportUpdate(this.update);
     }
     update = props => {
@@ -34,14 +35,16 @@ const pop = props => {
     const container = document.createElement('div');
     document.body.appendChild(container);
     const destroy = () => {
-        const result = ReactDOM.unmountComponentAtNode(container);
-        if (result && container.parentElement) {
+        const root = ReactDOM.createRoot(container);
+        root.unmount();
+        if (container.parentElement) {
             container.parentElement.removeChild(container);
         }
     };
 
     let update = null;
-    ReactDOM.render(<ModalWrap {...props} reportUpdate={_update => (update = _update)} />, container);
+    const root = ReactDOM.createRoot(container);
+    root.render(<ModalWrap {...props} reportUpdate={_update => (update = _update)} />);
 
     return {
         destory: () => {
@@ -57,13 +60,14 @@ const openModal = modal => {
     const container = document.createElement('div');
     document.body.appendChild(container);
     const destroy = () => {
-        const result = ReactDOM.unmountComponentAtNode(container);
-        if (result && container.parentElement) {
+        const root = ReactDOM.createRoot(container);
+        root.unmount();
+        if (container.parentElement) {
             container.parentElement.removeChild(container);
         }
     };
-
-    ReactDOM.render(<ThemeProvider theme={getRuntimeTheme()}>{modal}</ThemeProvider>, container);
+    const root = ReactDOM.createRoot(container);
+    root.render(<ThemeProvider theme={getRuntimeTheme()}>{modal}</ThemeProvider>);
 
     return {
         destroy

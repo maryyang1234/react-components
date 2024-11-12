@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode, useCallback, useMemo, useRef } from 'react';
+import React, { HTMLAttributes, ReactElement, ReactNode, useCallback, useMemo, useRef } from 'react';
 import classnames from 'classnames';
 
 import Checkbox from 'src/components/Checkbox';
@@ -116,7 +116,7 @@ export const strictGroupChildrenAsDataSource = (
 
                     childrenMap.set(key, props.children);
                     renderChildren.push(
-                        React.cloneElement(child, {
+                        React.cloneElement(child as ReactElement, {
                             [itemKeyName]: key,
                             disabled: globalDisabled || isDisabled,
                             isFirst,
@@ -141,7 +141,7 @@ export const strictGroupChildrenAsDataSource = (
 
                     return renderChildren.push(
                         React.cloneElement(
-                            child,
+                            child as React.ReactElement,
                             {
                                 disabled: globalDisabled || isDisabled,
                                 [subGroupKeyName]: key,

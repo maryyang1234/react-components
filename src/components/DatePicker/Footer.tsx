@@ -67,7 +67,7 @@ const Footer = ({ mode, confirmAble, onConfirm, shortcuts, onShortcut, tip, loca
         shortcuts = [];
     }
     const handleShortcutClick = useCallback(
-        i => {
+        (i:any)=> {
             const shortcut = shortcuts?.[i];
             if (!shortcut) return;
             const d = shortcut.handle();

@@ -142,7 +142,13 @@ const ActionMenu = ({
             {dropdownButton}
           </Button>
         ) : (
-          <Button {...dropdownButton} />
+            typeof dropdownButton === 'object' ? (
+                <Button {...dropdownButton as ButtonProps} />
+              ) : (
+                <Button size={size} styleType={buttonStyleType}>
+                  {dropdownButton}
+                </Button>
+              )
         )
       ) : (
         <Button size={size} styleType={buttonStyleType} icon={<SvgIcon type="ellipsis" />} />

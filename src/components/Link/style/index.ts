@@ -7,7 +7,7 @@ import styledWrap from 'src/utils/styledWrap';
 const { prefixCls: _prefixCls } = config;
 export const prefixCls = _prefixCls + '-link';
 
-export const SLink = styledWrap<unknown, HTMLAnchorElement>({ className: prefixCls })(
+export const SLink = styledWrap<unknown & { className?: string }, HTMLAnchorElement>({ className: prefixCls })(
     styled.a(props => {
         const {
             theme: { designTokens: DT }

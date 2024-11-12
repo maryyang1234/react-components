@@ -46,9 +46,9 @@ const Calendar = ({
     }, [rules]);
     const handleChange = useCallback(
         (v: TDate) => {
-            v = getValidDate(v, rules);
-            onChange && onChange(v);
-            onSelect && onSelect(v);
+            const inner_v = getValidDate(v, rules);
+            onChange && onChange(inner_v);
+            onSelect && onSelect(inner_v);
         },
         [onChange, onSelect, rules]
     );
@@ -57,7 +57,7 @@ const Calendar = ({
         locale.months,
         locale.weekdays
     ]);
-    const renderHeaderSwitcher = useCallback(props => <HeaderSwitcher {...props} locale={locale} />, [locale]);
+    const renderHeaderSwitcher = useCallback((props: any) => <HeaderSwitcher {...props} locale={locale} />, [locale]);
 
     return (
         <SCalendar

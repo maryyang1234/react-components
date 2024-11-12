@@ -56,7 +56,7 @@ export const getMiddleHeightBySize = (DT: DesignTokens, size: Size) => {
 
 export const offsetHeightBySize = (DT: DesignTokens, size: Size, offset: number) => {
     const sizeValue = getHeightBySize(DT, size);
-    return offsetValue(sizeValue, offset);
+    return offsetValue(String(sizeValue), offset);
 };
 
 export const getPaddingBySize = (DT: DesignTokens, size: Size) => {
@@ -66,7 +66,7 @@ export const getPaddingBySize = (DT: DesignTokens, size: Size) => {
 
 export const offsetPaddingBySize = (DT: DesignTokens, size: Size, offset: number) => {
     const sizeValue = getPaddingBySize(DT, size);
-    return offsetValue(sizeValue, offset);
+    return offsetValue(String(sizeValue), offset);
 };
 
 export const ignoreProps = (...props: string[]) => {

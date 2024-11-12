@@ -45,6 +45,8 @@ const uncontrolledDecorator = <T, ChildProps = any>(option?: {
     });
 
     hoistStatics(UncontrolledWrappedComponent, Child);
+    // TODO
+    // @ts-ignore
     return UncontrolledWrappedComponent;
 };
 

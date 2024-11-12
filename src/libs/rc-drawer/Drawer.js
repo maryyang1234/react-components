@@ -110,7 +110,7 @@ class Drawer extends React.PureComponent {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const { open, placement, getContainer } = nextProps;
         if (open !== undefined && open !== this.props.open) {
             this.isOpenChange = true;

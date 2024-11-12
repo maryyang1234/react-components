@@ -32,8 +32,8 @@ const Combine = ({ children, sharedProps = {}, spacing = 'smart', separator, ...
                 const _child = (
                     <div className={itemCls}>
                         {React.isValidElement(child)
-                            ? React.cloneElement(child, {
-                                  ...sharedProps,
+                            ? React.cloneElement(child as React.ReactElement, {
+                                ...(sharedProps as {[key: string]: any}),
                                   className: classnames(child.props.className, sharedProps.className)
                               })
                             : child}

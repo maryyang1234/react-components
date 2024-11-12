@@ -255,8 +255,7 @@ class Table extends Component {
             if (column.key === undefined) missingColumnKeyWarn();
         });
     };
-    // eslint-disable-next-line react/no-deprecated
-    componentWillReceiveProps = nextProps => {
+    UNSAFE_componentWillReceiveProps = nextProps => {
         const { rowSelection } = nextProps;
         if (_.isObject(rowSelection) && 'selectedRowKeys' in rowSelection) {
             const selectedRowKeyMap = {};

@@ -27,7 +27,7 @@ export const ExportComponent = <C extends ComponentType<any>, P extends Record<s
     return ExportComponent;
 };
 
-export const FunctionToClassComponent = <T>(FComponent: FC<T>): ComponentClass<T> => {
+export const FunctionToClassComponent = <T extends Record<string, any>>(FComponent: FC<T>): ComponentClass<T> => {
     class ClassComponent extends Component<T> {
         // extend ref properties to this
         saveRef = (ref: any) => {

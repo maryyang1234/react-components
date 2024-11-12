@@ -1,7 +1,8 @@
-import React, { Key, ReactNode, useContext, useMemo } from 'react';
+import React, { ReactNode, useContext, useMemo } from 'react';
 
 import SelectContext from './SelectContext';
 import { OptionWrap } from './style';
+import { Key } from 'src/hooks/group';
 
 export interface OptionProps {
     /** 值，会被用作 key */

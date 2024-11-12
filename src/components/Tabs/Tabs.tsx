@@ -40,7 +40,7 @@ function getNextActiveKey(panes: Panes, currentKey: Key, next?: boolean): Key {
 const getPanesFromChildren = (children: ReactNode) => {
     const panes: Panes = [];
     React.Children.forEach(children, (pane, index) => {
-        if (React.isValidElement(pane)) {
+        if (React.isValidElement<TabPaneProps>(pane)) {
             panes.push({
                 pane,
                 key: pane.key == null ? `__default_tab_key_${index}` : pane.key + ''

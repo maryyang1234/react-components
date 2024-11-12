@@ -105,7 +105,7 @@ const TimePicker = ({
     const [visible, setVisible] = useState(false);
     const [active, setActive] = useState(false);
     const defaultTime = useMemo(() => moment().startOf('date'), []);
-    const avoidBlur = useCallback(e => e.preventDefault(), []);
+    const avoidBlur = useCallback((e: any) => e.preventDefault(), []);
     const format = _format || DefaultFormat;
     const handleConfirm = useCallback(() => {
         setVisible(false);

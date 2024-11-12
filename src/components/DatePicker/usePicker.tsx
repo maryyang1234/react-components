@@ -222,7 +222,7 @@ const usePicker = <D,>(
     );
 
     const popoverConfigProps = usePopoverConfig();
-    const avoidBlur = useCallback(e => e.preventDefault(), []);
+    const avoidBlur = useCallback((e: any) => e.preventDefault(), []);
 
     const inputProps = {
         value: inputValue,

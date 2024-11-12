@@ -132,7 +132,7 @@ const TabBarRootNode = ({
     let newChildren = children;
     if (extraContent) {
         if (React.isValidElement(extraContent)) {
-            extraContent = cloneElement(extraContent, {
+            extraContent = cloneElement(extraContent as  React.ReactElement, {
                 key: 'extra',
                 style: {
                     ...tabBarExtraContentStyle,
@@ -516,6 +516,7 @@ const ScrollableTabBarNode = ({
     const prevButton = (
         <span
             onClick={onPrev}
+            // eslint-disable-next-line react/no-unknown-property
             unselectable="on"
             className={classnames({
                 [`${prefixCls}-tab-prev`]: 1,
@@ -530,6 +531,7 @@ const ScrollableTabBarNode = ({
     const nextButton = (
         <span
             onClick={onNext}
+            // eslint-disable-next-line react/no-unknown-property
             unselectable="on"
             className={classnames({
                 [`${prefixCls}-tab-next`]: 1,

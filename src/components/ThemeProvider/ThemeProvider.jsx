@@ -34,7 +34,7 @@ class ThemeProvider extends Component {
     getMergedTheme = theme => {
         return generateTheme(theme);
     };
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const { theme } = nextProps;
         if (JSON.stringify(theme) !== this.cache) {
             const mergedTheme = this.getMergedTheme(theme);

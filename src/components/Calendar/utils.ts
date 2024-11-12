@@ -34,7 +34,7 @@ export const getDisabledRule = (
 };
 
 export const isDateDisabled = (date: TDate, value?: TDate | null, rules?: Rules) => {
-    date = moment(+date);
+    const inner_date = moment(+date);
     if (!rules) {
         return false;
     }
@@ -42,26 +42,26 @@ export const isDateDisabled = (date: TDate, value?: TDate | null, rules?: Rules)
     if (range) {
         const [start, end] = range;
         if (
-            (start != null && moment(date).endOf('date') < start) ||
-            (end != null && moment(date).startOf('date') > end)
+            (start != null && moment(inner_date).endOf('date') < start) ||
+            (end != null && moment(inner_date).startOf('date') > end)
         ) {
             return true;
         }
     }
     if (custom) {
-        return custom(date, value == null ? value : moment(+value));
+        return custom(inner_date, value == null ? value : moment(+value));
     }
 };
 
 const isMonthDisabled = (date: TDate, rules?: Rules) => {
-    date = moment(+date);
+    const inner_date = moment(+date);
     if (!rules) return false;
     const { range } = rules;
     if (range) {
         const [start, end] = range;
         if (
-            (start != null && moment(date).endOf('month') < start) ||
-            (end != null && moment(date).startOf('month') > end)
+            (start != null && moment(inner_date).endOf('month') < start) ||
+            (end != null && moment(inner_date).startOf('month') > end)
         ) {
             return true;
         }
@@ -69,14 +69,14 @@ const isMonthDisabled = (date: TDate, rules?: Rules) => {
 };
 
 const isYearDisabled = (date: TDate, rules?: Rules) => {
-    date = moment(+date);
+    const inner_date = moment(+date);
     if (!rules) return false;
     const { range } = rules;
     if (range) {
         const [start, end] = range;
         if (
-            (start != null && moment(date).endOf('year') < start) ||
-            (end != null && moment(date).startOf('year') > end)
+            (start != null && moment(inner_date).endOf('year') < start) ||
+            (end != null && moment(inner_date).startOf('year') > end)
         ) {
             return true;
         }
@@ -84,7 +84,7 @@ const isYearDisabled = (date: TDate, rules?: Rules) => {
 };
 
 const isDecadeDisabled = (date: TDate, rules?: Rules) => {
-    date = moment(+date);
+    const inner_date = moment(+date);
     if (!rules) return false;
     const { range } = rules;
     if (range) {
@@ -92,10 +92,10 @@ const isDecadeDisabled = (date: TDate, rules?: Rules) => {
         const baseYear = (((date as Moment).year() / 10) | 0) * 10;
         if (
             (start != null &&
-                moment(date)
+                moment(inner_date)
                     .set('year', baseYear + 10)
                     .endOf('year') < start) ||
-            (end != null && moment(date).set('year', baseYear).startOf('year') > end)
+            (end != null && moment(inner_date).set('year', baseYear).startOf('year') > end)
         ) {
             return true;
         }

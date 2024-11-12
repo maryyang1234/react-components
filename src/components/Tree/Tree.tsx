@@ -179,7 +179,7 @@ const CommonTree = forwardRef(
         const stateRef = useRef({ selectedMap, selectedKeys });
 
         const handleDiff = useCallback(
-            newSelectedKeys => {
+            (newSelectedKeys: any[]) => {
                 if (!onDiff) return;
                 const selectKeys = [];
                 const unselectKeys = [];
@@ -209,7 +209,7 @@ const CommonTree = forwardRef(
         );
 
         const finalOnChange = useCallback(
-            selectedKeys => {
+            (selectedKeys: any[]) => {
                 onChange(selectedKeys);
                 handleDiff(selectedKeys);
             },
@@ -272,7 +272,7 @@ const CommonTree = forwardRef(
         );
 
         const onSelect = useCallback(
-            _selectedMap => {
+            (_selectedMap: any) => {
                 let selectedKeys;
                 if (multiple) {
                     const { selectedMap } = stateRef.current;

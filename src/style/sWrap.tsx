@@ -16,7 +16,7 @@ type Input<Props extends { className?: string }> = Omit<Partial<Props>, 'classNa
  * @param input {object} 需要注入组件的 props
  */
 const sWrap = <Props, IHTMLElement = HTMLElement>(
-    input?: Input<Props>,
+    input?: Input<Props & { className?: string }>,
     options?: {
         ignoreProps?: (keyof Props)[];
     }
@@ -57,6 +57,8 @@ const sWrap = <Props, IHTMLElement = HTMLElement>(
             const Com = (Comp as unknown) as FC;
             return <Com {...result} ref={ref} />;
         };
+        // TODO
+        // @ts-ignore
         return forwardRef(WithThemeComponent);
     };
 };

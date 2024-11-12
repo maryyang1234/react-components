@@ -105,7 +105,7 @@ const AutoComplete = ({
             e.stopPropagation();
         }
     }, []);
-    const handleVisibleChange = useCallback(visible => setVisible(visible), []);
+    const handleVisibleChange = useCallback((visible: boolean) => setVisible(visible), []);
     const onSelect = useCallback(
         (v: string) => {
             onChange(v);

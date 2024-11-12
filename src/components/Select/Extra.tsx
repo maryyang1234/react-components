@@ -16,7 +16,7 @@ const Extra = ({
 } & HTMLAttributes<HTMLDivElement>) => {
     const { hidePopup } = useContext(SelectContext);
     const handleClick = useCallback(
-        e => {
+        (e: any) => {
             if (autoHidePopup) hidePopup();
             onClick?.(e);
         },

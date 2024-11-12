@@ -123,7 +123,7 @@ class Pagination extends Component {
         };
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if ('pageSize' in nextProps) {
             this.setState({
                 pageSize: nextProps.pageSize
@@ -336,6 +336,7 @@ class Pagination extends Component {
         // 简易
         if (simple) {
             return (
+                // eslint-disable-next-line react/no-unknown-property
                 <ul className={classnames(wrapClassName, `${prefixCls}-simple`)} unselectable="unselectable" {...rest}>
                     <NumberInput
                         size={size}

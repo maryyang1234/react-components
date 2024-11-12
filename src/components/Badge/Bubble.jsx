@@ -1,6 +1,5 @@
 /* eslint-disable react/no-find-dom-node */
 import React, { PureComponent } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 import RcAlign from 'src/libs/rc-align';
@@ -16,6 +15,8 @@ const Size = ['sm', 'md'];
  * 后续会移除，请使用 Badge 替代
  */
 export class Bubble extends PureComponent {
+    bubbleRef = React.createRef();
+
     static propTypes = {
         /** @ignore */
         children: PropTypes.node,
@@ -62,11 +63,11 @@ export class Bubble extends PureComponent {
             ...rest
         } = this.props;
         return (
-            <SWrap {...rest}>
+            <SWrap {...rest} ref={this.bubbleRef}>
                 {children}
                 {bubble && (
                     <RcAlign
-                        target={getBubbleTarget || (() => ReactDOM.findDOMNode(this))}
+                        target={getBubbleTarget || (() => this.bubbleRef.current)}
                         align={{ ...bubblePlacement, targetOffset: offset }}
                     >
                         <SBubbleWrap styleType={styleType} customStyle={customStyle} size={size}>

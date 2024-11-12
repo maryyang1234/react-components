@@ -30,47 +30,47 @@ const isRangeDateValid = (
     },
     precision?: Precision | null
 ) => {
-    let [start, end] = value;
-    start = start == null ? null : moment(+start);
-    end = end == null ? null : moment(+end);
+    const [start, end] = value;
+    const inner_start = start == null ? null : moment(+start);
+    const inner_end = end == null ? null : moment(+end);
     if (precision) {
-        start && start.startOf(precision);
-        end && end.startOf(precision);
+        inner_start && inner_start.startOf(precision);
+        inner_end && inner_end.startOf(precision);
     }
     const { range, maxRange, minRange } = rules;
     if (range) {
-        let [s, e] = range;
-        s = s == null ? null : moment(+s);
-        e = e == null ? null : moment(+e);
+        const  [s, e] = range;
+        const inner_s = s == null ? null : moment(+s);
+        const inner_e = e == null ? null : moment(+e);
         if (precision) {
-            s && s.startOf(precision);
-            e && e.startOf(precision);
+            inner_s && inner_s.startOf(precision);
+            inner_e && inner_e.startOf(precision);
         }
-        if (s != null && start != null && start < s) {
+        if (inner_s != null && start != null && start < inner_s) {
             return 'rangeError';
         }
-        if (e != null && end != null && end > e) {
+        if (inner_e != null && end != null && end > inner_e) {
             return 'rangeError';
         }
     }
 
-    if (start == null || end == null) {
+    if (inner_start == null || inner_end == null) {
         return true;
     }
-    if (start > end) {
+    if (inner_start > inner_end) {
         return 'startGreaterThanEnd';
     }
-    if (maxRange && moment(start).add(maxRange) < end) {
+    if (maxRange && moment(inner_start).add(maxRange) < inner_end) {
         return 'maxRangeError';
     }
-    if (minRange && moment(end).subtract(minRange) < start) {
+    if (minRange && moment(inner_end).subtract(minRange) < inner_start) {
         return 'minRangeError';
     }
     return true;
 };
 
 const isDateValid = (date: TDate, value?: TDate | null, rules?: Rules) => {
-    date = moment(+date);
+    const inner_date = moment(+date);
     if (!rules) {
         return false;
     }
@@ -79,14 +79,14 @@ const isDateValid = (date: TDate, value?: TDate | null, rules?: Rules) => {
         let [start, end] = range;
         if (start != null) start = moment(+start).startOf('second');
         if (end != null) end = moment(+end).startOf('second');
-        const v = date.startOf('second');
+        const v = inner_date.startOf('second');
 
         if ((start != null && v < start) || (end != null && v > end)) {
             return true;
         }
     }
     if (custom) {
-        return custom(date, value == null ? value : moment(+value));
+        return custom(inner_date, value == null ? value : moment(+value));
     }
 };
 

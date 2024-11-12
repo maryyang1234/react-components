@@ -17,7 +17,8 @@ const messageContainerDom = document.createElement('div');
 
 const mainContainerDom = config.getContainer();
 let containerRef;
-ReactDOM.render(
+const root = ReactDOM.createRoot(messageContainerDom);
+root.render(
     <MessageContainer ref={ref => (containerRef = ref)} id="uc-fe-message-content-wrap" top={config.top} />,
     messageContainerDom
 );
