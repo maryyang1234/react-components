@@ -20,7 +20,7 @@ const isBuildInSpacing = (spacing: string): spacing is keyof typeof spacingMap =
   return Object.prototype.hasOwnProperty.call(spacingMap, spacing);
 };
 
-export const CombineWrap = styledWrap<{ spacing: string }>({
+export const CombineWrap = styledWrap<{ spacing: string } & { className?: string | undefined; }>({
   className: prefixCls
 })(
   styled('div')(props => {
@@ -32,7 +32,7 @@ export const CombineWrap = styledWrap<{ spacing: string }>({
     if (spacing === 'compact') {
       space = '-1px';
     } else if (isBuildInSpacing(spacing)) {
-      space = DT[spacingMap[spacing]];
+      space = String(DT[spacingMap[spacing]]);
     } else {
       space = spacing;
     }

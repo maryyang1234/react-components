@@ -44,7 +44,7 @@ const menuStyle = ({
   theme: Theme;
 }) => {
   const { maxWidth } = customStyle;
-  const isFirefox = window && window?.navigator?.userAgent?.indexOf?.('Firefox') > -1;
+  const isFirefox = typeof window !== 'undefined' && window && window?.navigator?.userAgent?.indexOf?.('Firefox') > -1;
   return css`
     display: inline-block;
     box-sizing: border-box;

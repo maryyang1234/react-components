@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, memo, useCallback, useMemo } from 'react';
 import { Moment } from 'moment';
-import { TDate } from '@z-r/calendar/types/interface';
+import { TDate } from '@ucloud-pccl/calendar/types/interface';
 
 import { Override } from 'src/type';
 import useLocale from 'src/components/LocaleProvider/useLocale';
@@ -46,9 +46,9 @@ const Month = ({
     }, [rules]);
     const handleChange = useCallback(
         (v: TDate) => {
-            v = getValidDate(v, rules);
-            onChange && onChange(v);
-            onSelect && onSelect(v);
+            const inner_v = getValidDate(v, rules);
+            onChange && onChange(inner_v);
+            onSelect && onSelect(inner_v);
         },
         [onChange, onSelect, rules]
     );
@@ -57,7 +57,7 @@ const Month = ({
         locale.months,
         locale.weekdays
     ]);
-    const renderHeaderSwitcher = useCallback(props => <HeaderSwitcher {...props} locale={locale} />, [locale]);
+    const renderHeaderSwitcher = useCallback((props: any) => <HeaderSwitcher {...props} locale={locale} />, [locale]);
 
     return (
         <SMonthCalendar

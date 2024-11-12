@@ -1,5 +1,5 @@
 import React, { memo, ReactNode, useCallback } from 'react';
-import { TDate } from '@z-r/calendar/types/interface';
+import { TDate } from '@ucloud-pccl/calendar/types/interface';
 
 import Button from 'src/components/Button';
 import Box from 'src/components/Box';
@@ -67,7 +67,7 @@ const Footer = ({ mode, confirmAble, onConfirm, shortcuts, onShortcut, tip, loca
         shortcuts = [];
     }
     const handleShortcutClick = useCallback(
-        i => {
+        (i:any)=> {
             const shortcut = shortcuts?.[i];
             if (!shortcut) return;
             const d = shortcut.handle();

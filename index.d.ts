@@ -1,4 +1,6 @@
-import type { CSSProperties, ReactNode, Component, PureComponent, HTMLAttributes } from 'react';
+import type { CSSProperties, ReactNode, Component, PureComponent, HTMLAttributes, PropsWithChildren } from 'react';
+
+import { Size } from "./src/type"
 
 // 忽略 T 对象中 键在 K 中的所有的属性
 type Override<T1, T2> = Omit<T1, keyof T2> & T2;
@@ -28,7 +30,7 @@ export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
   flex?: string;
   cleanMargin?: boolean;
 }
-export declare class Box extends PureComponent<BoxProps> {}
+export declare class Box extends PureComponent<PropsWithChildren<BoxProps>> {}
 
 // Row
 export type RowType = 'flex';
@@ -134,8 +136,8 @@ export interface RadioGroupProps {
   size?: SizeType;
   styleType?: RadioStyleType;
 }
-declare class RadioGroup extends Component<RadioGroupProps> {}
-export declare class Radio extends Component<RadioProps> {
+declare class RadioGroup extends Component<PropsWithChildren<RadioGroupProps>> {}
+export declare class Radio extends Component<PropsWithChildren<RadioProps>> {
   static Group: typeof RadioGroup;
 }
 
@@ -270,6 +272,10 @@ export declare class ZForm extends Component<ZFormProps> {
 }
 
 // Transfer
+interface SelectSearch {
+  handleSearch: (searchValue: string, item: any) => boolean;
+}
+
 interface TransferSource {
   title?: ReactNode;
   footer?: ReactNode;
@@ -467,7 +473,7 @@ interface ModalConfirmHandle {
 interface ModalConfirm {
   (options: ModalProps): ModalConfirmHandle;
 }
-export declare class Modal extends Component<ModalProps> {
+export declare class Modal extends Component<PropsWithChildren<ModalProps>> {
   static confirm: ModalConfirm;
   static alert: ModalConfirm;
   static open: ModalConfirm;
@@ -488,7 +494,7 @@ export interface DrawerProps {
   zIndex?: number;
   closeHandler?: null | false;
 }
-export declare class Drawer extends Component<DrawerProps> {}
+export declare class Drawer extends Component<PropsWithChildren<DrawerProps>> {}
 
 // Table
 export interface TableScroll {
@@ -550,6 +556,35 @@ interface ConditionChangeEvent {
 interface TableContextMenu {
   (row: object, hide: boolean): ReactNode;
 }
+
+interface ActionInfo {
+    /** 展示 */
+    label?: ReactNode;
+    /** 点击回调 */
+    onClick?: (e: MouseEvent) => void;
+    /** 子菜单，仅 menu 项有效 */
+    children?: ActionInfo[];
+    /** 提示内容，或自定义 tooltip props */
+    tooltip?: ReactNode | any;
+    /** 禁用 */
+    disabled?: boolean;
+  }
+export interface ActionListProps {
+    /** 操作列表 */
+    actionList: ActionInfo[];
+    /** 暴露的操作数量 */
+    exposeCount?: number;
+    /** 控件尺寸 */
+    size?: Size;
+    /** 操作数量等于 exposeCount+1 时是否直接显示按钮而不是显示下拉菜单 */
+    smart?: boolean;
+    /** 按钮的默认样式类别，参考 Button 的 styleType */
+    buttonStyleType?: ButtonProps['styleType'];
+    /** 自定义更多按钮内容，也可通过传入 object 来定义 props*/
+    dropdownButton?: ReactNode | ButtonProps;
+    /** 弹出层的 popover props */
+    popoverProps?: any;
+  }
 export interface TableProps {
   pagination?: PaginationProps;
   dataSource?: any[];
@@ -593,6 +628,8 @@ interface ColumnConfigButtonProps extends ButtonProps {
   modalProps?: ModalProps;
 }
 declare class TableColumnConfigButton extends Component<ColumnConfigButtonProps> {}
+declare class SearchInput extends Component {}
+declare class ActionList extends Component<ActionListProps> {}
 interface TableExpandedRowContentProps extends HTMLAttributes<HTMLDivElement> {}
 declare class TableExpandedRowContent extends Component<TableExpandedRowContentProps> {}
 export declare class Table extends Component<TableProps> {
@@ -775,6 +812,7 @@ export declare class LocaleProvider extends Component<LocaleProviderProps> {}
 
 // ThemeProvider
 interface ThemeProviderProps {
+  children?: ReactNode;
   theme: any;
 }
 export declare class ThemeProvider extends Component<ThemeProviderProps> {}

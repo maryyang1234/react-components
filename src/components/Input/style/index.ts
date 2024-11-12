@@ -52,7 +52,7 @@ export const SWrap = sWrap<
         const height = getControlHeightBySize(DT, size);
         const fontSize = getControlFontSizeBySize(DT, size);
         const spacing = getControlSpacingBySize(DT, size);
-        const halfSpacing = execSizeCal(spacing, '/2');
+        const halfSpacing = execSizeCal(String(spacing), '/2');
 
         return css`
             position: relative;

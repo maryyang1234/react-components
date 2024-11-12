@@ -16,7 +16,8 @@ const localeConsumerDecorator = ({
 }) => (Child: React.ComponentType<any>) => {
     // eslint-disable-next-line react/display-name
     const LocalConsumerWrappedComponent = React.forwardRef(
-        ({ locale, ...rest }: { locale: LocaleMap; [key: string]: any }, ref) => {
+        (props: Omit<{ [key: string]: any; locale: LocaleMap; }, 'ref'>, ref) => {
+            const { locale, ...rest } = props;
             const localeContext = useContext(LocaleContext);
             const componentLocaleContent = localeContext[localeName];
             const finalLocale = useMemo(() => {

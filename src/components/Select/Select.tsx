@@ -220,7 +220,7 @@ const Selector = ({
 }) => {
   placeholder = useMemo(() => placeholder || locale.placeholder, [locale.placeholder, placeholder]);
   const defaultRenderContent = useCallback(
-    (value, valueChild) => {
+    (value: any, valueChild: any) => {
       if (!multiple) {
         if (value === undefined) {
           return <span className={selectorContentHolder}>{placeholder}</span>;
@@ -353,7 +353,7 @@ const Popup = ({
     [multiple, onChange, handleVisibleChange]
   );
   const handleSearchInput = useCallback(
-    e => {
+    (e: any) => {
       setSearchValue(e.target.value);
     },
     [setSearchValue]

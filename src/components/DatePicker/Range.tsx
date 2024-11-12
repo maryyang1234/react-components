@@ -10,7 +10,7 @@ import React, {
     useContext
 } from 'react';
 import moment, { Moment } from 'moment';
-import { TDate } from '@z-r/calendar/types/interface';
+import { TDate } from '@ucloud-pccl/calendar/types/interface';
 
 import useUncontrolled from 'src/hooks/useUncontrolled';
 import useLocale from 'src/components/LocaleProvider/useLocale';

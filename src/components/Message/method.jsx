@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from 'emotion-theming';
 
 import { getRuntimeTheme } from 'src/components/ThemeProvider/runtime';
@@ -9,20 +9,26 @@ import MessageContainer from './MessageContainer';
 
 const config = {
     duration: 4500,
-    getContainer: () => document.body,
+    getContainer: () => document ? document.body : null,
     top: 20
 };
 
-const messageContainerDom = document.createElement('div');
+let messageContainerDom;
+if (typeof document !== 'undefined') {
+    messageContainerDom = document.createElement('div');
+}
 
-const mainContainerDom = config.getContainer();
+let mainContainerDom;
+if (typeof document !== 'undefined') {
+    mainContainerDom = config.getContainer();
+}
 let containerRef;
-ReactDOM.render(
+const root = messageContainerDom ? ReactDOM.createRoot(messageContainerDom) : null;
+root && root.render(
     <MessageContainer ref={ref => (containerRef = ref)} id="uc-fe-message-content-wrap" top={config.top} />,
     messageContainerDom
 );
-
-mainContainerDom.appendChild(messageContainerDom);
+mainContainerDom && mainContainerDom.appendChild(messageContainerDom);
 
 const popupMessage = (message, duration = config.duration, onClose = () => {}) => {
     const messageUid = containerRef.appendMessage(<ThemeProvider theme={getRuntimeTheme()}>{message}</ThemeProvider>);

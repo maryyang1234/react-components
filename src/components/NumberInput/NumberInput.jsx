@@ -152,7 +152,7 @@ class NumberInput extends Component {
         this.componentDidUpdate();
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if ('value' in nextProps) {
             const value = this.state.focused
                 ? nextProps.value
@@ -164,7 +164,7 @@ class NumberInput extends Component {
         }
     }
 
-    componentWillUpdate() {
+    UNSAFE_componentWillUpdate() {
         try {
             this.start = this.input.current.selectionStart;
             this.end = this.input.current.selectionEnd;
@@ -551,6 +551,7 @@ class NumberInput extends Component {
             <div>
                 <span
                     className={classnames(handlerUpCls, (disabled || upDisabled) && handlerDisabledCls)}
+                    // eslint-disable-next-line react/no-unknown-property
                     unselectable="unselectable"
                     disabled={disabled || upDisabled}
                     {...upEvents}
@@ -569,6 +570,7 @@ class NumberInput extends Component {
                 </span>
                 <span
                     className={classnames(handlerDownCls, (disabled || downDisabled) && handlerDisabledCls)}
+                    // eslint-disable-next-line react/no-unknown-property
                     unselectable="unselectable"
                     disabled={disabled || downDisabled}
                     {...downEvents}

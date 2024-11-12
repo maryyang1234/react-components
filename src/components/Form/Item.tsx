@@ -96,7 +96,7 @@ const RenderTip = ({ tip, status }: Pick<ItemProps, 'tip'> & Required<Pick<ItemP
     <Tip spacing="sm" status={status}>
       {finalTip.icon === false ? null : (
         <div className={tipIconCls}>
-          {finalTip.icon || finalTip.icon === null || finalTip.icon === false ? (
+          {finalTip.icon || finalTip.icon === null || Boolean(finalTip.icon) === false ? (
             finalTip.icon
           ) : (
             <StatusIcon status={status} spin={status === 'loading'} />

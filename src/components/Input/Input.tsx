@@ -132,7 +132,7 @@ const Input = forwardRef(
             [focus]
         );
         const handleClear = useCallback(
-            e => {
+            (e: any) => {
                 if (disabled) return;
                 onClear();
                 const input = inputRef.current;
@@ -211,5 +211,5 @@ const Input = forwardRef(
         );
     }
 );
-
+Input.displayName = 'Input';
 export default React.memo(Input);

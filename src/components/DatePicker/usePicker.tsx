@@ -1,6 +1,6 @@
 import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react';
 import moment, { Moment } from 'moment';
-import { TDate } from '@z-r/calendar/types/interface';
+import { TDate } from '@ucloud-pccl/calendar/types/interface';
 
 import { animationPrefixCls } from 'src/style/globalAnimation';
 import useLocale from 'src/components/LocaleProvider/useLocale';
@@ -222,7 +222,7 @@ const usePicker = <D,>(
     );
 
     const popoverConfigProps = usePopoverConfig();
-    const avoidBlur = useCallback(e => e.preventDefault(), []);
+    const avoidBlur = useCallback((e: any) => e.preventDefault(), []);
 
     const inputProps = {
         value: inputValue,

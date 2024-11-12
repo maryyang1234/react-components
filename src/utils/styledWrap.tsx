@@ -20,7 +20,7 @@ export interface Theme {
  * 包裹组件，注入默认主题，添加默认的 props
  * @param input {object} 需要注入组件的 props
  */
-const styledWrap = <Props, HTMLElement = HTMLDivElement>(input: Input<Props>) => {
+const styledWrap = <Props, HTMLElement = HTMLDivElement>(input: Input<Props & { className?: string; }>) => {
     type MergedPropsWithTheme = Props & HTMLAttributes<HTMLElement> & { theme?: Theme };
     type fullProps = Props & HTMLAttributes<HTMLElement>;
     return (
@@ -53,6 +53,8 @@ const styledWrap = <Props, HTMLElement = HTMLDivElement>(input: Input<Props>) =>
             const Com = (Comp as unknown) as FC;
             return <Com {...result} ref={ref} />;
         };
+        // TODO
+        // @ts-ignore
         return forwardRef(WithThemeComponent);
     };
 };

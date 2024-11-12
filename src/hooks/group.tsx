@@ -1,10 +1,14 @@
-import React, { useCallback, useEffect, useMemo, useRef, ReactNode, ComponentType } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, ReactNode } from 'react';
 
 import noop from 'src/utils/noop';
 
 export type Key = number | string;
 export type KeyMap = Map<Key, boolean>;
 export type ChildrenMap = Map<Key, ReactNode>;
+
+interface DisabledReactElement extends React.ReactElement {
+    props: React.ReactElement['props'] & { disabled?: boolean };
+}
 export interface GroupContext {
     selectedKeyMap?: KeyMap;
     selectedKeys?: Key[];
@@ -273,7 +277,7 @@ const groupChildrenAsDataSource = (
                     }
 
                     childrenMap.set(key, props.children);
-                    return React.cloneElement(child, {
+                    return React.cloneElement(child as React.ReactElement, {
                         [itemKeyName]: key,
                         disabled: globalDisabled || isDisabled,
                         isFirst,
@@ -293,7 +297,7 @@ const groupChildrenAsDataSource = (
                     validKeys.push(...subValidKeys);
                     disabledKeys.push(...subDisabledKeys);
                     return React.cloneElement(
-                        child,
+                        child as DisabledReactElement,
                         {
                             disabled: globalDisabled || isDisabled,
                             [subGroupKeyName]: key,

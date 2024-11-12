@@ -1,5 +1,4 @@
 import React, { CSSProperties, HTMLAttributes, PureComponent, ReactNode } from 'react';
-import ReactDOM from 'react-dom';
 
 import RcAlign from 'src/libs/rc-align';
 
@@ -48,6 +47,9 @@ class Badge extends PureComponent<BadgeProps> {
     static defaultProps = defaultProps;
     static Placement = Placement;
     static Color = Color;
+
+    badgeRef = React.createRef<HTMLDivElement>();
+
     renderBadge = () => {
         const { value, maxValue, dot, badgeStyle, color } = this.props;
         let content;
@@ -64,10 +66,11 @@ class Badge extends PureComponent<BadgeProps> {
             </SBadge>
         );
     };
+
     getTarget = () => {
-        // eslint-disable-next-line react/no-find-dom-node
-        return ReactDOM.findDOMNode(this);
+        return this.badgeRef.current;
     };
+
     render() {
         /* eslint-disable @typescript-eslint/no-unused-vars */
         const {
@@ -86,10 +89,10 @@ class Badge extends PureComponent<BadgeProps> {
         /* eslint-enable @typescript-eslint/no-unused-vars */
         const badge = this.renderBadge();
         if (!children) {
-            return <SWrap {...rest}>{badge}</SWrap>;
+            return <SWrap {...rest} ref={this.badgeRef}>{badge}</SWrap>;
         }
         return (
-            <SWrap {...rest}>
+            <SWrap {...rest} ref={this.badgeRef}>
                 {children}
                 {hideWhenZero && (value === 0 || value === '0') ? null : (
                     <RcAlign target={this.getTarget} align={{ ...placements[placement], offset: offset }}>

@@ -1,11 +1,15 @@
 let supportSticky = null;
 
 const checkStickySupport = () => {
-    const testDOM = document.createElement('div');
+    let support = false;
+    if (typeof document === 'undefined') {
+        return support;
+    }
+    const testDOM = typeof document !== 'undefined' ? document.createElement('div') : null;
     const style = testDOM.style;
     const prefix = ['', '-o-', '-webkit-', '-moz-', '-ms-'];
 
-    let support = false;
+
     for (let i = 0; i < prefix.length; i += 1) {
         const stickyName = `${prefix[i]}sticky`;
         style.position = stickyName;

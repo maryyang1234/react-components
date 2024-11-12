@@ -1,6 +1,6 @@
 import React, { ChangeEvent, memo, useCallback, useEffect, useMemo, useState } from 'react';
 import moment, { Moment } from 'moment';
-import { TDate } from '@z-r/calendar/types/interface';
+import { TDate } from '@ucloud-pccl/calendar/types/interface';
 
 import Input from 'src/components/Input';
 import Popover from 'src/components/Popover';
@@ -105,7 +105,7 @@ const TimePicker = ({
     const [visible, setVisible] = useState(false);
     const [active, setActive] = useState(false);
     const defaultTime = useMemo(() => moment().startOf('date'), []);
-    const avoidBlur = useCallback(e => e.preventDefault(), []);
+    const avoidBlur = useCallback((e: any) => e.preventDefault(), []);
     const format = _format || DefaultFormat;
     const handleConfirm = useCallback(() => {
         setVisible(false);

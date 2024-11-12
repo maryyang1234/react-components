@@ -64,7 +64,7 @@ const PopupWithOutMemo = React.forwardRef(function Popup(
     );
 
     const onSelect = useCallback(
-        values => {
+        (values: any[]) => {
             onChange(values[0]);
         },
         [onChange]

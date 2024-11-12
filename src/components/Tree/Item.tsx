@@ -101,7 +101,7 @@ const ItemView = ({
     value: Key;
 } & SharedItemProps) => {
     const onBodyClick = useCallback(
-        e => {
+        (e: any) => {
             if (loading) {
                 return;
             }
@@ -165,7 +165,7 @@ const ChildItem = ({
 } & SharedItemProps) => {
     const checked = selectedMap[value];
     const onCheckChange = useCallback(
-        checked => {
+        (checked: any) => {
             onSelect({ [value]: checked });
         },
         [value, onSelect]
@@ -210,7 +210,7 @@ const TitleItem = ({
     const selectedStatus = getSelectedStatus(values, selectedMap, disabledValues);
     const [loading, setLoading] = useState(false);
     const onCheckChange = useCallback(
-        checked => {
+        (checked: any) => {
             const selectedMap: ChangeKeyMap = {};
             values?.forEach(v => {
                 selectedMap[v] = checked;

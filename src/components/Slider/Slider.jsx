@@ -121,7 +121,7 @@ class Slider extends Component {
     simpleClone = (obj = null) => {
         return JSON.parse(JSON.stringify(obj));
     };
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (
             !(nextProps.marks == this.state.cacheMarks || _.isEqual(nextProps.marks, this.state.cacheMarks)) ||
             nextProps.max !== this.props.max ||

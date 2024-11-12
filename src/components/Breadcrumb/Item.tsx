@@ -15,7 +15,7 @@ export interface ItemProps {
 
 const Item = ({ disabled, onClick, href, ...rest }: ItemProps & HTMLAttributes<HTMLElement>) => {
     const handleClick = useCallback(
-        e => {
+        (e: any) => {
             if (disabled) return;
             onClick?.(e);
         },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Moment } from 'moment';
-import { TDate } from '@z-r/calendar/types/interface';
+import { TDate } from '@ucloud-pccl/calendar/types/interface';
 
 import Input from 'src/components/Input';
 import Calendar from 'src/components/Calendar';

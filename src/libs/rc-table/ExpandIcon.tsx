@@ -10,7 +10,7 @@ interface ExpandIconProps {
 }
 
 const ExpandIcon = ({ expandable, prefixCls, onExpand, needIndentSpaced, expanded, record }: ExpandIconProps) => {
-    const handleClick = useCallback(e => onExpand(record, e), [onExpand, record]);
+    const handleClick = useCallback((e: any) => onExpand(record, e), [onExpand, record]);
     if (expandable) {
         const expandClassName = expanded ? 'expanded' : 'collapsed';
         return <span className={`${prefixCls}-expand-icon ${prefixCls}-${expandClassName}`} onClick={handleClick} />;
