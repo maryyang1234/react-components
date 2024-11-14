@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { createForm, formShape } from 'rc-form';
-import createReactContext from 'create-react-context';
 
 import Form from 'src/components/Form';
 
-export const ZFormContext = createReactContext();
+export const ZFormContext = React.createContext();
 
 class ZForm extends Component {
     static propTypes = {

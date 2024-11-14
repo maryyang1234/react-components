@@ -60,7 +60,6 @@
         "classnames": "^2.2.5",
         "color": "^3.0.0",
         "component-classes": "^1.2.6",
-        "create-react-context": "^0.2.3",
         "dom-align": "^1.12.0",
         "emotion": "^10.0.27",
         "emotion-theming": "^10.0.27",

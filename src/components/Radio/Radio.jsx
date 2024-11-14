@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import createReactContext from 'create-react-context';
 import classnames from 'classnames';
 
 import itemDecorator from 'src/decorators/selectableWithStore/item';
@@ -19,8 +18,8 @@ import {
 import Card from './Card';
 import RadioIcon from './RadioIcon';
 
-export const StoreContext = createReactContext();
-export const RadioContext = createReactContext();
+export const StoreContext = React.createContext();
+export const RadioContext = React.createReactContext();
 
 const Size = ['sm', 'md', 'lg'];
 const StyleType = ['default', 'button', 'tag', 'card', 'text', 'list'];

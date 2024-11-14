@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import createReactContext from 'create-react-context';
 
 import RcTable from 'src/libs/rc-table';
 import deprecatedLog from 'src/utils/deprecatedLog';
@@ -34,7 +33,7 @@ export const deprecatedLogForOnRowSelect = _.once(() => deprecatedLog('Table onR
 
 export const placeholderKey = 'table_column_width_placeholder';
 
-export const TableContext = createReactContext();
+export const TableContext = React.createContext();
 
 const missingColumnKeyWarn = () => console.error('Warning: Table column need a unique key');
 
