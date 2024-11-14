@@ -56,7 +56,7 @@
         "@emotion/core": "^10.0.35",
         "@emotion/styled": "^10.0.27",
         "@emotion/styled-base": "^10.3.0",
-        "@z-r/calendar": "0.6.0",
+        "@z-r/calendar": "git+https://github.com/maryyang1234/calendar.git#62db011b581177580a374b05303fa6460817c55a",
         "classnames": "^2.2.5",
         "color": "^3.0.0",
         "component-classes": "^1.2.6",
